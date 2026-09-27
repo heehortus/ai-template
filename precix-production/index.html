@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRECIX — 정밀 부품 가공 제조</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Custom Cursor -->
+  <div id="cursor" aria-hidden="true"></div>
+
+  <!-- ===========================
+       NAVIGATION
+  =========================== -->
+  <div id="scroll-bar" aria-hidden="true"></div>
+  <nav class="nav" id="nav" aria-label="주 내비게이션">
+    <a href="#" class="nav-logo" aria-label="PRECIX 홈">
+      PRECI<span>X</span>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#capabilities">SERVICE</a></li>
+      <li><a href="#values">VALUES</a></li>
+      <li><a href="#portfolio">PORTFOLIO</a></li>
+      <li><a href="#quality">QUALITY</a></li>
+    </ul>
+    <button class="nav-hamburger" aria-label="메뉴 열기" id="hamburger" aria-expanded="false">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" id="hamburger-svg">
+        <line x1="3" y1="6" x2="21" y2="6"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="18" x2="21" y2="18"/>
+      </svg>
+    </button>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="nav-mobile" id="nav-mobile" aria-hidden="true">
+    <ul class="nav-mobile-links" role="list">
+      <li><a href="#capabilities" class="nav-mobile-link">SERVICE</a></li>
+      <li><a href="#values" class="nav-mobile-link">VALUES</a></li>
+      <li><a href="#portfolio" class="nav-mobile-link">PORTFOLIO</a></li>
+      <li><a href="#quality" class="nav-mobile-link">QUALITY</a></li>
+    </ul>
+  </div>
+
+  <!-- ===========================
+       HERO — 영상 전용
+  =========================== -->
+  <section class="hero" aria-label="히어로 영상">
+    <div class="hero-video-wrap">
+      <video autoplay muted loop playsinline
+             src="asset/hero-video-2.mp4"></video>
+    </div>
+    <div class="hero-dim"></div>
+    <p class="hero-copy">가장 완벽한 금속.<br>프리식스가 만듭니다.</p>
+  </section>
+
+  <!-- ===========================
+       HERO TEXT + STATS
+  =========================== -->
+  <section class="stats" aria-labelledby="hero-headline">
+    <div class="hero-inner">
+      <div class="hero-headline-wrap">
+        <p class="hero-headline" id="hero-headline">
+          <span id="typing-target"></span>
+        </p>
+      </div>
+    </div>
+    <div class="stats-grid">
+      <div class="stat-item" data-stat>
+        <span class="stat-label">Since</span>
+        <div class="stat-number-wrap">
+          <span class="stat-number" data-count="2004">0</span>
+        </div>
+      </div>
+      <div class="stat-item" data-stat>
+        <span class="stat-label">Clients</span>
+        <div class="stat-number-wrap">
+          <span class="stat-number" data-count="300">0</span><span class="stat-suffix" aria-hidden="true">+</span>
+        </div>
+      </div>
+      <div class="stat-item" data-stat>
+        <span class="stat-label">Quality</span>
+        <div class="stat-number-wrap">
+          <span class="stat-number" data-count="99">0</span><span class="stat-suffix" aria-hidden="true">%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       CAPABILITIES
+  =========================== -->
+  <section class="section capabilities" id="capabilities" aria-labelledby="cap-main-title">
+    <div class="container">
+
+      <div class="cap-header reveal">
+        <h2 class="cap-main-title" id="cap-main-title">Our Service</h2>
+        <p class="cap-main-sub">알루미늄부터 인코넬까지. <br class="br-mobile">모든 소재와 형상을 가공합니다.</p>
+      </div>
+
+      <div class="cap-list">
+
+        <div class="cap-item">
+          <div class="cap-item-content">
+            <h3 class="cap-item-title">CNC Precision<br>Machining</h3>
+            <p class="cap-item-desc">3축 CNC 머시닝센터를 이용한 고정밀 황삭·정삭 가공. 복잡한 형상과 좁은 공차도 안정적으로 양산합니다.</p>
+            <p class="cap-item-technique">Technique</p>
+            <div class="cap-item-tags">
+              <span class="cap-item-tag">3축 Machining</span>
+              <span class="cap-item-tag">Ra 0.8μm</span>
+              <span class="cap-item-tag">공차 ±0.005mm</span>
+            </div>
+          </div>
+          <div class="cap-item-image">
+            <img src="asset/capa-1.jpg" alt="CNC Precision Machining 이미지" />
+          </div>
+        </div>
+
+        <div class="cap-item">
+          <div class="cap-item-content">
+            <h3 class="cap-item-title">5-Axis Complex<br>Machining</h3>
+            <p class="cap-item-desc">동시 5축 제어로 단일 셋업에서 복잡한 3D 형상을 완성. 재고정 오차를 제거해 최고 수준의 정밀도를 구현합니다.</p>
+            <p class="cap-item-technique">Technique</p>
+            <div class="cap-item-tags">
+              <span class="cap-item-tag">5-Axis Simultaneous</span>
+              <span class="cap-item-tag">공차 ±0.001mm</span>
+              <span class="cap-item-tag">언더컷 형상</span>
+            </div>
+          </div>
+          <div class="cap-item-image">
+            <img src="asset/capa-2.jpg" alt="5-Axis Complex Machining 이미지" />
+          </div>
+        </div>
+
+        <div class="cap-item">
+          <div class="cap-item-content">
+            <h3 class="cap-item-title">Mass<br>Production</h3>
+            <p class="cap-item-desc">프로토타입 제품부터 대량 양산까지. 공정 표준화와 지그 설계로 안정적인 품질을 유지하며 납기를 맞춥니다.</p>
+            <p class="cap-item-technique">Technique</p>
+            <div class="cap-item-tags">
+              <span class="cap-item-tag">LOT 생산</span>
+              <span class="cap-item-tag">SPC 관리</span>
+              <span class="cap-item-tag">납기 준수</span>
+            </div>
+          </div>
+          <div class="cap-item-image">
+            <img src="asset/capa-3.jpg" alt="Mass Production 이미지" />
+          </div>
+        </div>
+
+        <div class="cap-item">
+          <div class="cap-item-content">
+            <h3 class="cap-item-title">Surface<br>Treatment</h3>
+            <p class="cap-item-desc">알로다인, 하드 아노다이징, 전기 도금, 파카라이징 등 소재별 최적 표면 처리를 원스톱으로 제공합니다.</p>
+            <p class="cap-item-technique">Technique</p>
+            <div class="cap-item-tags">
+              <span class="cap-item-tag">Hard Anodizing</span>
+              <span class="cap-item-tag">Alodine</span>
+              <span class="cap-item-tag">전기 도금</span>
+            </div>
+          </div>
+          <div class="cap-item-image">
+            <img src="asset/capa-4.jpg" alt="Surface Treatment 이미지" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       VALUES
+  =========================== -->
+  <section class="values" id="values" aria-label="핵심 가치">
+    <div class="values-sticky">
+
+      <p class="values-bg-text" aria-hidden="true">We Are Precix</p>
+
+      <div class="values-grid">
+
+      <div class="value-card">
+        <p class="value-card-label">Our Precision</p>
+        <p class="value-card-desc">머리카락 굵기의 10분의 1. 도면에 적힌 숫자가 완성품의 숫자가 되도록, 오차 없는 가공을 가장 중요한 약속으로 삼습니다.</p>
+      </div>
+
+      <div class="value-card">
+        <p class="value-card-label">Our Reliability</p>
+        <p class="value-card-desc">납기일은 협상의 대상이 아닙니다. 약속한 날짜에, 약속한 품질로. 그 신뢰가 20년간 300개 고객사를 이어온 이유입니다.</p>
+      </div>
+
+      <div class="value-card">
+        <p class="value-card-label">Our Technology</p>
+        <p class="value-card-desc">DMG MORI 5축 설비와 Zeiss CMM 측정 시스템. 장비에 투자하는 것이 곧 고객에게 투자하는 일이라 믿습니다.</p>
+      </div>
+
+      <div class="value-card">
+        <p class="value-card-label">Our Partnership</p>
+        <p class="value-card-desc">도면 한 장으로 시작합니다. 소재 선정부터 표면처리까지 함께 고민하고, 고객의 완성품이 세상에 나올 때까지 파트너로 남습니다.</p>
+      </div>
+
+      </div>
+    </div><!-- .values-sticky -->
+  </section>
+
+  <!-- ===========================
+       PORTFOLIO — Our Works
+  =========================== -->
+  <section class="section portfolio" id="portfolio" aria-labelledby="port-title">
+    <div class="container">
+
+      <div class="portfolio-header reveal">
+        <h2 class="portfolio-main-title" id="port-title">Our Works</h2>
+        <p class="portfolio-main-sub">항공우주부터 의료기기까지 <br class="br-mobile">— PRECIX가 만든 정밀 부품들</p>
+      </div>
+
+      <div class="portfolio-masonry">
+
+        <div class="works-card">
+          <img src="asset/works-1.jpg" alt="항공기 구조 브래킷 이미지" class="works-card-img" />
+          <div class="works-card-label">
+            <p class="works-card-name">항공기 구조 브래킷</p>
+          </div>
+        </div>
+
+        <div class="works-card">
+          <img src="asset/works-2.jpg" alt="수술 로봇 암 이미지" class="works-card-img" />
+          <div class="works-card-label">
+            <p class="works-card-name">수술 로봇 암 컴포넌트</p>
+          </div>
+        </div>
+
+        <div class="works-card">
+          <img src="asset/works-3.jpg" alt="이온 임플란터 이미지" class="works-card-img" />
+          <div class="works-card-label">
+            <p class="works-card-name">이온 임플란터 샤프트</p>
+          </div>
+        </div>
+
+        <div class="works-card">
+          <img src="asset/works-4.jpg" alt="위성 마운팅 플레이트 이미지" class="works-card-img" />
+          <div class="works-card-label">
+
+            <p class="works-card-name">위성 마운팅 플레이트</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       CONTACT CTA
+  =========================== -->
+  <section class="contact-cta" id="contact" aria-labelledby="cta-title">
+    <div class="container">
+      <h2 class="contact-cta-title reveal" id="cta-title" style="transition-delay:0.06s">
+        WE ARE ALWAYS <br> READY FOR PROJECT
+      </h2>
+      <p class="contact-cta-sub reveal" style="transition-delay:0.12s">
+        프리식스는 언제나 여러분을 위해 열려 있습니다.<br>
+        가장 완벽한 금속 공정을 위해 항상 노력합니다.
+      </p>
+  </section>
+
+  <!-- ===========================
+       FOOTER
+  =========================== -->
+  <footer class="footer">
+    <div class="footer-info">
+      <p class="footer-company">(주)프리식스</p>
+      <p class="footer-detail"><strong>Address.</strong><br class="br-mobile">경기도 안산시 단원구 산업로 125 (반월공단)</p>
+      <p class="footer-detail"><strong>Tel.</strong><br class="br-mobile">+82 2-1234-5678</p>
+    </div>
+    <p class="footer-copy">© 2025 PRECIX Co., Ltd. All rights reserved.</p>
+    <p class="footer-wordmark" aria-hidden="true">PRECIX</p>
+  </footer>
+
+  <!-- ===========================
+       JAVASCRIPT
+  =========================== -->
+  <script src="js/main.js"></script>
+</body>
+</html>

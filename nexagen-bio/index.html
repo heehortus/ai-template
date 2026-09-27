@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NEXAGEN — 차세대 세포재생 바이오 플랫폼</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600;700&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ═══════════════════════════ NAV ═══════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">NEXAGEN</a>
+      <ul class="nav__links">
+        <li><a href="#mission">기업소개</a></li>
+        <li><a href="#research">연구분야</a></li>
+        <li><a href="#clinical">임상성과</a></li>
+        <li><a href="#process">파이프라인</a></li>
+      </ul>
+      <button class="nav__burger" id="navBurger" aria-label="메뉴 열기">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round">
+          <line x1="5" y1="7" x2="19" y2="7"/>
+          <line x1="5" y1="12" x2="19" y2="12"/>
+          <line x1="5" y1="17" x2="19" y2="17"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <div class="nav__mobile" id="navMobile">
+    <ul>
+      <li><a href="#mission">기업소개</a></li>
+      <li><a href="#research">연구분야</a></li>
+      <li><a href="#clinical">임상성과</a></li>
+      <li><a href="#process">파이프라인</a></li>
+    </ul>
+  </div>
+
+  <!-- ═══════════════════════════ HERO ════════════════════════════ -->
+  <section class="hero" id="hero">
+    </div>
+    <video class="hero__video" autoplay muted loop playsinline preload="auto">
+      <source src="asset/video-1.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero__dim"></div>
+    <div class="hero__content">
+      <div class="hero__headline">
+        <span class="hero__line">생명이 스스로 <br/>치유합니다</span>
+      </div>
+      <p class="hero__sub">NEXAGEN은 세포 재생의학 원천 기술로 <br class="br-mobile">인체의 자연 복원력을 가속합니다</p>
+    </div>
+
+    <!-- Bouncing chevron -->
+    <div class="hero__chevron" aria-hidden="true">
+      <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M6 10L14 18L22 10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ STATS ════════════════════════════ -->
+  <section class="stats" id="stats">
+    <div class="container">
+      <div class="stats__grid">
+        <div class="stats__item">
+          <span class="stats__number" data-count="18" data-suffix="+">0</span>
+          <span class="stats__label">연구 기간</span>
+        </div>
+        <div class="stats__item">
+          <span class="stats__number" data-count="12400" data-suffix="+">0</span>
+          <span class="stats__label">임상 케이스</span>
+        </div>
+        <div class="stats__item">
+          <span class="stats__number" data-count="912" data-suffix="%" data-decimal="1">0</span>
+          <span class="stats__label">세포 재생률</span>
+        </div>
+        <div class="stats__item">
+          <span class="stats__number" data-count="47" data-suffix="건">0</span>
+          <span class="stats__label">등록 특허</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ MISSION ══════════════════════════ -->
+  <section class="mission" id="mission">
+    <div class="container">
+      <div class="mission__grid">
+        <!-- Left -->
+        <div class="rv-left">
+          <h2>
+            <span class="mission__h1">과학과 자연이<br>만나는 지점에서</span>
+          </h2>
+          <p class="mission__body">
+            NEXAGEN은 인체 세포의 재생 능력에서 출발합니다. <br>줄기세포 기반 원천 기술과 정밀 면역 제어 플랫폼을 결합해, 손상된 조직이 스스로 회복하는 과정을 과학적으로 가속합니다.<br><br>
+            우리는 임상 데이터와 분자 메커니즘의 접점에서 차세대 재생의학의 경계를 넓혀 나갑니다.
+          </p>
+        </div>
+        <!-- Right: Cell illustration slideshow -->
+        <div class="rv-right">
+          <div class="mission__illustration" id="missionMedia">
+            <div class="timeline-slide active">
+              <img src="asset/6.jpg" alt="세포 재생의학 이미지 1" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div class="timeline-slide">
+              <img src="asset/1.jpg" alt="세포 재생의학 이미지 2" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div class="timeline-slide">
+              <img src="asset/2.jpg" alt="세포 재생의학 이미지 3" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+            <div class="timeline-slide">
+              <img src="asset/3.jpg" alt="세포 재생의학 이미지 4" style="width:100%; height:100%; object-fit:cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ RESEARCH ═════════════════════════ -->
+  <section class="research" id="research">
+    <div class="container">
+      <div class="section-header rv">
+        <h2>세 가지 핵심 연구 분야</h2>
+        <p>과학적 엄밀성과 임상적 실효성을 동시에 추구합니다</p>
+      </div>
+    </div>
+    <div class="research__grid">
+        <!-- Card 1 -->
+        <div class="r-card rv rv-delay-1">
+          <svg class="r-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="줄기세포 아이콘">
+            <circle cx="24" cy="24" r="14" stroke="#171717" stroke-width="4"/>
+            <circle cx="24" cy="24" r="5" stroke="#171717" stroke-width="4"/>
+            <line x1="24" y1="4" x2="24" y2="10" stroke="#171717" stroke-width="4" stroke-linecap="round"/>
+            <line x1="40.5" y1="14" x2="35.3" y2="17" stroke="#171717" stroke-width="4" stroke-linecap="round"/>
+            <line x1="40.5" y1="34" x2="35.3" y2="31" stroke="#171717" stroke-width="4" stroke-linecap="round"/>
+            <line x1="24" y1="44" x2="24" y2="38" stroke="#171717" stroke-width="4" stroke-linecap="round"/>
+            <line x1="7.5" y1="34" x2="12.7" y2="31" stroke="#171717" stroke-width="4" stroke-linecap="round"/>
+            <line x1="7.5" y1="14" x2="12.7" y2="17" stroke="#171717" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <h3 class="r-card__title">줄기세포 재생의학</h3>
+          <p class="r-card__desc">자가·동종 줄기세포를 활용한 조직 재생 플랫폼. 손상된 연골, 심근, 신경 조직의 회복을 임상 수준으로 구현합니다.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="r-card rv rv-delay-2">
+          <svg class="r-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="세포 면역치료 아이콘">
+            <path d="M24 4L10 12V26C10 34.4 16.2 42.2 24 44C31.8 42.2 38 34.4 38 26V12L24 4Z" stroke="#171717" stroke-width="4" stroke-linejoin="round"/>
+            <line x1="24" y1="17" x2="24" y2="30" stroke="#171717" stroke-width="4" stroke-linecap="round"/>
+            <line x1="17" y1="24" x2="31" y2="24" stroke="#171717" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <h3 class="r-card__title">세포 면역 치료</h3>
+          <p class="r-card__desc">CAR-T 및 NK 세포 엔지니어링을 통해 자가면역 질환과 암세포에 대한 정밀 표적 치료를 개발합니다.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="r-card rv rv-delay-3">
+          <svg class="r-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="바이오마커 진단 아이콘">
+            <circle cx="22" cy="22" r="20" stroke="#171717" stroke-width="4"/>
+            <line x1="38" y1="38" x2="48" y2="48" stroke="#171717" stroke-width="4" stroke-linecap="round"/>
+          </svg>
+          <h3 class="r-card__title">바이오마커 진단</h3>
+          <p class="r-card__desc">혈중 세포외 소포 및 cfDNA 분석을 통해 재생 치료 반응성을 사전 예측하는 진단 플랫폼을 구축합니다.</p>
+        </div>
+      </div>
+      <!-- Scroll indicator (mobile carousel) -->
+      <div class="research__scrollbar" id="researchScrollbar">
+        <div class="research__scrollbar-thumb" id="researchScrollbarThumb"></div>
+      </div>
+  </section>
+
+  <!-- ═══════════════════════════ PROCESS ══════════════════════════ -->
+  <section class="process" id="process">
+    <div class="container">
+      <div class="process__header">
+        <h2>연구에서 치유까지</h2>
+        <p>NEXAGEN의 4단계 재생 프로토콜</p>
+      </div>
+
+      <div class="process__layout">
+        <!-- Spine SVG -->
+        <div class="process__spine">
+          <svg id="processSpine" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"></svg>
+        </div>
+
+        <!-- Steps -->
+        <div class="process__steps" id="processSteps">
+
+          <div class="p-step rv">
+            <span class="p-step__num">01</span>
+            <div class="p-step__content">
+              <h3 class="p-step__title">세포 분석 및 수집</h3>
+              <p class="p-step__desc">환자의 혈액 및 조직 샘플로부터 목표 세포군을 분리·정제합니다. 단일세포 RNA 시퀀싱 기반의 세포 상태 지도를 작성해 재생 가능성을 정밀 평가합니다.</p>
+            </div>
+          </div>
+
+          <div class="p-step rv rv-delay-1">
+            <span class="p-step__num">02</span>
+            <div class="p-step__content">
+              <h3 class="p-step__title">재생 프로토콜 설계</h3>
+              <p class="p-step__desc">세포 상태 분석 결과를 바탕으로 성장인자 조합, 스캐폴드 구조, 배양 조건을 최적화합니다. AI 기반 시뮬레이션으로 프로토콜의 효능을 사전 검증합니다.</p>
+            </div>
+          </div>
+
+          <div class="p-step rv rv-delay-2">
+            <span class="p-step__num">03</span>
+            <div class="p-step__content">
+              <h3 class="p-step__title">임상 적용 및 모니터링</h3>
+              <p class="p-step__desc">GMP 등급 세포 제제를 임상 환경에 적용하고, 영상 바이오마커와 세포외 소포 농도를 주기적으로 추적하여 재생 경과를 실시간 평가합니다.</p>
+            </div>
+          </div>
+
+          <div class="p-step rv rv-delay-3">
+            <span class="p-step__num">04</span>
+            <div class="p-step__content">
+              <h3 class="p-step__title">데이터 분석 및 최적화</h3>
+              <p class="p-step__desc">축적된 임상 데이터를 머신러닝으로 분석해 프로토콜을 지속 개선합니다. 각 환자의 반응 데이터가 다음 세대 재생 알고리즘에 반영됩니다.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ CLINICAL TIMELINE ═════════════════ -->
+  <section class="timeline-sec" id="clinical">
+    <div class="container">
+      <h2 class="timeline-title rv">18년의 임상 여정</h2>
+      <div class="timeline-grid">
+
+        <!-- Left: cards -->
+        <div class="timeline-list">
+          <div class="t-card">
+            <div class="t-card__year">2006</div>
+            <div class="t-card__title">연구소 설립 및 줄기세포 배양 기술 특허</div>
+            <div class="t-card__desc">NEXAGEN 연구소를 설립하고, 자가 골수 줄기세포 장기 배양 기술에 관한 최초의 국내 특허를 등록했습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2007</div>
+            <div class="t-card__title">세포 분리·정제 자동화 시스템 개발</div>
+            <div class="t-card__desc">줄기세포 분리 및 정제 공정의 자동화 시스템을 구축하여 세포 순도 98.3%를 달성하고 생산 재현성을 확보했습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2008</div>
+            <div class="t-card__title">동물 모델 전임상 연구 착수</div>
+            <div class="t-card__desc">쥐 및 영장류 모델에서 세포 생착률과 조직 재생 효능을 검증하는 대규모 전임상 연구를 개시했습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2009</div>
+            <div class="t-card__title">1세대 세포 재생 프로토콜 개발</div>
+            <div class="t-card__desc">연골 손상 모델 전임상 연구를 완료하고, 세포 투여 경로 및 농도 최적화를 달성한 1세대 프로토콜을 확립했습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2011</div>
+            <div class="t-card__title">국제 공동 연구 네트워크 구축</div>
+            <div class="t-card__desc">미국·독일·일본 3개국 연구기관과 세포치료 공동 연구 협약을 체결하고, 다국적 데이터 공유 플랫폼을 운영했습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2012</div>
+            <div class="t-card__title">임상 1상 진입</div>
+            <div class="t-card__desc">무릎 연골 손상 환자 12명을 대상으로 안전성 평가 임상 1상을 개시하였으며, 6개월 추적 관찰에서 중대 이상반응 0건을 기록했습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2014</div>
+            <div class="t-card__title">임상 1/2상 중간 분석 발표</div>
+            <div class="t-card__desc">48명 확장 코호트의 12개월 중간 결과를 국제줄기세포학회(ISSCR)에서 발표하며 글로벌 주목을 받았습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2015</div>
+            <div class="t-card__title">임상 2상 완료 — 재생률 78.4% 달성</div>
+            <div class="t-card__desc">96명 이중맹검 대조군 연구에서 세포 재생률 78.4%를 달성하며 당시 국내 최고 수준의 유효성 데이터를 확보했습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2017</div>
+            <div class="t-card__title">2세대 엑소좀 기반 치료 플랫폼 특허</div>
+            <div class="t-card__desc">세포 직접 투여 방식을 넘어 엑소좀 매개 비세포성 재생 플랫폼에 관한 핵심 원천 특허 12건을 국내외 등록했습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2018</div>
+            <div class="t-card__title">FDA IND 승인 획득</div>
+            <div class="t-card__desc">미국 FDA로부터 임상시험 계획(IND) 승인을 획득하여 글로벌 임상 연구를 위한 기반을 마련했습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2020</div>
+            <div class="t-card__title">AI 기반 세포 반응 예측 모델 출시</div>
+            <div class="t-card__desc">1,800명 임상 데이터를 학습한 딥러닝 예측 모델을 개발하여 환자별 맞춤 투여 용량 결정 시스템을 상용화했습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2021</div>
+            <div class="t-card__title">3,200건 임상 데이터 분석 완료</div>
+            <div class="t-card__desc">누적 3,200명의 환자 데이터를 단일세포 분석 및 AI 모델에 통합하여 세포 반응 예측 정확도를 94.7%로 향상시켰습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2022</div>
+            <div class="t-card__title">임상 3상 개시 — 다국가 480명 등록</div>
+            <div class="t-card__desc">한국·미국·독일 3개국 12개 기관에서 480명을 대상으로 피벗 임상 3상을 개시하고 첫 환자 투여를 완료했습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2023</div>
+            <div class="t-card__title">유럽 EMA 혁신 의약품 지정</div>
+            <div class="t-card__desc">유럽 의약품청(EMA)으로부터 혁신 의약품(PRIME) 지정을 받아 조기 허가 절차 및 규제 지원을 확보했습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2024</div>
+            <div class="t-card__title">91.2% 재생률 달성 — 글로벌 특허 등록</div>
+            <div class="t-card__desc">3상 임상 최종 결과 세포 재생률 91.2%를 달성하고, 핵심 기술에 관한 글로벌 특허 47건을 완료했습니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2025</div>
+            <div class="t-card__title">한국 식약처 품목허가 신청</div>
+            <div class="t-card__desc">3상 최종 데이터를 기반으로 국내 식품의약품안전처에 세포치료제 품목허가를 신청하고 심사를 진행 중입니다.</div>
+          </div>
+          <div class="t-card">
+            <div class="t-card__year">2026</div>
+            <div class="t-card__title">상업화 생산 시설 GMP 완공</div>
+            <div class="t-card__desc">연간 10만 도즈 생산 규모의 GMP 인증 세포치료제 전용 공장을 완공하고 상업 생산 체계를 구축했습니다.</div>
+          </div>
+        </div>
+
+        <!-- Center: progress bar -->
+        <div class="timeline-progress" id="timelineProgress">
+          <div class="timeline-progress__track">
+            <div class="timeline-progress__fill" id="timelineFill"></div>
+            <div class="timeline-progress__dot" id="timelineDot"></div>
+          </div>
+        </div>
+
+        <div class="timeline-media" id="timelineMedia">
+          <div class="timeline-slide active">
+            <img src="asset/1.jpg" alt="임상 연구 이미지 1" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="timeline-slide">
+            <img src="asset/2.jpg" alt="임상 연구 이미지 2" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="timeline-slide">
+            <img src="asset/3.jpg" alt="임상 연구 이미지 3" style="width:100%; height:100%; object-fit:cover;">
+          </div>
+          <div class="timeline-slide">
+            <img src="asset/4.jpg" alt="임상 연구 이미지 4" style="width:100%; height:100%; object-fit:cover;">
+          </div>  
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ PUBLICATIONS ══════════════════════ -->
+  <section class="publications" id="publications">
+    <div class="pub-layout">
+
+      <!-- Left col: image + header -->
+      <div class="pub-left-col rv">
+        <div class="pub-image">
+          <img src="asset/5.jpg" alt="연구 이미지">
+        </div>
+        <div class="pub-header">
+          <h2>주요 연구 성과</h2>
+          <p>국제 학술지에 발표된 <br/>NEXAGEN의 핵심 연구</p>
+        </div>
+      </div>
+
+      <!-- Right: 3x2 card grid -->
+      <div class="pub-content">
+        <div class="pub-grid">
+
+          <div class="pub-item">
+            <div class="pub-item__top">
+              <span class="pub-year">2024</span>
+            </div>
+            <p class="pub-title">세포외 소포를 매개로 한 조직 재생 가속 메커니즘 규명</p>
+            <p class="pub-author">Kim JH, Park SY, Lee DW et al. <br /> NEXAGEN Research Institute</p>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-item__top">
+              <span class="pub-year">2023</span>
+            </div>
+            <p class="pub-title">줄기세포 유래 사이토카인의 면역 조절 효과에 관한 임상 연구</p>
+            <p class="pub-author">Choi MR, Jung YS, Han KT et al. <br /> NEXAGEN &amp; Seoul National University</p>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-item__top">
+              <span class="pub-year">2022</span>
+            </div>
+            <p class="pub-title">3D 오가노이드 모델을 활용한 신장 재생 프로토콜 최적화</p>
+            <p class="pub-author">Yoon SW, Lim HC, Kwon JY et al. <br /> NEXAGEN &amp; KAIST</p>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-item__top">
+              <span class="pub-year">2021</span>
+            </div>
+            <p class="pub-title">미토콘드리아 기능 회복 기전을 통한 노화세포 재프로그래밍</p>
+            <p class="pub-author">Oh BK, Shin JH, Park CW et al. <br /> NEXAGEN Research Institute</p>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-item__top">
+              <span class="pub-year">2020</span>
+            </div>
+            <p class="pub-title">CAR-T 세포 치료와 줄기세포 병용 요법의 시너지 효과</p>
+            <p class="pub-author">Lee SH, Kim DH, Ahn JW et al. <br /> NEXAGEN &amp; Yonsei University</p>
+          </div>
+
+          <div class="pub-item">
+            <div class="pub-item__top">
+              <span class="pub-year">2019</span>
+            </div>
+            <p class="pub-title">연골 손상 모델에서의 줄기세포 생착 최적화 연구</p>
+            <p class="pub-author">Park JW, Kim SH, Cho DY et al. <br /> NEXAGEN Research Institute</p>
+          </div>
+
+        </div>
+      </div><!-- /pub-content -->
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════ FOOTER ════════════════════════════ -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <span class="footer__logo">NEXAGEN</span>
+        <span class="footer__tagline">차세대 세포재생 바이오 플랫폼</span>
+      </div>
+      <span class="footer__copy">© 2024 NEXAGEN Biotech Inc. All rights reserved.</span>
+    </div>
+  </footer>
+
+
+  <!-- ═══════════════════════════ JAVASCRIPT ════════════════════════ -->
+  <script src="js/main.js"></script>
+</body>
+</html>

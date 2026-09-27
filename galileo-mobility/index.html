@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Galileo Mobility — AI 기반 모빌리티 인텔리전스 플랫폼</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav class="nav" aria-label="주 내비게이션">
+    <div class="container nav__inner">
+      <a href="#" class="nav__logo">
+        <div class="nav__logo-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+            <circle cx="10" cy="10" r="3" fill="#7EE6DC"/>
+            <path d="M10 2v3M10 15v3M2 10h3M15 10h3" stroke="rgba(255,255,255,0.5)" stroke-width="1.5" stroke-linecap="round"/>
+            <circle cx="10" cy="10" r="7" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+          </svg>
+        </div>
+        Galileo Mobility
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="#how" class="nav__link">작동 방식</a></li>
+        <li><a href="#features" class="nav__link">기능</a></li>
+        <li><a href="#usecases" class="nav__link">유즈케이스</a></li>
+      </ul>
+      <div class="nav__hamburger" id="navHamburger" role="button" tabindex="0" aria-label="메뉴 열기" aria-expanded="false">
+        <span class="nav__hamburger-bar"></span>
+        <span class="nav__hamburger-bar"></span>
+        <span class="nav__hamburger-bar"></span>
+      </div>
+    </div>
+  </nav>
+  <div class="nav__drawer" id="navDrawer" aria-hidden="true">
+    <div class="nav__drawer-inner">
+      <a href="#how" class="nav__drawer-link">작동 방식</a>
+      <a href="#features" class="nav__drawer-link">기능</a>
+      <a href="#usecases" class="nav__drawer-link">유즈케이스</a>
+    </div>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero" aria-labelledby="hero-headline">
+    <div class="hero__grid-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero__inner">
+
+        <div class="hero__content">
+          <div class="hero__eyebrow">
+          </div>
+          <h1 class="hero__headline" id="hero-headline">
+            도시를 움직이는<br><em>AI 인프라</em>
+          </h1>
+          <p class="hero__body">
+            Galileo Mobility는 모빌리티 팀이 지능형 교통 시스템을 구축·배포·확장할 수 있도록 설계된 AI 인프라 플랫폼입니다. 경로 최적화부터 플릿 조율까지, 모든 이동을 더 스마트하게 만듭니다.
+          </p>
+
+          <!-- Mobile-only visual (between body and stats) -->
+          <div class="hero__visual--mobile" aria-hidden="true">
+            <div class="route-canvas">
+              <svg class="route-svg" viewBox="52 40 460 410" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.12">
+                  <circle cx="80"  cy="80"  r="2" fill="white"/><circle cx="160" cy="80"  r="2" fill="white"/><circle cx="240" cy="80"  r="2" fill="white"/><circle cx="320" cy="80"  r="2" fill="white"/><circle cx="400" cy="80"  r="2" fill="white"/><circle cx="480" cy="80"  r="2" fill="white"/>
+                  <circle cx="80"  cy="160" r="2" fill="white"/><circle cx="160" cy="160" r="2" fill="white"/><circle cx="240" cy="160" r="2" fill="white"/><circle cx="320" cy="160" r="2" fill="white"/><circle cx="400" cy="160" r="2" fill="white"/><circle cx="480" cy="160" r="2" fill="white"/>
+                  <circle cx="80"  cy="240" r="2" fill="white"/><circle cx="160" cy="240" r="2" fill="white"/><circle cx="240" cy="240" r="2" fill="white"/><circle cx="320" cy="240" r="2" fill="white"/><circle cx="400" cy="240" r="2" fill="white"/><circle cx="480" cy="240" r="2" fill="white"/>
+                  <circle cx="80"  cy="320" r="2" fill="white"/><circle cx="160" cy="320" r="2" fill="white"/><circle cx="240" cy="320" r="2" fill="white"/><circle cx="320" cy="320" r="2" fill="white"/><circle cx="400" cy="320" r="2" fill="white"/><circle cx="480" cy="320" r="2" fill="white"/>
+                  <circle cx="80"  cy="400" r="2" fill="white"/><circle cx="160" cy="400" r="2" fill="white"/><circle cx="240" cy="400" r="2" fill="white"/><circle cx="320" cy="400" r="2" fill="white"/><circle cx="400" cy="400" r="2" fill="white"/><circle cx="480" cy="400" r="2" fill="white"/>
+                </g>
+                <path d="M 80 400 L 240 400 L 240 240 L 400 240" stroke="rgba(255,255,255,0.08)" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
+                <path d="M 400 240 L 400 80 L 480 80"             stroke="rgba(255,255,255,0.06)" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
+                <path d="M 160 320 L 160 160 L 320 160 L 320 80"  stroke="rgba(255,255,255,0.06)" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
+                <path d="M 80 400 C 80 340, 80 320, 160 320 C 240 320, 240 240, 320 240 C 400 240, 400 160, 400 80 C 400 80, 440 80, 480 80" stroke="rgba(237,255,253,0.08)" stroke-width="16" fill="none"/>
+                <path d="M 80 400 C 80 340, 80 320, 160 320 C 240 320, 240 240, 320 240 C 400 240, 400 160, 400 80 C 400 80, 440 80, 480 80" stroke="rgba(237,255,253,0.45)" stroke-width="2.5" stroke-dasharray="8 5" fill="none"/>
+                <circle cx="80"  cy="400" r="8"  fill="#1D232D" stroke="rgba(237,255,253,0.65)" stroke-width="2"/>
+                <circle cx="80"  cy="400" r="16" fill="rgba(237,255,253,0.08)"/>
+                <circle cx="160" cy="320" r="6"  fill="#1D232D" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+                <circle cx="320" cy="240" r="6"  fill="#1D232D" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+                <circle cx="400" cy="80"  r="6"  fill="#1D232D" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+                <circle cx="480" cy="80" r="8"  fill="#7EE6DC"/>
+                <circle cx="480" cy="80" r="18" fill="rgba(237,255,253,0.18)"/>
+                <circle cx="480" cy="80" r="28" fill="rgba(237,255,253,0.07)" class="pulse-ring"/>
+                <text x="66"  y="430" font-family="Pretendard, sans-serif" font-size="12" fill="rgba(255,255,255,0.38)" font-weight="500">출발지</text>
+                <text x="465" y="54"  font-family="Pretendard, sans-serif" font-size="12" fill="rgba(237,255,253,0.75)" font-weight="600">목적지</text>
+                <g class="vehicle-dot"><circle r="9" fill="#7EE6DC"/><circle r="17" fill="rgba(237,255,253,0.22)"/></g>
+                <rect x="320" y="280" width="160" height="60" rx="8" fill="rgba(34,44,64,0.8)" stroke="rgba(237,255,253,0.28)" stroke-width="1"/>
+                <text x="336" y="304" font-family="Pretendard, sans-serif" font-size="12" fill="rgba(255,255,255,0.5)" font-weight="500">최적 경로 분석 완료</text>
+                <text x="336" y="324" font-family="Pretendard, sans-serif" font-size="14" fill="white" font-weight="700">23분 단축 예측</text>
+              </svg>
+            </div>
+          </div>
+
+          <div class="hero__stat-row">
+            <div>
+              <div class="hero__stat-value"
+                   data-counter data-target="2.4" data-suffix="억+" data-decimal="1">0억+</div>
+              <div class="hero__stat-label">일일 처리 경로</div>
+            </div>
+            <div>
+              <div class="hero__stat-value"
+                   data-counter data-target="99.98" data-suffix="%" data-decimal="2">0%</div>
+              <div class="hero__stat-label">서비스 가용성</div>
+            </div>
+            <div>
+              <div class="hero__stat-value"
+                   data-counter data-target="40" data-suffix="ms" data-decimal="0">0ms</div>
+              <div class="hero__stat-label">평균 응답 시간</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Signature: Route Animation -->
+        <div class="hero__visual" aria-hidden="true">
+          <div class="route-canvas">
+            <svg class="route-svg" viewBox="0 0 540 460" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+              <!-- Background grid dots -->
+              <g opacity="0.12">
+                <circle cx="80"  cy="80"  r="2" fill="white"/>
+                <circle cx="160" cy="80"  r="2" fill="white"/>
+                <circle cx="240" cy="80"  r="2" fill="white"/>
+                <circle cx="320" cy="80"  r="2" fill="white"/>
+                <circle cx="400" cy="80"  r="2" fill="white"/>
+                <circle cx="480" cy="80"  r="2" fill="white"/>
+                <circle cx="80"  cy="160" r="2" fill="white"/>
+                <circle cx="160" cy="160" r="2" fill="white"/>
+                <circle cx="240" cy="160" r="2" fill="white"/>
+                <circle cx="320" cy="160" r="2" fill="white"/>
+                <circle cx="400" cy="160" r="2" fill="white"/>
+                <circle cx="480" cy="160" r="2" fill="white"/>
+                <circle cx="80"  cy="240" r="2" fill="white"/>
+                <circle cx="160" cy="240" r="2" fill="white"/>
+                <circle cx="240" cy="240" r="2" fill="white"/>
+                <circle cx="320" cy="240" r="2" fill="white"/>
+                <circle cx="400" cy="240" r="2" fill="white"/>
+                <circle cx="480" cy="240" r="2" fill="white"/>
+                <circle cx="80"  cy="320" r="2" fill="white"/>
+                <circle cx="160" cy="320" r="2" fill="white"/>
+                <circle cx="240" cy="320" r="2" fill="white"/>
+                <circle cx="320" cy="320" r="2" fill="white"/>
+                <circle cx="400" cy="320" r="2" fill="white"/>
+                <circle cx="480" cy="320" r="2" fill="white"/>
+                <circle cx="80"  cy="400" r="2" fill="white"/>
+                <circle cx="160" cy="400" r="2" fill="white"/>
+                <circle cx="240" cy="400" r="2" fill="white"/>
+                <circle cx="320" cy="400" r="2" fill="white"/>
+                <circle cx="400" cy="400" r="2" fill="white"/>
+                <circle cx="480" cy="400" r="2" fill="white"/>
+              </g>
+
+              <!-- Secondary routes (faded) -->
+              <path d="M 80 400 L 240 400 L 240 240 L 400 240" stroke="rgba(255,255,255,0.08)" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
+              <path d="M 400 240 L 400 80 L 480 80"             stroke="rgba(255,255,255,0.06)" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
+              <path d="M 160 320 L 160 160 L 320 160 L 320 80"  stroke="rgba(255,255,255,0.06)" stroke-width="2" stroke-dasharray="5 4" fill="none"/>
+
+              <!-- Main route glow -->
+              <path d="M 80 400 C 80 340, 80 320, 160 320 C 240 320, 240 240, 320 240 C 400 240, 400 160, 400 80 C 400 80, 440 80, 480 80"
+                    stroke="rgba(237,255,253,0.08)" stroke-width="16" fill="none"/>
+              <!-- Main route dashed line -->
+              <path d="M 80 400 C 80 340, 80 320, 160 320 C 240 320, 240 240, 320 240 C 400 240, 400 160, 400 80 C 400 80, 440 80, 480 80"
+                    stroke="rgba(237,255,253,0.45)" stroke-width="2.5" stroke-dasharray="8 5" fill="none"/>
+
+              <!-- Waypoint nodes -->
+              <circle cx="80"  cy="400" r="8"  fill="#1D232D" stroke="rgba(237,255,253,0.65)" stroke-width="2"/>
+              <circle cx="80"  cy="400" r="16" fill="rgba(237,255,253,0.08)"/>
+              <circle cx="160" cy="320" r="6"  fill="#1D232D" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+              <circle cx="320" cy="240" r="6"  fill="#1D232D" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+              <circle cx="400" cy="80"  r="6"  fill="#1D232D" stroke="rgba(255,255,255,0.35)" stroke-width="1.5"/>
+
+              <!-- Destination node -->
+              <circle cx="480" cy="80" r="8"  fill="#7EE6DC"/>
+              <circle cx="480" cy="80" r="18" fill="rgba(237,255,253,0.18)"/>
+              <circle cx="480" cy="80" r="28" fill="rgba(237,255,253,0.07)" class="pulse-ring"/>
+
+              <!-- Labels -->
+              <text x="66"  y="430" font-family="Pretendard, sans-serif" font-size="12" fill="rgba(255,255,255,0.38)" font-weight="500">출발지</text>
+              <text x="465" y="54"  font-family="Pretendard, sans-serif" font-size="12" fill="rgba(237,255,253,0.75)" font-weight="600">목적지</text>
+
+              <!-- Moving vehicle -->
+              <g class="vehicle-dot">
+                <circle r="9"  fill="#7EE6DC"/>
+                <circle r="17" fill="rgba(237,255,253,0.22)"/>
+              </g>
+
+              <!-- Info overlay card -->
+              <rect x="320" y="280" width="160" height="60" rx="8" fill="rgba(34,44,64,0.8)" stroke="rgba(237,255,253,0.28)" stroke-width="1"/>
+              <text x="336" y="304" font-family="Pretendard, sans-serif" font-size="12" fill="rgba(255,255,255,0.5)" font-weight="500">최적 경로 분석 완료</text>
+              <text x="336" y="324" font-family="Pretendard, sans-serif" font-size="14" fill="white" font-weight="700">23분 단축 예측</text>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- How it Works -->
+  <section class="how" id="how" aria-labelledby="how-title">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">How it works</p>
+        <h2 class="section-title" id="how-title">세 단계로 배포까지</h2>
+        <p class="section-body">복잡한 모빌리티 인텔리전스를 빠르게 연결하고, 분석하고, 배포하세요.</p>
+      </div>
+      <div class="how__steps">
+        <div class="how__step">
+          <div class="how__step-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M12 2L2 7l10 5 10-5-10-5z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+              <path d="M2 17l10 5 10-5M2 12l10 5 10-5" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="how__step-title">데이터 연결</h3>
+          <p class="how__step-body">GPS 스트림, 교통 API, 센서 데이터를 단일 파이프라인으로 통합합니다. SDK 또는 REST API로 수분 내 연결 완료.</p>
+        </div>
+        <div class="how__arrow" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="how__step">
+          <div class="how__step-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.93 4.93l2.12 2.12M16.95 16.95l2.12 2.12M4.93 19.07l2.12-2.12M16.95 7.05l2.12-2.12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="how__step-title">AI 분석</h3>
+          <p class="how__step-body">실시간 교통 패턴 예측, 수요 예측, 이상 탐지를 즉시 수행하는 AI 모델이 자동으로 작동합니다.</p>
+        </div>
+        <div class="how__arrow" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="how__step">
+          <div class="how__step-icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+              <path d="M13 10V3L4 14h7v7l9-11h-7z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="how__step-title">즉시 배포</h3>
+          <p class="how__step-body">검증된 모델을 프로덕션에 원클릭 배포하고 실시간 성능 모니터링으로 결과를 확인하세요.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features" aria-labelledby="features-title">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Platform Features</p>
+        <h2 class="section-title" id="features-title">모든 모빌리티 인텔리전스를<br>하나의 플랫폼에서</h2>
+      </div>
+      <div class="features__grid">
+
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M12 8v4l3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">실시간 경로 최적화</h3>
+          <p class="feature-card__body">수백만 건의 이동 데이터를 실시간으로 분석해 최적 경로를 40ms 이내에 제공합니다.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M3 9h18M9 21V9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">플릿 조율 엔진</h3>
+          <p class="feature-card__body">차량, 드론, 퍼스널 모빌리티 등 이기종 플릿을 하나의 대시보드로 통합 관제합니다.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">수요 예측 AI</h3>
+          <p class="feature-card__body">시간대, 날씨, 이벤트를 반영한 수요 예측 모델로 공급과 수요를 선제적으로 균형 맞춥니다.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">이상 탐지 & 알림</h3>
+          <p class="feature-card__body">정상 패턴에서 벗어나는 이벤트를 즉시 감지하고 운영팀에 실시간 알림을 전달합니다.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">글로벌 지도 통합</h3>
+          <p class="feature-card__body">HERE, TomTom, 카카오맵, Naver Map 등 주요 지도 API와 플러그인 방식으로 연동합니다.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">API-First 아키텍처</h3>
+          <p class="feature-card__body">REST, WebSocket, GraphQL을 모두 지원하는 개발자 친화적 API로 기존 스택에 바로 통합하세요.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Use Cases -->
+  <section class="usecases" id="usecases" aria-labelledby="usecases-title">
+    <div class="container">
+      <div class="section-header">
+        <p class="section-eyebrow">Use Cases</p>
+        <h2 class="section-title" id="usecases-title">어떤 모빌리티 문제든</h2>
+        <p class="section-body">라이드헤일링, 마이크로 모빌리티, 자율주행, 물류까지. Galileo는 모든 이동 도메인에 적용됩니다.</p>
+      </div>
+
+      <div class="usecase">
+        <div class="usecase__content">
+          <p class="usecase__eyebrow">라이드헤일링</p>
+          <h3 class="usecase__title">승객과 드라이버를<br>최적 타이밍에 연결</h3>
+          <p class="usecase__body">동적 가격 책정, 수요 예측, 실시간 매칭 알고리즘을 통해 빈차율을 줄이고 운전자 수익을 높입니다.</p>
+        </div>
+        <div class="usecase__visual" aria-hidden="true">
+          <svg width="75%" viewBox="0 0 320 200" fill="none">
+            <g class="uc-grid" stroke="rgba(0,0,128,0.07)" stroke-width="1">
+              <line x1="0" y1="50"  x2="320" y2="50"/>
+              <line x1="0" y1="100" x2="320" y2="100"/>
+              <line x1="0" y1="150" x2="320" y2="150"/>
+              <line x1="80"  y1="0" x2="80"  y2="200"/>
+              <line x1="160" y1="0" x2="160" y2="200"/>
+              <line x1="240" y1="0" x2="240" y2="200"/>
+            </g>
+            <g class="uc-driver" style="animation-delay:0.12s">
+              <circle cx="60"  cy="80"  r="18" fill="rgba(0,0,128,0.08)"/>
+              <circle cx="60"  cy="80"  r="8"  fill="#1D232D"/>
+            </g>
+            <g class="uc-driver" style="animation-delay:0.24s">
+              <circle cx="200" cy="130" r="18" fill="rgba(0,0,128,0.08)"/>
+              <circle cx="200" cy="130" r="8"  fill="#1D232D" opacity="0.55"/>
+            </g>
+            <g class="uc-driver" style="animation-delay:0.36s">
+              <circle cx="140" cy="55"  r="8"  fill="#1D232D" opacity="0.55"/>
+            </g>
+            <g class="uc-passenger">
+              <circle cx="180" cy="100" r="22" fill="rgba(237,255,253,0.18)"/>
+              <circle cx="180" cy="100" r="11" fill="#7EE6DC"/>
+            </g>
+            <line class="uc-match-line" x1="60" y1="80" x2="180" y2="100"
+                  stroke="#1D232D" stroke-width="1.5" opacity="0.45"/>
+            <g class="uc-label">
+              <rect x="86" y="60" width="72" height="24" rx="4" fill="rgba(0,0,128,0.08)"/>
+              <text x="94" y="76" font-family="Pretendard,sans-serif" font-size="10" fill="#1D232D" opacity="0.7" font-weight="600">최적 매칭</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="usecase usecase--reverse">
+        <div class="usecase__content">
+          <p class="usecase__eyebrow">물류 & 라스트마일</p>
+          <h3 class="usecase__title">배송 경로를<br>AI가 실시간으로 재설계</h3>
+          <p class="usecase__body">교통 혼잡, 날씨, 우선순위 변경을 즉각 반영해 최적 배송 순서와 경로를 자동으로 재계산합니다.</p>
+        </div>
+        <div class="usecase__visual" aria-hidden="true">
+          <svg width="75%" viewBox="0 0 320 200" fill="none">
+            <path class="uc-route"
+                  d="M 40 160 C 40 120, 80 100, 120 80 C 160 60, 200 80, 240 60 C 270 45, 290 40, 300 40"
+                  stroke="#1D232D" stroke-width="2" opacity="0.4" fill="none"/>
+            <g class="uc-stop" style="animation-delay:0.28s">
+              <circle cx="40"  cy="160" r="7" fill="#1D232D"/>
+            </g>
+            <g class="uc-stop" style="animation-delay:0.48s">
+              <circle cx="120" cy="80"  r="7" fill="#1D232D"/>
+            </g>
+            <g class="uc-stop" style="animation-delay:0.68s">
+              <circle cx="240" cy="60"  r="7" fill="#1D232D"/>
+            </g>
+            <g class="uc-stop" style="animation-delay:0.88s">
+              <circle cx="300" cy="40"  r="8" fill="#7EE6DC" stroke="#1D232D" stroke-width="2"/>
+            </g>
+            <text class="uc-stop-label" style="animation-delay:0.33s" x="28" y="178" font-family="Pretendard,sans-serif" font-size="9" fill="rgba(0,0,128,0.65)" font-weight="700">A</text>
+            <text class="uc-stop-label" style="animation-delay:0.53s" x="108" y="98" font-family="Pretendard,sans-serif" font-size="9" fill="rgba(0,0,128,0.65)" font-weight="700">B</text>
+            <text class="uc-stop-label" style="animation-delay:0.73s" x="228" y="78" font-family="Pretendard,sans-serif" font-size="9" fill="rgba(0,0,128,0.65)" font-weight="700">C</text>
+            <text class="uc-stop-label" style="animation-delay:0.93s" x="291" y="55" font-family="Pretendard,sans-serif" font-size="9" fill="#1D232D" font-weight="700">D</text>
+            <g class="uc-eta">
+              <rect x="158" y="112" width="108" height="52" rx="6" fill="white" stroke="rgba(0,0,128,0.18)" stroke-width="1"/>
+              <text x="172" y="133" font-family="Pretendard,sans-serif" font-size="9"  fill="rgba(0,0,128,0.5)" font-weight="500">도착 예정</text>
+              <text x="172" y="153" font-family="Pretendard,sans-serif" font-size="14" fill="#1D232D" font-weight="700">오후 2:47</text>
+            </g>
+          </svg>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner" aria-labelledby="cta-headline">
+    <div class="container">
+      <h2 class="cta-banner__headline" id="cta-headline">지금 바로 <em>이동을 바꾸세요</em></h2>
+      <p class="cta-banner__body">무료 플랜으로 시작하고, 팀이 성장하면 확장하세요. 신용카드 없이 5분 안에 시작.</p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" aria-label="사이트 푸터">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <div class="footer__brand-name">Galileo Mobility</div>
+          <p class="footer__brand-desc">20년 UX 전문성과 AI 혁신이 만나는 모빌리티 인텔리전스 플랫폼. ELUO CNC가 만듭니다.</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 ELUO CNC. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LOCUS — 상업용 부동산 데이터 인텔리전스</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ══ NAV ═══════════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__row">
+      <a href="#" class="nav__logo">LOCUS</a>
+      <ul class="nav__links">
+        <li><a href="#features"  class="nav__link">핵심 기능</a></li>
+        <li><a href="#usecases"  class="nav__link">활용 사례</a></li>
+        <li><a href="#data"      class="nav__link">데이터</a></li>
+        <li><a href="#coverage"  class="nav__link">커버리지</a></li>
+      </ul>
+      <button class="nav__burger" id="navBurger" aria-label="메뉴 열기">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU ─────────────────────────────────────────── -->
+  <div class="nav__mobile" id="navMobile">
+    <button class="nav__mobile-close" id="navMobileClose" aria-label="메뉴 닫기">
+      <span></span><span></span>
+    </button>
+    <ul class="nav__mobile-links">
+      <li><a href="#features"  class="nav__mobile-link">핵심 기능</a></li>
+      <li><a href="#usecases"  class="nav__mobile-link">활용 사례</a></li>
+      <li><a href="#data"      class="nav__mobile-link">데이터</a></li>
+      <li><a href="#coverage"  class="nav__mobile-link">커버리지</a></li>
+    </ul>
+  </div>
+
+  <!-- ══ HERO ══════════════════════════════════════════════ -->
+  <section class="hero">
+
+    <!-- 지적도 SVG 텍스처 -->
+    <div class="hero__cadastral">
+      <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <polygon class="cad-path" points="80,60 210,40 260,110 230,180 140,200 70,140"/>
+        <polygon class="cad-path" points="210,40 380,20 420,80 390,160 260,110"/>
+        <polygon class="cad-path" points="380,20 520,50 540,130 420,80"/>
+        <polygon class="cad-path" points="540,130 520,50 680,30 720,120 660,180 560,200"/>
+        <polygon class="cad-path" points="720,120 680,30 860,10 900,100 840,170 760,190"/>
+        <polygon class="cad-path" points="900,100 860,10 1040,30 1080,120 1010,190 920,180"/>
+        <polygon class="cad-path" points="1080,120 1040,30 1200,50 1240,140 1170,200 1100,190"/>
+        <polygon class="cad-path" points="1200,50 1360,40 1420,110 1380,190 1240,140"/>
+        <polygon class="cad-path" points="70,140 140,200 100,290 30,260"/>
+        <polygon class="cad-path" points="140,200 230,180 280,270 200,320 100,290"/>
+        <polygon class="cad-path" points="230,180 390,160 430,250 340,310 280,270"/>
+        <polygon class="cad-path" points="390,160 560,200 580,290 460,330 430,250"/>
+        <polygon class="cad-path" points="560,200 660,180 700,270 600,310 580,290"/>
+        <polygon class="cad-path" points="760,190 840,170 880,250 800,310 720,280"/>
+        <polygon class="cad-path" points="840,170 1010,190 1040,280 950,330 880,250"/>
+        <polygon class="cad-path" points="1010,190 1170,200 1200,280 1100,320 1040,280"/>
+        <polygon class="cad-path" points="1170,200 1380,190 1410,270 1300,310 1200,280"/>
+        <line class="cad-path" x1="100" y1="290" x2="200" y2="320"/>
+        <line class="cad-path" x1="280" y1="270" x2="340" y2="310"/>
+        <line class="cad-path" x1="430" y1="250" x2="460" y2="330"/>
+        <line class="cad-path" x1="600" y1="310" x2="700" y2="270"/>
+        <line class="cad-path" x1="800" y1="310" x2="880" y2="250"/>
+        <line class="cad-path" x1="950" y1="330" x2="1040" y2="280"/>
+      </svg>
+    </div>
+
+    <div class="hero__glow"></div>
+
+    <div class="hero__inner">
+      <!-- 좌측: 텍스트 -->
+      <div class="hero__text">
+        <h1 class="hero__h rv rv-delay-1">
+          상권은 느낌이<br>아니라 <em>데이터</em>로<br>읽습니다.
+        </h1>
+        <p class="hero__sub rv rv-delay-2">
+          전국 234만 필지의 유동인구·임대료·공실률을 한 화면에서 분석합니다.<br/>입지 선정의 불확실성을 데이터로 제거하세요.
+        </p>
+        
+      </div>
+
+      <!-- 우측: 히트맵 목업 -->
+      <div class="hero__visual rv rv-delay-2">
+        <div class="heatmap-card">
+          <!-- 툴바 -->
+          <div class="heatmap-toolbar">
+            <div class="heatmap-toolbar__tabs">
+              <span class="htab htab--active" data-tab="density">유동인구</span>
+              <span class="htab" data-tab="rent">임대료</span>
+              <span class="htab" data-tab="vacancy">공실률</span>
+            </div>
+            <div class="heatmap-toolbar__controls">
+              <div class="htool"><svg viewBox="0 0 14 14" fill="none"><circle cx="6" cy="6" r="4" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/><line x1="9.5" y1="9.5" x2="13" y2="13" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+              <div class="htool"><svg viewBox="0 0 14 14" fill="none"><path d="M2 7h10M7 2v10" stroke="rgba(255,255,255,0.4)" stroke-width="1.2" stroke-linecap="round"/></svg></div>
+              <div class="htool"><svg viewBox="0 0 14 14" fill="none"><rect x="2" y="2" width="4" height="4" rx="1" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/><rect x="8" y="2" width="4" height="4" rx="1" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/><rect x="2" y="8" width="4" height="4" rx="1" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/><rect x="8" y="8" width="4" height="4" rx="1" stroke="rgba(255,255,255,0.4)" stroke-width="1.2"/></svg></div>
+            </div>
+          </div>
+
+          <!-- 맵 + 사이드 패널 -->
+          <div class="heatmap-body">
+            <div class="heatmap-map">
+
+              <!-- ① 유동인구 패널 -->
+              <div class="tab-panel tab-panel--active" id="tab-density">
+                <div class="heatmap-layer">
+                  <div class="heat-spot heat-spot--1"></div>
+                  <div class="heat-spot heat-spot--2"></div>
+                  <div class="heat-spot heat-spot--3"></div>
+                  <div class="heat-spot heat-spot--4"></div>
+                  <div class="heat-spot heat-spot--5"></div>
+                </div>
+                <div class="map-pin map-pin--active" data-label="강남역" style="top:28%;left:36%;"></div>
+                <div class="map-pin" data-label="신논현" style="top:55%;left:58%;"></div>
+                <div class="map-pin" data-label="역삼역" style="top:22%;left:62%;"></div>
+              </div>
+
+              <!-- ② 임대료 패널 -->
+              <div class="tab-panel" id="tab-rent">
+                <div class="heatmap-layer">
+                  <div class="rent-spot rent-spot--1"></div>
+                  <div class="rent-spot rent-spot--2"></div>
+                  <div class="rent-spot rent-spot--3"></div>
+                  <div class="rent-spot rent-spot--4"></div>
+                </div>
+                <div class="map-pin map-pin--active" data-label="강남역 18.2만" style="top:28%;left:36%;"></div>
+                <div class="map-pin" data-label="역삼역 12.4만" style="top:22%;left:62%;"></div>
+                <div class="map-pin" data-label="신논현 9.8만" style="top:55%;left:58%;"></div>
+              </div>
+
+              <!-- ③ 공실률 패널 -->
+              <div class="tab-panel" id="tab-vacancy">
+                <div class="heatmap-layer">
+                  <div class="vac-spot vac-spot--1"></div>
+                  <div class="vac-spot vac-spot--2"></div>
+                  <div class="vac-spot vac-spot--3"></div>
+                  <div class="vac-spot vac-spot--4"></div>
+                </div>
+                <div class="map-pin map-pin--warn" data-label="위험 12.4%" style="top:40%;left:38%;"></div>
+                <div class="map-pin map-pin--caution" data-label="주의 8.2%" style="top:28%;left:36%;"></div>
+                <div class="map-pin map-pin--active" data-label="안전 5.2%" style="top:22%;left:62%;"></div>
+              </div>
+
+            </div>
+
+            <!-- 사이드 통계 패널 -->
+            <div class="heatmap-stats">
+
+              <!-- ① 유동인구 통계 -->
+              <div class="stats-panel stats-panel--active" id="stats-density">
+                <div class="hstat">
+                  <span class="hstat__label">일평균 유동인구</span>
+                  <span class="hstat__val"><span class="hval-n" data-n="42300" data-fmt="int">42,300</span></span>
+                  <span class="hstat__sub">명 / 일</span>
+                  <span class="hstat__trend hstat__trend--up">▲ 전월 대비 +8.2%</span>
+                </div>
+                <div class="hstat-div"></div>
+                <div class="hstat">
+                  <span class="hstat__label">공실률</span>
+                  <span class="hstat__val"><span class="hval-n" data-n="8.2" data-fmt="d1">8.2</span><span style="font-size:12px;font-weight:500;">%</span></span>
+                  <span class="hstat__trend hstat__trend--dn">▼ 전분기 대비 -1.4%p</span>
+                </div>
+                <div class="hstat-div"></div>
+                <div class="hstat">
+                  <span class="hstat__label">평균 임대료</span>
+                  <span class="hstat__val"><span class="hval-n" data-n="8.5" data-fmt="d1">8.5</span><span style="font-size:12px;font-weight:500;">만</span></span>
+                  <span class="hstat__sub">원/㎡</span>
+                  <span class="hstat__trend hstat__trend--up">▲ +3.1%</span>
+                </div>
+                <div class="hstat-div"></div>
+                <div class="hstat">
+                  <span class="hstat__label">수익률</span>
+                  <span class="hstat__val"><span class="hval-n" data-n="4.8" data-fmt="d1">4.8</span><span style="font-size:12px;font-weight:500;">%</span></span>
+                  <span class="hstat__sub">연 기대수익률</span>
+                </div>
+              </div>
+
+              <!-- ② 임대료 통계 -->
+              <div class="stats-panel" id="stats-rent">
+                <div class="hstat">
+                  <span class="hstat__label">평균 임대료</span>
+                  <span class="hstat__val"><span class="hval-n" data-n="8.5" data-fmt="d1">8.5</span><span style="font-size:12px;font-weight:500;">만</span></span>
+                  <span class="hstat__sub">원/㎡</span>
+                  <span class="hstat__trend hstat__trend--up">▲ 전분기 대비 +3.1%</span>
+                </div>
+                <div class="hstat-div"></div>
+                <div class="hstat">
+                  <span class="hstat__label">최고가 구간</span>
+                  <span class="hstat__val"><span class="hval-n" data-n="18.2" data-fmt="d1">18.2</span><span style="font-size:12px;font-weight:500;">만</span></span>
+                  <span class="hstat__sub">강남역 일대</span>
+                </div>
+                <div class="hstat-div"></div>
+                <div class="hstat">
+                  <span class="hstat__label">임대료 지수</span>
+                  <span class="hstat__val"><span class="hval-n" data-n="112.4" data-fmt="d1">112.4</span></span>
+                  <span class="hstat__sub">전년도 100 기준</span>
+                  <span class="hstat__trend hstat__trend--up">▲ +12.4p</span>
+                </div>
+                <div class="hstat-div"></div>
+                <div class="hstat">
+                  <span class="hstat__label">최저가 구간</span>
+                  <span class="hstat__val"><span class="hval-n" data-n="2.4" data-fmt="d1">2.4</span><span style="font-size:12px;font-weight:500;">만</span></span>
+                  <span class="hstat__sub">외곽 상업지역</span>
+                </div>
+              </div>
+
+              <!-- ③ 공실률 통계 -->
+              <div class="stats-panel" id="stats-vacancy">
+                <div class="hstat">
+                  <span class="hstat__label">현재 공실률</span>
+                  <span class="hstat__val"><span class="hval-n" data-n="8.2" data-fmt="d1">8.2</span><span style="font-size:12px;font-weight:500;">%</span></span>
+                  <span class="hstat__trend hstat__trend--dn">▼ 전분기 대비 -1.4%p</span>
+                </div>
+                <div class="hstat-div"></div>
+                <div class="hstat">
+                  <span class="hstat__label">6개월 예측</span>
+                  <span class="hstat__val"><span class="hval-n" data-n="7.1" data-fmt="d1">7.1</span><span style="font-size:12px;font-weight:500;">%</span></span>
+                  <span class="hstat__sub">ML 예측값</span>
+                  <span class="hstat__trend hstat__trend--dn">▼ 추가 하락 예상</span>
+                </div>
+                <div class="hstat-div"></div>
+                <div class="hstat">
+                  <span class="hstat__label">위험 필지</span>
+                  <span class="hstat__val"><span class="hval-n" data-n="12.3" data-fmt="d1">12.3</span><span style="font-size:12px;font-weight:500;">천</span></span>
+                  <span class="hstat__sub">공실률 15% 이상</span>
+                  <span class="hstat__trend" style="color:#f87171;">▲ 전분기 증가</span>
+                </div>
+                <div class="hstat-div"></div>
+                <div class="hstat">
+                  <span class="hstat__label">안전 필지</span>
+                  <span class="hstat__val"><span class="hval-n" data-n="89.4" data-fmt="d1">89.4</span><span style="font-size:12px;font-weight:500;">%</span></span>
+                  <span class="hstat__sub">공실률 10% 미만</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- 범례 -->
+          <div class="heatmap-legend">
+            <span class="legend-label" id="legend-low">낮음</span>
+            <div class="tab-legend legend-bar--density tab-legend--active"></div>
+            <div class="tab-legend legend-bar--rent"></div>
+            <div class="tab-legend legend-bar--vacancy"></div>
+            <span class="legend-label" id="legend-high">높음</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ STAT BAND ═════════════════════════════════════════ -->
+  <section class="stat-band">
+    <div class="stat-band__grid">
+      <div class="stat-item rv">
+        <div class="stat-item__num"><em data-count="234">234</em>만+</div>
+        <div class="stat-item__label">전국 분석 필지 수</div>
+      </div>
+      <div class="stat-item rv rv-delay-1">
+        <div class="stat-item__num">실시간</div>
+        <div class="stat-item__label">유동인구 데이터 업데이트</div>
+      </div>
+      <div class="stat-item rv rv-delay-2">
+        <div class="stat-item__num"><em data-count="47">47</em>개</div>
+        <div class="stat-item__label">연계 공공·민간 데이터소스</div>
+      </div>
+      <div class="stat-item rv rv-delay-3">
+        <div class="stat-item__num"><em data-count="91">91</em>%</div>
+        <div class="stat-item__label">6개월 공실률 예측 정확도</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FEATURES ══════════════════════════════════════════ -->
+  <section class="features" id="features">
+    <div class="wrap">
+      <div class="section-eyebrow rv"><span class="badge badge-blue">핵심 기능</span></div>
+      <h2 class="section-title rv">필요한 모든 데이터를<br>하나의 플랫폼에서</h2>
+      <p class="section-sub rv">복잡한 데이터 수집과 분석을 자동화해 <br class="br-mo">의사결정 속도를 높입니다.</p>
+
+      <div class="features__grid">
+        <!-- 기능 1: 유동인구 히트맵 -->
+        <div class="feat-card rv">
+          <div class="feat-card__visual">
+            <div class="mini-heatmap">
+              <div class="mini-heat mini-heat--a"></div>
+              <div class="mini-heat mini-heat--b"></div>
+              <div class="mini-heat mini-heat--c"></div>
+            </div>
+          </div>
+          <div class="feat-card__body">
+            <div class="feat-card__num">01</div>
+            <h3 class="feat-card__title">유동인구 히트맵</h3>
+            <p class="feat-card__desc">통신사 빅데이터와 카드 소비 데이터를 결합해 시간대·요일별 유동인구를 시각화합니다. 상권 활성화 시간대를 정밀하게 파악하세요.</p>
+          </div>
+        </div>
+
+        <!-- 기능 2: 공실률 예측 모델 -->
+        <div class="feat-card rv rv-delay-1">
+          <div class="feat-card__visual">
+            <div class="mini-chart">
+              <div class="mini-chart__line"></div>
+              <div class="mini-chart__bars">
+                <div class="mbar" data-h="45%"></div>
+                <div class="mbar" data-h="52%"></div>
+                <div class="mbar" data-h="48%"></div>
+                <div class="mbar mbar--highlight" data-h="62%"></div>
+                <div class="mbar mbar--highlight" data-h="58%"></div>
+                <div class="mbar mbar--pred" data-h="50%"></div>
+                <div class="mbar mbar--pred" data-h="44%"></div>
+                <div class="mbar mbar--pred" data-h="40%"></div>
+              </div>
+              <div class="mini-chart__label">공실률 추이 및 6개월 예측</div>
+            </div>
+          </div>
+          <div class="feat-card__body">
+            <div class="feat-card__num">02</div>
+            <h3 class="feat-card__title">공실률 예측 모델</h3>
+            <p class="feat-card__desc">머신러닝 기반으로 향후 6개월 공실률을 예측합니다. 임대 리스크를 사전에 파악해 투자 의사결정의 정확도를 높입니다.</p>
+          </div>
+        </div>
+
+        <!-- 기능 3: 경쟁사 반경 분석 -->
+        <div class="feat-card rv rv-delay-2">
+          <div class="feat-card__visual">
+            <div class="mini-radius-map">
+              <div class="radius-circle radius-circle--outer"></div>
+              <div class="radius-circle radius-circle--mid"></div>
+              <div class="radius-circle radius-circle--inner"></div>
+              <div class="radius-center"></div>
+              <div class="pin-orbit" style="--orbit-r:90px; --orbit-dur:9s;  --orbit-delay:0s;"><div class="competitor-pin"></div></div>
+              <div class="pin-orbit" style="--orbit-r:60px; --orbit-dur:6s;  --orbit-delay:-2s;"><div class="competitor-pin"></div></div>
+              <div class="pin-orbit" style="--orbit-r:90px; --orbit-dur:13s; --orbit-delay:-5s;"><div class="competitor-pin"></div></div>
+              <div class="pin-orbit" style="--orbit-r:60px; --orbit-dur:8s;  --orbit-delay:-1s;"><div class="competitor-pin"></div></div>
+            </div>
+          </div>
+          <div class="feat-card__body">
+            <div class="feat-card__num">03</div>
+            <h3 class="feat-card__title">경쟁사 반경 분석</h3>
+            <p class="feat-card__desc">목표 지점 반경 내 경쟁 업체 현황을 자동으로 파악합니다. 카테고리별 포화도와 시장 진입 가능성을 수치로 확인하세요.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DASHBOARD SHOWCASE ════════════════════════════════ -->
+  <section class="showcase">
+    <div class="showcase__inner">
+      <div class="showcase__copy rv">
+        <div class="showcase__label">통합 분석 대시보드</div>
+        <h2 class="showcase__title">분산된 데이터를<br>하나의 화면으로</h2>
+        <p class="showcase__sub">유동인구·임대료·공실률·경쟁사 현황을 단일 대시보드에서 실시간으로 모니터링합니다. 보고서 작성 시간을 줄이고, 의사결정에 집중하세요.</p>
+        <div class="showcase__tags">
+          <span class="badge badge-dark">실시간 동기화</span>
+          <span class="badge badge-dark">자동 리포트</span>
+          <span class="badge badge-dark">팀 공유</span>
+          <span class="badge badge-dark">엑셀 내보내기</span>
+        </div>
+      </div>
+
+      <div class="showcase__visual rv rv-delay-1">
+        <div class="dashboard-frame">
+          <div class="dash-chrome">
+            <div class="dash-dot dash-dot--r"></div>
+            <div class="dash-dot dash-dot--y"></div>
+            <div class="dash-dot dash-dot--g"></div>
+          </div>
+          <div class="dash-body">
+            <div class="dash-sidebar">
+              <div class="dash-sidebar__title">분석 항목</div>
+              <div class="dash-nav-item dash-nav-item--active"><div class="dash-nav-dot"></div>유동인구</div>
+              <div class="dash-nav-item"><div class="dash-nav-dot"></div>임대료</div>
+              <div class="dash-nav-item"><div class="dash-nav-dot"></div>공실률</div>
+              <div class="dash-nav-item"><div class="dash-nav-dot"></div>경쟁사</div>
+              <div class="dash-nav-item"><div class="dash-nav-dot"></div>수익률</div>
+              <div class="dash-nav-item"><div class="dash-nav-dot"></div>리포트</div>
+            </div>
+            <div class="dash-main">
+              <div class="dash-kpi-row">
+                <div class="dash-kpi">
+                  <div class="dash-kpi__label">유동인구</div>
+                  <div class="dash-kpi__val" data-kpi="42300" data-kpi-fmt="K1">0K</div>
+                  <div class="dash-kpi__change dash-kpi__change--up">▲ +8.2%</div>
+                </div>
+                <div class="dash-kpi">
+                  <div class="dash-kpi__label">공실률</div>
+                  <div class="dash-kpi__val" data-kpi="82" data-kpi-fmt="pct1">0%</div>
+                  <div class="dash-kpi__change dash-kpi__change--dn">▼ -1.4%p</div>
+                </div>
+                <div class="dash-kpi">
+                  <div class="dash-kpi__label">수익률</div>
+                  <div class="dash-kpi__val" data-kpi="48" data-kpi-fmt="pct1">0%</div>
+                  <div class="dash-kpi__change dash-kpi__change--up">▲ +0.3%p</div>
+                </div>
+              </div>
+              <div class="dash-chart-area">
+                <div class="dash-chart-bars">
+                  <div class="dbar" data-h="40%"></div>
+                  <div class="dbar" data-h="55%"></div>
+                  <div class="dbar" data-h="48%"></div>
+                  <div class="dbar dbar--hi" data-h="72%"></div>
+                  <div class="dbar dbar--hi" data-h="68%"></div>
+                  <div class="dbar" data-h="60%"></div>
+                  <div class="dbar" data-h="52%"></div>
+                  <div class="dbar" data-h="64%"></div>
+                  <div class="dbar dbar--hi" data-h="78%"></div>
+                  <div class="dbar" data-h="58%"></div>
+                  <div class="dbar" data-h="50%"></div>
+                  <div class="dbar dbar--hi" data-h="82%"></div>
+                </div>
+                <div class="dash-chart-label">월별 유동인구 추이 (최근 12개월)</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ USE CASES ═════════════════════════════════════════ -->
+  <section class="usecases" id="usecases">
+    <div class="wrap">
+      <div class="section-eyebrow rv"><span class="badge badge-dark">활용 사례</span></div>
+      <h2 class="section-title rv">산업별 입지 분석의<br>새로운 기준</h2>
+      <p class="section-sub rv" style="color:rgba(255,255,255,0.45);">각 업종의 의사결정 구조에 맞게 설계된 분석 뷰를 제공합니다.</p>
+
+      <div class="usecases__grid">
+        <div class="uc-card rv">
+          <div class="uc-card__num">01</div>
+          <div class="uc-card__badge"><span class="badge badge-blue">자산운용사</span></div>
+          <h3 class="uc-card__title">리테일 자산 투자 심사</h3>
+          <p class="uc-card__desc">개별 자산의 임대 현황과 주변 상권 지표를 통합해 투자 적격성을 판단합니다. 실사 기간을 단축하고 투자 리스크를 정량화하세요.</p>
+          <div class="uc-card__metrics">
+            <div class="uc-metric">
+              <span class="uc-metric__key">평균 실사 소요 기간</span>
+              <span class="uc-metric__val">14일 → 3일</span>
+            </div>
+            <div class="uc-metric">
+              <span class="uc-metric__key">분석 필지 범위</span>
+              <span class="uc-metric__val">반경 500m 자동 산정</span>
+            </div>
+            <div class="uc-metric">
+              <span class="uc-metric__key">수익률 예측 정확도</span>
+              <span class="uc-metric__val">±0.3%p 이내</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="uc-card rv rv-delay-1">
+          <div class="uc-card__num">02</div>
+          <div class="uc-card__badge"><span class="badge badge-blue">프랜차이즈 본부</span></div>
+          <h3 class="uc-card__title">출점 전략 최적화</h3>
+          <p class="uc-card__desc">신규 출점 후보지의 상권 포화도와 경쟁 강도를 분석합니다. 가맹점 간 매출 잠식 없이 최적의 출점 밀도를 산출합니다.</p>
+          <div class="uc-card__metrics">
+            <div class="uc-metric">
+              <span class="uc-metric__key">출점 후 1년 생존율</span>
+              <span class="uc-metric__val">업계 평균 대비 +23%</span>
+            </div>
+            <div class="uc-metric">
+              <span class="uc-metric__key">후보지 스크리닝</span>
+              <span class="uc-metric__val">수백 곳 → 상위 10개</span>
+            </div>
+            <div class="uc-metric">
+              <span class="uc-metric__key">상권 포화도 지수</span>
+              <span class="uc-metric__val">카테고리별 자동 산출</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="uc-card rv rv-delay-2">
+          <div class="uc-card__num">03</div>
+          <div class="uc-card__badge"><span class="badge badge-blue">리테일 MD</span></div>
+          <h3 class="uc-card__title">매장 포트폴리오 재편 분석</h3>
+          <p class="uc-card__desc">기존 매장의 상권 변화를 모니터링하고 이전·폐점 시점을 데이터로 포착합니다. 유동인구 감소 트렌드를 6개월 전에 감지하세요.</p>
+          <div class="uc-card__metrics">
+            <div class="uc-metric">
+              <span class="uc-metric__key">상권 하락 사전 감지</span>
+              <span class="uc-metric__val">평균 6.2개월 전</span>
+            </div>
+            <div class="uc-metric">
+              <span class="uc-metric__key">모니터링 매장 수</span>
+              <span class="uc-metric__val">제한 없음</span>
+            </div>
+            <div class="uc-metric">
+              <span class="uc-metric__key">알림 기준</span>
+              <span class="uc-metric__val">지표·임계값 자유 설정</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 캐러셀 인디케이터 (모바일) -->
+      <div class="uc-dots" id="ucDots">
+        <span class="uc-dot uc-dot--active"></span>
+        <span class="uc-dot"></span>
+        <span class="uc-dot"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ DATA SOURCES ══════════════════════════════════════ -->
+  <section class="data-sec" id="data">
+    <div class="wrap">
+      <div class="data-sec__grid">
+        <div class="data-sec__copy rv">
+          <div class="section-eyebrow rv"><span class="badge badge-blue">데이터</span></div>
+          <h2 class="section-title">47개 공공·민간<br>데이터를 연계합니다</h2>
+          <p class="section-sub">정부 공공 API부터 통신사 빅데이터, 카드사 소비 데이터까지 — 검증된 소스를 자동으로 수집·정제해 항상 최신 상태를 유지합니다.</p>
+          <div class="data-source-list">
+            <div class="ds-item">
+              <div class="ds-icon">
+                <svg viewBox="0 0 20 20" fill="none"><rect x="3" y="3" width="14" height="14" rx="2" stroke="#1868db" stroke-width="1.5"/><path d="M7 10h6M7 7h3M7 13h4" stroke="#1868db" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="ds-info">
+                <div class="ds-name">국토교통부 실거래가 공개시스템</div>
+                <div class="ds-desc">임대차 계약 및 매매가 원시데이터</div>
+              </div>
+              <span class="ds-count">실시간</span>
+            </div>
+            <div class="ds-item">
+              <div class="ds-icon">
+                <svg viewBox="0 0 20 20" fill="none"><circle cx="10" cy="10" r="7" stroke="#1868db" stroke-width="1.5"/><path d="M10 6v4l3 2" stroke="#1868db" stroke-width="1.5" stroke-linecap="round"/></svg>
+              </div>
+              <div class="ds-info">
+                <div class="ds-name">통신사 유동인구 빅데이터</div>
+                <div class="ds-desc">SKT·KT 기지국 기반 유동인구 데이터</div>
+              </div>
+              <span class="ds-count">시간 단위</span>
+            </div>
+            <div class="ds-item">
+              <div class="ds-icon">
+                <svg viewBox="0 0 20 20" fill="none"><path d="M4 14l4-4 3 3 5-6" stroke="#1868db" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="ds-info">
+                <div class="ds-name">카드사 매출 소비 데이터</div>
+                <div class="ds-desc">BC·신한·국민카드 업종별 소비 집계</div>
+              </div>
+              <span class="ds-count">일별 업데이트</span>
+            </div>
+            <div class="ds-item">
+              <div class="ds-icon">
+                <svg viewBox="0 0 20 20" fill="none"><path d="M10 3L3 7v6l7 4 7-4V7l-7-4z" stroke="#1868db" stroke-width="1.5" stroke-linejoin="round"/></svg>
+              </div>
+              <div class="ds-info">
+                <div class="ds-name">행정안전부 사업자 등록 현황</div>
+                <div class="ds-desc">업종별 개·폐업 현황 및 경쟁사 매핑</div>
+              </div>
+              <span class="ds-count">월별 업데이트</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="data-sec__visual rv rv-delay-1">
+          <div class="data-coverage-box">
+            <div class="dcov-title">전국 데이터 커버리지</div>
+            <div class="dcov-grid">
+              <div class="dcov-item">
+                <div class="dcov-item__val"><span data-count="17">17</span><em>개</em></div>
+                <div class="dcov-item__label">광역시·도 전체</div>
+              </div>
+              <div class="dcov-item">
+                <div class="dcov-item__val"><span data-count="250">250</span><em>개</em></div>
+                <div class="dcov-item__label">시·군·구 단위</div>
+              </div>
+              <div class="dcov-item">
+                <div class="dcov-item__val"><span data-count="234">234</span><em>만</em></div>
+                <div class="dcov-item__label">필지 분석</div>
+              </div>
+              <div class="dcov-item">
+                <div class="dcov-item__val"><span data-count="5">5</span><em>년</em></div>
+                <div class="dcov-item__label">히스토리 데이터</div>
+              </div>
+            </div>
+            <div class="dcov-bar-section">
+              <div class="dcov-bar-row">
+                <div class="dcov-bar-label"><span>서울·수도권</span><span>98%</span></div>
+                <div class="dcov-bar-track"><div class="dcov-bar-fill" data-w="98%"></div></div>
+              </div>
+              <div class="dcov-bar-row">
+                <div class="dcov-bar-label"><span>6대 광역시</span><span>94%</span></div>
+                <div class="dcov-bar-track"><div class="dcov-bar-fill" data-w="94%"></div></div>
+              </div>
+              <div class="dcov-bar-row">
+                <div class="dcov-bar-label"><span>중소도시</span><span>87%</span></div>
+                <div class="dcov-bar-track"><div class="dcov-bar-fill" data-w="87%"></div></div>
+              </div>
+              <div class="dcov-bar-row">
+                <div class="dcov-bar-label"><span>농어촌 지역</span><span>72%</span></div>
+                <div class="dcov-bar-track"><div class="dcov-bar-fill" data-w="72%"></div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ COVERAGE BAND ─────────────────────────────────── -->
+  <section class="coverage-band" id="coverage">
+    <div class="coverage-band__inner">
+      <div class="section-eyebrow rv"><span class="badge badge-blue">커버리지</span></div>
+      <h2 class="section-title rv">전국 어디서나, <br class="br-mo" />동일한 수준의 분석</h2>
+      <p class="section-sub rv">수도권에 집중된 기존 부동산 데이터의 한계를 넘어, <br/>전국 250개 시·군·구에서 일관된 정밀도의 상권 분석을 제공합니다.</p>
+      <div class="coverage-band__tags rv">
+        <span class="badge badge-muted">서울·경기·인천</span>
+        <span class="badge badge-muted">부산·대구·광주·대전</span>
+        <span class="badge badge-muted">강원도</span>
+        <span class="badge badge-muted">충청북도·충청남도</span>
+        <span class="badge badge-muted">전라북도·전라남도</span>
+        <span class="badge badge-muted">경상북도·경상남도</span>
+        <span class="badge badge-muted">제주도</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ═════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__inner">
+        <div>
+          <div class="footer__logo">LOCUS
+          </div>
+          <p class="footer__tagline">상업용 부동산 데이터 인텔리전스 플랫폼</p>
+        </div>
+        <span class="footer__copy">© 2025 LOCUS. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

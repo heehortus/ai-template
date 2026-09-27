@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>청림 — 자연이 기른 닭, 정직이 낳은 계란</title>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+════════════════════════════════════════════ -->
+<header class="site-header" id="siteHeader">
+    <div class="header-inner">
+        <a href="#hero" class="logo" aria-label="청림 홈">
+            <span class="logo__text">청림</span>
+        </a>
+        <nav class="site-nav" aria-label="주요 메뉴">
+            <a href="#hero"        class="nav__link" data-section="hero">회사소개</a>
+            <a href="#philosophy"  class="nav__link" data-section="philosophy">철학</a>
+            <a href="#process"     class="nav__link" data-section="process">제품공정</a>
+            <a href="#esg"         class="nav__link" data-section="esg">ESG</a>
+            <a href="#experience"  class="nav__link" data-section="experience">체험안내</a>
+            <a href="#news"        class="nav__link" data-section="news">뉴스룸</a>
+        </nav>
+        <button class="nav__hamburger" id="navHamburger" aria-label="메뉴 열기" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</header>
+
+<div class="nav__overlay" id="navOverlay" aria-hidden="true"></div>
+<div class="nav__drawer" id="navDrawer" role="dialog" aria-modal="true" aria-label="사이트 메뉴" aria-hidden="true">
+    <button class="nav__drawer-close" id="navDrawerClose" aria-label="메뉴 닫기">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <path d="M4 4l12 12M16 4L4 16"/>
+        </svg>
+    </button>
+    <a href="#hero"       class="nav__drawer-link">회사소개</a>
+    <a href="#philosophy" class="nav__drawer-link">철학</a>
+    <a href="#process"    class="nav__drawer-link">제품공정</a>
+    <a href="#esg"        class="nav__drawer-link">ESG</a>
+    <a href="#experience" class="nav__drawer-link">체험안내</a>
+    <a href="#news"       class="nav__drawer-link">뉴스룸</a>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     HERO — 4 슬라이드 풀스크린
+════════════════════════════════════════════ -->
+<section class="hero" id="hero" aria-label="메인 슬라이더">
+    <div class="hero__slides" id="heroSlides">
+
+        <div class="hero__slide is-active">
+            <video class="hero__video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
+                <source src="asset/hero-video.mp4" type="video/mp4">
+            </video>
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <h1 class="hero__title">맛과 신선을<br>최고의 가치로</h1>
+                <p class="hero__desc">자연에서 자란 닭이 낳은 계란 <br/>청림은 정직한 사육에서 탄생하는 신선함을 식탁에 전합니다</p>
+            </div>
+        </div>
+
+        <div class="hero__slide">
+            <div class="hero__bg"></div>
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <h1 class="hero__title">농장에서<br>식탁까지</h1>
+                <p class="hero__desc">사육부터 유통까지 모든 단계를 <br/>청림이 직접 관리하는 통합 가치사슬</p>
+            </div>
+        </div>
+
+        <div class="hero__slide">
+            <div class="hero__bg"></div>
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <h1 class="hero__title">자연이 낳은<br>프리미엄 계란</h1>
+                <p class="hero__desc">무항생제·동물복지 인증 <br/>닭이 건강해야 계란이 건강합니다</p>
+            </div>
+        </div>
+
+        <div class="hero__slide">
+            <div class="hero__bg"></div>
+            <div class="hero__overlay"></div>
+            <div class="hero__content">
+                <h1 class="hero__title">건강한<br>유통의 혁신</h1>
+                <p class="hero__desc">콜드체인 직송 시스템으로 <br/>수확 후 24시간 내 전국 배송</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="hero__dots" id="heroDots" role="tablist" aria-label="슬라이드 이동">
+        <button class="hero__dot is-active" role="tab" aria-selected="true"  aria-label="슬라이드 1" data-idx="0"></button>
+        <button class="hero__dot"           role="tab" aria-selected="false" aria-label="슬라이드 2" data-idx="1"></button>
+        <button class="hero__dot"           role="tab" aria-selected="false" aria-label="슬라이드 3" data-idx="2"></button>
+        <button class="hero__dot"           role="tab" aria-selected="false" aria-label="슬라이드 4" data-idx="3"></button>
+    </div>
+
+    <div class="hero__progress" id="heroProgress" aria-hidden="true"></div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     [A] PHILOSOPHY
+════════════════════════════════════════════ -->
+<section class="philosophy" id="philosophy" aria-labelledby="philTitle">
+    <div class="philosophy__sticky">
+        <div class="philosophy__bg" id="philBg"></div>
+        <div class="philosophy__overlay"></div>
+        <div class="philosophy__content">
+            <h2 class="philosophy__title" id="philTitle">
+                계란의 본질은 <em>신선함</em>,<br>
+                최고의 신선함은 정직한 사육에서
+            </h2>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     [B] PROCESS — 7단계 생산 가치사슬
+════════════════════════════════════════════ -->
+<section class="process" id="process" aria-labelledby="processTitle">
+    <div class="process__sticky">
+    <div class="container">
+        <div class="sec-header reveal">
+            <p class="process__eyebrow">PROCESS</p>
+            <h2 class="sec-title" id="processTitle">농장에서 식탁까지,<br>7단계 직접 관리</h2>
+        </div>
+    </div>
+    <div class="process__track-wrap" id="processDrag">
+        <div class="process__track">
+            <div class="process__card">
+                <img class="process__card-img" src="asset/9.jpg" alt="자연 사육">
+                <div class="process__card-gradient"></div>
+                <div class="process__card-body">
+                    <p class="process__card-name">자연 사육</p>
+                    <p class="process__card-desc">넓은 방사장에서 무항생제 사료로 키운 닭. 닭이 건강해야 계란이 건강합니다.</p>
+                </div>
+            </div>
+            <div class="process__card">
+                <img class="process__card-img" src="asset/process-2.jpg" alt="산란">
+                <div class="process__card-gradient"></div>
+                <div class="process__card-body">
+                    <p class="process__card-name">산란</p>
+                    <p class="process__card-desc">매일 아침 자연 채광 아래에서 산란. 스트레스 없는 환경이 신선한 계란을 만듭니다.</p>
+                </div>
+            </div>
+            <div class="process__card">
+                <img class="process__card-img" src="asset/16.jpg" alt="수집">
+                <div class="process__card-gradient"></div>
+                <div class="process__card-body">
+                    <p class="process__card-name">수집</p>
+                    <p class="process__card-desc">산란 후 2시간 내 자동화 시스템으로 수집. 파란·오염란을 실시간으로 분리합니다.</p>
+                </div>
+            </div>
+            <div class="process__card">
+                <img class="process__card-img" src="asset/process-1.png" alt="세척·선별">
+                <div class="process__card-gradient"></div>
+                <div class="process__card-body">
+                    <p class="process__card-name">세척·선별</p>
+                    <p class="process__card-desc">식품등급 세척 후 중량·크기·품질 기준으로 자동 분류. 불량란 0% 목표.</p>
+                </div>
+            </div>
+            <div class="process__card">
+                <img class="process__card-img" src="asset/process-3.jpg" alt="냉장 보관">
+                <div class="process__card-gradient"></div>
+                <div class="process__card-body">
+                    <p class="process__card-name">냉장 보관</p>
+                    <p class="process__card-desc">4°C 이하 항온 저장고에서 콜드체인을 유지. 신선도를 출하 직전까지 보장합니다.</p>
+                </div>
+            </div>
+            <div class="process__card">
+                <img class="process__card-img" src="asset/process-4.jpg" alt="포장">
+                <div class="process__card-gradient"></div>
+                <div class="process__card-body">
+                    <p class="process__card-name">포장</p>
+                    <p class="process__card-desc">100% 재생 가능 친환경 포장재 사용. 산란일, 농장 코드, 이력정보 전면 표기.</p>
+                </div>
+            </div>
+            <div class="process__card">
+                <img class="process__card-img" src="asset/process-5.png" alt="유통">
+                <div class="process__card-gradient"></div>
+                <div class="process__card-body">
+                    <p class="process__card-name">유통</p>
+                    <p class="process__card-desc">수확 후 24시간 내 전국 직배송. 냉장 차량 전용 운행으로 신선도를 끝까지 지킵니다.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="process__indicator-wrap">
+        <div class="process__indicator-bar">
+            <div class="process__indicator-fill" id="processIndicatorFill"></div>
+        </div>
+    </div>
+    </div><!-- /.process__sticky -->
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     [C] ESG — 3카드
+════════════════════════════════════════════ -->
+<section class="esg" id="esg" aria-labelledby="esgTitle">
+    <div class="esg__bg"></div>
+    <div class="esg__content">
+        <div class="esg__header">
+            <p class="esg__eyebrow reveal">ESG</p>
+            <h2 class="esg__headline reveal d1" id="esgTitle">자연과 함께,<br>미래를 향한 책임</h2>
+        </div>
+        <div class="esg__grid">
+
+            <!-- 환경 -->
+            <div class="esg__card">
+                <div class="esg__icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M7 38C7 38 10 21 23 11C36 1 39 8 39 8C39 8 37 25 24 33C16 38 7 38 7 38Z"/>
+                        <path d="M7 38L23 22"/>
+                        <path d="M30 10C34 15 34 22 30 27"/>
+                    </svg>
+                </div>
+                <h3 class="esg__card-title">환경</h3>
+                <p class="esg__card-desc">계분(鷄糞)을 유기 비료로 재활용하고 포장재를 100% 재생 소재로 전환했습니다. 2030년애 탄소중립 농장을 목표로 하고 있습니다.</p>
+            </div>
+
+            <!-- 동물복지 -->
+            <div class="esg__card">
+                <div class="esg__icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 7C16 7 9 13 9 22C9 31 15 39 22 39C29 39 35 31 35 22C35 13 28 7 22 7Z"/>
+                        <path d="M15 22C15 19 17.5 17.5 22 21C26.5 17.5 29 19 29 22C29 25.5 22 30 22 30C22 30 15 25.5 15 22Z"/>
+                    </svg>
+                </div>
+                <h3 class="esg__card-title">동물복지</h3>
+                <p class="esg__card-desc">닭 한 마리당 최소 0.75㎡ 생활 공간을 보장하고 국가인증 동물복지 농장 기준을 준수하고 있습니다.</p>
+            </div>
+
+            <!-- 투명경영 -->
+            <div class="esg__card">
+                <div class="esg__icon-wrap" aria-hidden="true">
+                    <svg viewBox="0 0 44 44" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="9" y="5" width="26" height="34" rx="3"/>
+                        <path d="M15 20L19.5 25L29 16"/>
+                        <path d="M15 31H29"/>
+                        <path d="M15 36H23"/>
+                    </svg>
+                </div>
+                <h3 class="esg__card-title">투명경영</h3>
+                <p class="esg__card-desc">HACCP·ISO 22000·친환경 인증을 취득했습니다. 전 공정 이력추적제 운영으로 소비자와의 신뢰를 구축합니다.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     [D] EXPERIENCE — 배경이미지 + 4 아이콘 카드
+════════════════════════════════════════════ -->
+<section class="experience" id="experience" aria-labelledby="expTitle">
+    <div class="experience__layout">
+        <img class="experience__img" src="asset/4.png" alt="청림 체험 현장">
+        <div class="experience__right">
+            <p class="experience__eyebrow reveal">EXPERIENCE</p>
+            <h2 class="experience__headline reveal d1" id="expTitle">보고 느끼고<br>직접 만나는 청림</h2>
+            <div class="experience__grid">
+
+                <!-- 농장 견학 -->
+                <div class="experience__item reveal">
+                    <div class="experience__icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M4 22L20 8L36 22"/>
+                            <rect x="7" y="22" width="26" height="13" rx="1"/>
+                            <path d="M16 35V27C16 26.4 16.4 26 17 26H23C23.6 26 24 26.4 24 27V35"/>
+                            <rect x="26" y="26" width="5" height="5" rx="0.5"/>
+                        </svg>
+                    </div>
+                    <p class="experience__name">농장 견학</p>
+                </div>
+
+                <!-- 계란 공장 투어 -->
+                <div class="experience__item reveal d1">
+                    <div class="experience__icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="18" width="34" height="18" rx="1"/>
+                            <path d="M3 26L10 20V26L17 20V26L24 20V26"/>
+                            <path d="M28 18V12M33 18V12"/>
+                            <rect x="28" y="8" width="7" height="4" rx="0.5"/>
+                            <rect x="6" y="28" width="4" height="5"/>
+                            <rect x="14" y="28" width="4" height="5"/>
+                            <rect x="22" y="28" width="4" height="5"/>
+                        </svg>
+                    </div>
+                    <p class="experience__name">계란 공장 투어</p>
+                </div>
+
+                <!-- 쿠킹 클래스 -->
+                <div class="experience__item reveal d2">
+                    <div class="experience__icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 22C11 14 14 8 20 8C26 8 29 14 28 22"/>
+                            <rect x="10" y="22" width="20" height="5" rx="0.5"/>
+                            <path d="M14 27V34M26 27V34"/>
+                            <path d="M12 34H28"/>
+                            <path d="M16 34V37M24 34V37"/>
+                        </svg>
+                    </div>
+                    <p class="experience__name">쿠킹 클래스</p>
+                </div>
+
+                <!-- 유통 센터 -->
+                <div class="experience__item reveal d3">
+                    <div class="experience__icon-wrap" aria-hidden="true">
+                        <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="14" width="24" height="17" rx="1"/>
+                            <path d="M26 20H35L38 26V31H26V20Z"/>
+                            <circle cx="8" cy="33" r="3"/>
+                            <circle cx="31" cy="33" r="3"/>
+                            <path d="M11 33H28"/>
+                            <path d="M8 20H18"/>
+                            <path d="M8 24H14"/>
+                        </svg>
+                    </div>
+                    <p class="experience__name">유통 센터</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     [F] RECIPE
+════════════════════════════════════════════ -->
+<section class="recipe" id="recipe" aria-labelledby="recipeTitle">
+    <div class="container">
+        <div class="recipe__header">
+            <p class="recipe__eyebrow reveal">RECIPE</p>
+            <h2 class="recipe__headline reveal d1" id="recipeTitle">계란 하나로<br>완성되는 프리미엄 식탁</h2>
+        </div>
+        <div class="recipe__grid">
+
+            <!-- Featured: 에그 베네딕트 -->
+            <div class="recipe__card recipe__card--feature reveal">
+                <img class="recipe__card-img" src="asset/10.jpg" alt="에그 오믈렛">
+                <div class="recipe__card-gradient"></div>
+                <div class="recipe__card-body">
+                    <h3 class="recipe__card-title">에그 오믈렛</h3>
+                </div>
+            </div>
+
+            <!-- Sub cards -->
+            <div class="recipe__side">
+                <div class="recipe__card recipe__card--sub reveal d1">
+                    <img class="recipe__card-img" src="asset/7.jpg" alt="트러플 스크램블 에그">
+                    <div class="recipe__card-gradient"></div>
+                    <div class="recipe__card-body">ß
+                        <h3 class="recipe__card-title">트러플 스크램블 에그</h3>
+                    </div>
+                </div>
+                <div class="recipe__card recipe__card--sub reveal d2">
+                    <img class="recipe__card-img" src="asset/19.png" alt="에그 베네딕트">
+                    <div class="recipe__card-gradient"></div>
+                    <div class="recipe__card-body">
+                        <h3 class="recipe__card-title">에그 베네딕트</h3>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     [E] NEWS — 3 카드
+════════════════════════════════════════════ -->
+<section class="news" id="news" aria-labelledby="newsTitle">
+    <div class="container">
+        <div class="news__layout">
+
+            <!-- 왼쪽: 헤드라인 -->
+            <div class="news__left">
+                <p class="news__eyebrow reveal">NEWSROOM</p>
+                <h2 class="news__headline reveal d1" id="newsTitle">청림의<br>새로운 소식을<br>만나보세요.</h2>
+            </div>
+
+            <!-- 오른쪽: 리스트 -->
+            <div class="news__right">
+                <div class="news__list">
+                    <a href="#" class="news__row reveal">
+                        <p class="news__row-title">청림, 동물복지 인증 농장 전국 5호점 개장</p>
+                        <span class="news__row-date">2026.07.28</span>
+                    </a>
+                    <a href="#" class="news__row reveal d1">
+                        <p class="news__row-title">2026 친환경 포장재 전환율 85% 달성</p>
+                        <span class="news__row-date">2026.07.15</span>
+                    </a>
+                    <a href="#" class="news__row reveal d2">
+                        <p class="news__row-title">2026 대한민국 식품안전대상 최우수상 수상</p>
+                        <span class="news__row-date">2026.06.30</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+
+<!-- ═══════════════════════════════════════════
+     CTA BANNER
+════════════════════════════════════════════ -->
+<div class="cta-banner" id="ctaBanner">
+    <div class="cta-banner__bg"></div>
+    <div class="cta-banner__overlay"></div>
+    <div class="cta-banner__content">
+        <p class="cta-banner__title">청림의 신선함을<br>만나보세요.</p>
+    </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+════════════════════════════════════════════ -->
+<footer class="site-footer">
+    <div class="container">
+        <dl class="footer__info">
+             <div class="footer__brand">
+                <div class="logo" aria-label="청림">
+                    <span class="logo__text">청림</span>
+                </div>
+                <p class="footer__tagline">자연이 기른 닭, 정직이 낳은 계란</p>
+            </div>
+            <div class="footer__info-group">
+                <dt>본사</dt>
+                <dd>전라북도 익산시 왕궁면 농생명로 123<br>063-000-0000</dd>
+            </div>
+            <div class="footer__info-group">
+                <dt>서울 공장</dt>
+                <dd>서울특별시 강남구 테헤란로 456<br>02-0000-0000</dd>
+            </div>
+        </dl>
+
+        <p class="footer__bottom">© 2026. CHEONGRIM CORP. All rights reserved.</p>
+    </div>
+</footer>
+
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+════════════════════════════════════════════ -->
+  <script src="js/main.js"></script>
+
+</body>
+</html>

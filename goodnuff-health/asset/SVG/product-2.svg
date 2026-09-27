@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="_레이어_2" data-name="레이어 2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 108.94 214.56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #fae9dc;
+        stroke-linecap: round;
+        stroke-linejoin: round;
+        stroke-width: 3.31px;
+      }
+    </style>
+  </defs>
+  <g id="_Layer_" data-name="&amp;lt;Layer&amp;gt;">
+    <g>
+      <circle class="cls-1" cx="54.47" cy="54.47" r="52.82"/>
+      <circle class="cls-1" cx="54.47" cy="80.87" r="52.82"/>
+      <circle class="cls-1" cx="54.47" cy="107.28" r="52.82" transform="translate(-62.46 135.64) rotate(-76.72)"/>
+      <circle class="cls-1" cx="54.47" cy="133.69" r="52.82"/>
+      <circle class="cls-1" cx="54.47" cy="160.09" r="52.82" transform="translate(-113.1 182.84) rotate(-78.94)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>굿너프 — 일상의 건강을 지키는 헬스케어 솔루션</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- GNB -->
+  <header class="gnb" id="gnb">
+    <div class="container">
+      <div class="gnb-inner">
+        <a class="gnb-logo" href="#">굿너프</a>
+        <nav class="gnb-nav" aria-label="주요 메뉴">
+          <a class="gnb-nav-link" href="#products">제품</a>
+          <a class="gnb-nav-link" href="#new-release">릴리즈</a>
+          <a class="gnb-nav-link" href="#expertise">기술</a>
+          <a class="gnb-nav-link" href="#news">뉴스</a>
+        </nav>
+        <button class="gnb-hamburger" id="hamburger" aria-label="메뉴 열기" aria-expanded="false" type="button">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="gnb-mobile-nav" id="mobile-nav" aria-label="모바일 메뉴">
+    <a href="#products">제품</a>
+    <a href="#new-release">릴리즈</a>
+    <a href="#expertise">기술</a>
+    <a href="#news">뉴스</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="hero" aria-label="히어로">
+    <video class="hero-video" src="asset/hero-video.mp4" autoplay muted loop playsinline></video>
+    <div class="hero-bg"></div>
+
+    <div class="hero-content">
+      <p class="hero-line1">정밀한 진단이 <br class="br-mo">치료의 시작입니다</p>
+      <h1 class="hero-line2">현장에서 즉시, <br class="br-mo">결과는 정확하게,</h1>
+      <p class="hero-line3">굿너프는 체외진단의 <br class="br-mo">새 기준을 씁니다.</p>
+    </div>
+
+  </section>
+
+  <!-- 제품 카테고리 -->
+  <section class="section products" id="products">
+    <div class="container">
+      <h2 class="products-display-title reveal">PRODUCT</h2>
+      <div class="products-track" id="products-track">
+
+        <div class="product-card">
+          <div class="product-card-header">
+            <span class="product-card-arrow">→</span>
+            <p class="product-card-name">연속혈당측정 시스템</p>
+          </div>
+          <p class="product-card-desc">실시간으로 혈당 변화를 추적해 당뇨병 환자의 자기 관리 능력을 높입니다. 최소 교정으로 14일 연속 착용이 가능합니다.</p>
+          <svg class="product-card-svg" viewBox="0 0 170 170" fill="none" stroke="currentColor" stroke-width="3.31" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M110.24,59.76c43.86,43.86,68.11,90.71,54.17,104.65-13.94,13.94-60.8-10.31-104.65-54.17C15.9,66.39-8.35,19.53,5.59,5.59c13.94-13.94,60.8,10.31,104.65,54.17Z"/>
+            <path d="M59.76,59.76C103.62,15.9,150.47-8.35,164.41,5.59c13.94,13.94-10.31,60.8-54.17,104.65-43.86,43.86-90.71,68.11-104.65,54.17-13.94-13.94,10.31-60.8,54.17-104.65Z"/>
+          </svg>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-header">
+            <span class="product-card-arrow">→</span>
+            <p class="product-card-name">심장 바이오마커</p>
+          </div>
+          <p class="product-card-desc">트로포닌·BNP 등 주요 심장 마커를 현장에서 10분 내 정량 분석해 급성 심혈관 질환의 조기 감별을 지원합니다.</p>
+          <svg class="product-card-svg" viewBox="0 0 108.94 214.56" fill="none" stroke="currentColor" stroke-width="3.31" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="54.47" cy="54.47" r="52.82"/>
+            <circle cx="54.47" cy="80.87" r="52.82"/>
+            <circle cx="54.47" cy="107.28" r="52.82" transform="translate(-62.46 135.64) rotate(-76.72)"/>
+            <circle cx="54.47" cy="133.69" r="52.82"/>
+            <circle cx="54.47" cy="160.09" r="52.82" transform="translate(-113.1 182.84) rotate(-78.94)"/>
+          </svg>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-header">
+            <span class="product-card-arrow">→</span>
+            <p class="product-card-name">혈액응고 분석</p>
+          </div>
+          <p class="product-card-desc">PT·APTT·D-dimer를 포함한 응고 인자를 신속 측정해 항응고 치료 모니터링과 수술 전 검사를 지원합니다.</p>
+          <svg class="product-card-svg" viewBox="0 0 196.89 196.89" fill="none" stroke="currentColor" stroke-width="3.31" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M98.45,1.65c-26.73,26.73-26.73,70.06,0,96.79"/><path d="M81.64,3.12c-21.68,30.96-14.16,73.64,16.81,95.32"/><path d="M65.34,7.49c-15.97,34.26-1.15,74.98,33.11,90.96"/><path d="M50.05,14.62c-9.78,36.51,11.88,74.04,48.4,83.83"/><path d="M36.23,24.3c-3.29,37.66,24.56,70.85,62.22,74.15"/><path d="M24.3,36.23c3.3,37.66,36.49,65.51,74.15,62.22"/><path d="M14.62,50.05c9.78,36.51,47.31,58.18,83.83,48.4"/><path d="M7.49,65.34c15.98,34.26,56.7,49.08,90.96,33.11"/><path d="M3.12,81.64c21.68,30.96,64.36,38.49,95.32,16.81"/><path d="M1.65,98.45c26.73,26.73,70.06,26.73,96.79,0"/><path d="M3.12,115.25c30.96,21.68,73.64,14.16,95.32-16.81"/><path d="M7.49,131.55c34.26,15.98,74.98,1.15,90.96-33.11"/><path d="M14.62,146.84c36.51,9.78,74.04-11.88,83.83-48.4"/><path d="M24.3,160.66c37.66,3.29,70.85-24.56,74.15-62.22"/><path d="M36.23,172.59c37.66-3.29,65.51-36.49,62.22-74.15"/><path d="M50.05,182.27c36.51-9.78,58.18-47.31,48.4-83.83"/><path d="M65.34,189.4c34.26-15.98,49.08-56.7,33.11-90.96"/><path d="M81.64,193.77c30.96-21.68,38.49-64.36,16.81-95.32"/><path d="M98.45,195.24c26.73-26.73,26.73-70.06,0-96.79"/><path d="M115.25,193.77c21.68-30.96,14.16-73.64-16.81-95.32"/><path d="M131.55,189.4c15.98-34.26,1.15-74.98-33.11-90.96"/><path d="M146.84,182.27c9.78-36.51-11.88-74.04-48.4-83.83"/><path d="M160.66,172.59c3.29-37.66-24.56-70.85-62.22-74.15"/><path d="M172.59,160.66c-3.3-37.66-36.49-65.51-74.15-62.22"/><path d="M182.27,146.84c-9.78-36.51-47.31-58.18-83.83-48.4"/><path d="M189.4,131.55c-15.98-34.26-56.7-49.08-90.96-33.11"/><path d="M193.77,115.25c-21.68-30.96-64.36-38.49-95.32-16.81"/><path d="M195.24,98.45c-26.73-26.73-70.06-26.73-96.79,0"/><path d="M193.77,81.64c-30.96-21.68-73.64-14.16-95.32,16.81"/><path d="M189.4,65.34c-34.26-15.97-74.98-1.15-90.96,33.11"/><path d="M182.27,50.05c-36.51-9.78-74.04,11.88-83.83,48.4"/><path d="M172.59,36.23c-37.66-3.29-70.85,24.56-74.15,62.22"/><path d="M160.66,24.3c-37.66,3.3-65.51,36.49-62.22,74.15"/><path d="M146.84,14.62c-36.51,9.78-58.18,47.31-48.4,83.83"/><path d="M131.55,7.49c-34.26,15.98-49.08,56.7-33.11,90.96"/><path d="M115.25,3.12c-30.96,21.68-38.49,64.36-16.81,95.32"/>
+          </svg>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-header">
+            <span class="product-card-arrow">→</span>
+            <p class="product-card-name">감염병 패널</p>
+          </div>
+          <p class="product-card-desc">독감·RSV·COVID-19 등 호흡기 병원체를 단일 카트리지로 동시 검출합니다. POCT 환경에 최적화된 멀티플렉스 솔루션입니다.</p>
+          <svg class="product-card-svg" viewBox="0 0 194.55 181.98" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M186.75,53.05l-80.53,32.99c-5.73,2.35-12.15,2.35-17.88,0L7.8,53.05c-7.07-2.9-7.07-12.91,0-15.8L88.34,4.26c5.73-2.35,12.15-2.35,17.88,0l80.53,32.99c7.07,2.9,7.07,12.91,0,15.8Z"/>
+            <path d="M186.75,75.97l-80.53,32.99c-5.73,2.35-12.15,2.35-17.88,0L7.8,75.97c-7.07-2.9-7.07-12.91,0-15.8L88.34,27.18c5.73-2.35,12.15-2.35,17.88,0l80.53,32.99c7.07,2.9,7.07,12.91,0,15.8Z"/>
+            <path d="M186.75,98.89l-80.53,32.99c-5.73,2.35-12.15,2.35-17.88,0L7.8,98.89c-7.07-2.9-7.07-12.91,0-15.8l80.53-32.99c5.73-2.35,12.15-2.35,17.88,0l80.53,32.99c7.07,2.9,7.07,12.91,0,15.8Z"/>
+            <path d="M54.08,87.06l34.26-14.03c5.73-2.35,12.15-2.35,17.88,0l80.53,32.99c7.07,2.9,7.07,12.91,0,15.8l-80.53,32.99c-5.73,2.35-12.15,2.35-17.88,0L7.8,121.81c-7.07-2.9-7.07-12.91,0-15.8l46.28-18.95"/>
+            <path d="M186.75,144.73l-80.53,32.99c-5.73,2.35-12.15,2.35-17.88,0L7.8,144.73c-7.07-2.9-7.07-12.91,0-15.8l80.53-32.99c5.73-2.35,12.15-2.35,17.88,0l80.53,32.99c7.07,2.9,7.07,12.91,0,15.8Z"/>
+          </svg>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-header">
+            <span class="product-card-arrow">→</span>
+            <p class="product-card-name">종양 유전자 분석</p>
+          </div>
+          <p class="product-card-desc">액체 생검 기반의 순환 종양 DNA(ctDNA) 검출로 암의 조기 발견과 치료 반응 모니터링을 가능하게 합니다.</p>
+          <svg class="product-card-svg" viewBox="0 0 177 173.09" fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M72.99,170.59c-5.04,0-13.94-1.43-20.64-8.12-4.75-4.75-8.56-12.06-10.99-20.06-4.51-14.86-7.85-35.09-7.85-58.12C33.51,39.12,44.25,2.5,57.49,2.5s23.98,36.62,23.98,81.79c0,23.03-3.28,44.29-7.72,56.67-2.82,7.87-7.5,16.61-12.1,21.5-6.42,6.83-14.62,8.13-19.66,8.13s-13.24-1.3-19.66-8.13c-4.6-4.89-9.28-13.63-12.1-21.5-4.44-12.38-7.72-33.65-7.72-56.67C2.5,39.12,13.23,2.5,26.48,2.5s23.98,36.62,23.98,81.79c0,23.03-3.34,43.26-7.85,58.12-2.43,8-6.24,15.31-10.99,20.06-6.7,6.7-15.6,8.12-20.64,8.12"/>
+            <path d="M72.99,170.59c5.04,0,13.94-1.43,20.64-8.12,4.75-4.75,8.56-12.06,10.99-20.06,4.51-14.86,7.85-35.09,7.85-58.12,0-45.17-10.73-81.79-23.98-81.79s-23.98,36.62-23.98,81.79c0,23.03,3.28,44.29,7.72,56.67,2.82,7.87,7.5,16.61,12.1,21.5,6.42,6.83,14.62,8.13,19.66,8.13s13.24-1.3,19.66-8.13c4.6-4.89,9.28-13.63,12.1-21.5,4.44-12.38,7.72-33.65,7.72-56.67,0-45.17-10.73-81.79-23.98-81.79s-23.98,36.62-23.98,81.79c0,23.03,3.34,43.26,7.85,58.12,2.43,8,6.24,15.31,10.99,20.06,6.7,6.7,15.6,8.12,20.64,8.12"/>
+            <path d="M166.02,170.59c-5.04,0-13.24-1.3-19.66-8.13-4.6-4.89-9.27-13.63-12.1-21.5-4.44-12.38-7.72-33.65-7.72-56.67,0-45.17,10.74-81.79,23.98-81.79s23.98,36.62,23.98,81.79c0,23.03-3.34,43.26-7.85,58.12-2.43,8-6.24,15.31-10.99,20.06-6.7,6.7-15.6,8.12-20.64,8.12"/>
+          </svg>
+        </div>
+
+        <div class="product-card">
+          <div class="product-card-header">
+            <span class="product-card-arrow">→</span>
+            <p class="product-card-name">자동화 검사 시스템</p>
+          </div>
+          <p class="product-card-desc">검체 처리부터 결과 보고까지 전 과정을 자동화해 검사실 처리량을 극대화하고 인적 오류를 최소화합니다.</p>
+          <svg class="product-card-svg" viewBox="0 0 182.54 182.52">
+            <polygon points="0 84.83 67.27 84.83 9.01 51.19 15.44 40.06 73.7 73.7 40.06 15.44 51.19 9.01 84.83 67.27 84.83 0 97.68 0 97.68 67.27 131.32 9.01 142.45 15.44 108.81 73.7 167.07 40.06 173.5 51.19 115.24 84.83 182.51 84.83 182.51 84.84 182.54 84.84 182.54 97.69 115.27 97.69 173.52 131.33 167.1 142.46 108.84 108.82 142.47 167.08 131.34 173.51 97.71 115.25 97.71 182.52 84.85 182.52 84.85 115.25 51.22 173.51 40.09 167.08 73.72 108.82 15.46 142.46 9.04 131.33 67.3 97.69 .02 97.69 .02 97.68 0 97.68 0 84.83" fill="currentColor"/>
+          </svg>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 신제품 -->
+  <section class="new-release" id="new-release">
+    <div class="container">
+      <div class="new-release-header reveal">
+        <h2 class="new-release-title">NEW RELEASE</h2>
+      </div>
+    </div>
+    <div class="new-release-grid">
+
+      <article class="release-card reveal" data-delay="1">
+        <img class="release-card-bg" src="asset/product-1.jpg" alt="GluNEO H">
+        <div class="release-card-overlay"></div>
+        <div class="release-card-num"><span>01</span></div>
+        <span class="release-card-num-alt">01</span>
+        <div class="release-card-body">
+          <p class="release-card-name">NovaSense Pro</p>
+          <p class="release-card-desc">유연한 바이오센서 패치로 7일 연속 혈당 모니터링. 스마트폰과 실시간 연동되어 언제 어디서나 확인합니다.</p>
+        </div>
+      </article>
+
+      <article class="release-card reveal" data-delay="2">
+        <img class="release-card-bg" src="asset/product-2.jpg" alt="CLOVER A1c Expert">
+        <div class="release-card-overlay"></div>
+        <div class="release-card-num"><span>02</span></div>
+        <span class="release-card-num-alt">02</span>
+        <div class="release-card-body">
+          <p class="release-card-name">ImmunoRapid CRP+</p>
+          <p class="release-card-desc">C반응성 단백질(CRP)과 PCT를 5분 내 동시 정량 분석. 감염 중증도 판별을 현장에서 즉시 지원합니다.</p>
+        </div>
+      </article>
+
+      <article class="release-card reveal" data-delay="3">
+        <img class="release-card-bg" src="asset/product-3.jpg" alt="GeneFinder™ Flu A&B Rapid Test">
+        <div class="release-card-overlay"></div>
+        <div class="release-card-num"><span>03</span></div>
+        <span class="release-card-num-alt">03</span>
+        <div class="release-card-body">
+          <p class="release-card-name">CardioPanel X1</p>
+          <p class="release-card-desc">트로포닌 I·T와 NT-proBNP를 단일 칩으로 측정해 급성 심근경색 진단 시간을 획기적으로 단축합니다.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 기술 역량 -->
+  <section class="expertise" id="expertise">
+    <div class="expertise-sticky">
+      <div class="expertise-heading" id="expertise-heading">
+        <span class="expertise-title-word" id="expertise-title-left">Technical</span>
+        <span class="expertise-title-word" id="expertise-title-right">Expertise</span>
+      </div>
+      <div class="expertise-cards-container" id="expertise-cards-container">
+        <div class="expertise-cards-list" id="expertise-cards-list">
+          <div class="expertise-card">
+            <video class="expertise-card-video" src="asset/expertise-1.mp4" poster="asset/expertise-1-thumb.jpg" muted loop playsinline preload="none"></video>
+            <div class="expertise-card-overlay"></div>
+            <div class="expertise-card-content">
+              <h3 class="expertise-item-title">Precision Engineering</h3>
+              <p class="expertise-item-desc">나노 바이오센서부터 미세유체 플랫폼까지, 첨단 공학 기술을 의료 진단에 접목합니다. 연간 120건 이상의 특허를 출원하며 기술 우위를 지켜갑니다.</p>
+            </div>
+          </div>
+          <div class="expertise-card">
+            <video class="expertise-card-video" src="asset/expertise-2.mp4" poster="asset/expertise-2-thumb.jpg" muted loop playsinline preload="none"></video>
+            <div class="expertise-card-overlay"></div>
+            <div class="expertise-card-content">
+              <h3 class="expertise-item-title">Rapid &amp; Accurate</h3>
+              <p class="expertise-item-desc">15분 이내 결과 제공, 99.5% 임상 정확도를 동시에 구현합니다. 골든 아워가 중요한 응급 의료 현장에서 즉각적인 판단을 지원합니다.</p>
+            </div>
+          </div>
+          <div class="expertise-card">
+            <video class="expertise-card-video" src="asset/expertise-3.mp4" poster="asset/expertise-3-thumb.jpg" muted loop playsinline preload="none"></video>
+            <div class="expertise-card-overlay"></div>
+            <div class="expertise-card-content">
+              <h3 class="expertise-item-title">Global Regulatory</h3>
+              <p class="expertise-item-desc">CE-IVD, FDA 510(k), ISO 13485 등 전 세계 주요 인증을 보유합니다. 100여 개국 의료 기관이 신뢰하는 체외진단 파트너입니다.</p>
+            </div>
+          </div>
+          <div class="expertise-card">
+            <video class="expertise-card-video" src="asset/expertise-4.mp4" poster="asset/expertise-4-thumb.jpg" muted loop playsinline preload="none"></video>
+            <div class="expertise-card-overlay"></div>
+            <div class="expertise-card-content">
+              <h3 class="expertise-item-title">Connected Healthcare</h3>
+              <p class="expertise-item-desc">클라우드 기반 데이터 플랫폼으로 검사 결과를 병원 정보 시스템(HIS/LIS)과 실시간 연동합니다. 데이터 기반의 정밀의료를 실현합니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="section news" id="news">
+    <div class="container">
+      <h2 class="news-display-title reveal">NEWS</h2>
+    </div>
+    <div class="news-track" id="news-track">
+      <article class="news-card">
+        <span class="news-tag">보도자료</span>
+        <p class="news-title">굿너프, FDA 510(k) 승인 획득… 미국 체외진단 시장 본격 진출 선언</p>
+        <p class="news-date">2026. 07. 22</p>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">언론기사</span>
+        <p class="news-title">"현장 진단의 혁명" — NovaSense Pro, CES 2026 혁신상 수상</p>
+        <p class="news-date">2026. 07. 08</p>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">보도자료</span>
+        <p class="news-title">굿너프, 유럽 체외진단기기 협회(EDMA) 정회원사 공식 등록</p>
+        <p class="news-date">2026. 06. 25</p>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">제품출시</span>
+        <p class="news-title">CardioPanel X1, 국내 긴급사용승인 획득… 응급실 즉시 공급 시작</p>
+        <p class="news-date">2026. 06. 10</p>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">언론기사</span>
+        <p class="news-title">굿너프 액체생검 플랫폼, 국립암센터와 공동 임상 연구 착수</p>
+        <p class="news-date">2026. 05. 19</p>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">IR자료</span>
+        <p class="news-title">굿너프 2026 상반기 사업설명회 발표 자료 공개</p>
+        <p class="news-date">2026. 05. 03</p>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- 배너 -->
+  <section class="banner" id="banner">
+    <img class="banner-bg" src="asset/banner-1.jpg" alt="">
+    <div class="banner-overlay"></div>
+    <div class="banner-content reveal">
+      <span class="banner-line">진단의 경계를 넘어,</span>
+      <span class="banner-line">더 빠르고 정확한 의료를 만듭니다.</span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-info">
+          <p class="footer-info-label">GOODNUFF CO., LTD.</p>
+          <p class="footer-info-text">
+            (주)굿너프 &nbsp;|&nbsp; 주소 : 경기도 안양시 동안구 안양천동로 132<br>
+            대표전화 : 031-460-0300 &nbsp;|&nbsp; 팩스 : 031-460-0401
+          </p>
+        </div>
+        <div class="footer-contact">
+          <div class="footer-contact-row">
+            <span class="footer-contact-label">고객센터</span>
+            <span class="footer-contact-num">080-300-8114</span>
+          </div>
+          <div class="footer-contact-row">
+            <span class="footer-contact-label">판매 및 구매처</span>
+            <span class="footer-contact-num">031-460-0335</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-wordmark">GOODNUFF</p>
+        <p class="footer-copy">Copyright © GOODNUFF. ALL RIGHTS RESERVED.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FAB -->
+  <div class="drag-cursor" id="drag-cursor">Drag</div>
+
+  <div class="fab-top is-visible" id="fab-top" role="button" tabindex="0" aria-label="맨 위로 이동">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+    </svg>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

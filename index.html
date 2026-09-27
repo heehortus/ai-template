@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Template — Project Index</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --surface: #111111;
+      --border: rgba(255,255,255,0.08);
+      --text: rgba(255,255,255,0.55);
+      --white: #ffffff;
+      --accent: #7C3AED;
+      --ease: cubic-bezier(0.25, 0.1, 0.25, 1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scrollbar-width: none; -ms-overflow-style: none; }
+    html::-webkit-scrollbar { display: none; }
+    body {
+      font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif;
+      background: var(--bg);
+      color: var(--white);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+    a { text-decoration: none; color: inherit; }
+
+    /* Header */
+    .header {
+      padding: 64px 48px 48px;
+      border-bottom: 1px solid var(--border);
+    }
+    .header-title {
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .header-sub {
+      font-size: 1rem;
+      color: var(--text);
+    }
+
+    /* Grid */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border-top: 1px solid var(--border);
+    }
+
+    .card {
+      background: var(--bg);
+      padding: 40px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      transition: background 0.25s var(--ease);
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--accent);
+      clip-path: circle(0% at 0% 100%);
+      transition: clip-path 0.5s cubic-bezier(0.4, 0, 1, 1);
+      pointer-events: none;
+    }
+    .card:hover::before {
+      clip-path: circle(160% at 0% 100%);
+      transition: clip-path 0.6s cubic-bezier(0, 0, 0.2, 1);
+    }
+    .card > * { position: relative; z-index: 1; }
+
+    .card-index {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text);
+      letter-spacing: 0.08em;
+      transition: color 0.25s var(--ease);
+    }
+    .card:hover .card-index { color: rgba(255,255,255,0.6); }
+
+    .card-body { flex: 1; }
+    .card-name {
+      font-size: 1.375rem;
+      font-weight: 700;
+      letter-spacing: -0.025em;
+      line-height: 1.3;
+      margin-bottom: 8px;
+    }
+    .card-desc {
+      font-size: 0.875rem;
+      color: var(--text);
+      line-height: 1.7;
+      transition: color 0.25s var(--ease);
+    }
+    .card:hover .card-desc { color: rgba(255,255,255,0.6); }
+
+    .card-arrow {
+      font-size: 1.25rem;
+      font-weight: 300;
+      color: var(--text);
+      align-self: flex-end;
+      transform: translateX(-4px);
+      transition: transform 0.25s var(--ease), color 0.25s var(--ease);
+    }
+    .card:hover .card-arrow {
+      transform: translateX(0);
+      color: var(--white);
+    }
+
+    /* Footer */
+    .footer {
+      padding: 32px 48px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-copy {
+      font-size: 0.75rem;
+      color: var(--text);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 1024px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 640px) {
+      .header { padding: 48px 24px 32px; }
+      .grid { grid-template-columns: 1fr; }
+      .card { padding: 32px 24px; }
+      .footer { padding: 24px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1 class="header-title">AI Template</h1>
+    <p class="header-sub">Generated landing pages — click to preview each project</p>
+  </header>
+
+  <main class="grid">
+
+    <a class="card" href="velox-logistics/">
+      <span class="card-index">01</span>
+      <div class="card-body">
+        <p class="card-name">VELOX Logistics</p>
+        <p class="card-desc">연결이 멈추지 않는 물류 솔루션. 스크롤 드리븐 히어로, 통계 섹션, 플로우 차트.</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a class="card" href="alto-marketing/">
+      <span class="card-index">02</span>
+      <div class="card-body">
+        <p class="card-name">Alto Marketing</p>
+        <p class="card-desc">브랜드 퍼포먼스 마케팅 에이전시.</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a class="card" href="cheongrim-farm/">
+      <span class="card-index">03</span>
+      <div class="card-body">
+        <p class="card-name">청림농장</p>
+        <p class="card-desc">친환경 농산물 직거래 브랜드 랜딩 페이지.</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a class="card" href="clover-fnb/">
+      <span class="card-index">04</span>
+      <div class="card-body">
+        <p class="card-name">Clover F&B</p>
+        <p class="card-desc">식음료 프랜차이즈 브랜드 사이트.</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a class="card" href="galileo-mobility/">
+      <span class="card-index">05</span>
+      <div class="card-body">
+        <p class="card-name">Galileo Mobility</p>
+        <p class="card-desc">모빌리티 테크 스타트업 랜딩 페이지.</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a class="card" href="goodnuff-health/">
+      <span class="card-index">06</span>
+      <div class="card-body">
+        <p class="card-name">Goodnuff Health</p>
+        <p class="card-desc">헬스케어 웰니스 브랜드 랜딩 페이지.</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a class="card" href="lets-dev/">
+      <span class="card-index">07</span>
+      <div class="card-body">
+        <p class="card-name">Let's Dev</p>
+        <p class="card-desc">개발자 커뮤니티 & 교육 플랫폼 랜딩 페이지.</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a class="card" href="locus-it/">
+      <span class="card-index">08</span>
+      <div class="card-body">
+        <p class="card-name">Locus IT</p>
+        <p class="card-desc">IT 솔루션 & 시스템 통합 기업 사이트.</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a class="card" href="nexagen-bio/">
+      <span class="card-index">09</span>
+      <div class="card-body">
+        <p class="card-name">Nexagen Bio</p>
+        <p class="card-desc">바이오테크 & 신약 개발 기업 랜딩 페이지.</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a class="card" href="offrame-media/">
+      <span class="card-index">10</span>
+      <div class="card-body">
+        <p class="card-name">Offrame Media</p>
+        <p class="card-desc">영상 제작 & 콘텐츠 스튜디오 브랜드 사이트.</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a class="card" href="precix-production/">
+      <span class="card-index">11</span>
+      <div class="card-body">
+        <p class="card-name">Precix Production</p>
+        <p class="card-desc">정밀 제조 & 생산 설비 기업 랜딩 페이지.</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+    <a class="card" href="urhome-lifestyle/">
+      <span class="card-index">12</span>
+      <div class="card-body">
+        <p class="card-name">Urhome Lifestyle</p>
+        <p class="card-desc">홈 인테리어 & 라이프스타일 브랜드 사이트.</p>
+      </div>
+      <span class="card-arrow">→</span>
+    </a>
+
+  </main>
+
+  <footer class="footer">
+    <span class="footer-copy">AI Template — 12 Projects</span>
+  </footer>
+
+</body>
+</html>

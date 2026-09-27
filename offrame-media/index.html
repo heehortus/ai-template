@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OFFFRAME — 결정적 장면만을 큐레이션하는 미디어 플랫폼</title>
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
+  <link href="https://api.fontshare.com/v2/css?f[]=cabinet-grotesk@400,500,700,800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ─── NAV ──────────────────────────────────────────── -->
+  <!-- 구조: 로고(좌) / 2열 링크(중앙) / Contact(우) -->
+  <nav class="nav" id="nav">
+    <a href="#" class="nav-logo">OFFRAME<em>.</em></a>
+
+    <ul class="nav-links">
+      <li><a href="#studio">Studio</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#series">Series</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+
+    <button class="nav-burger" id="burger" aria-label="메뉴">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="nav-overlay" id="navOverlay">
+    <a href="#studio"  onclick="closeNav()">Studio</a>
+    <a href="#about"   onclick="closeNav()">About</a>
+    <a href="#series"  onclick="closeNav()">Series</a>
+    <a href="#current" onclick="closeNav()">Current</a>
+    <a href="#contact" onclick="closeNav()">Contact</a>
+  </div>
+
+  <!-- ─── HERO ─────────────────────────────────────────── -->
+  <!-- 풀블리드 다크 사진 + 좌상단 대형 헤드라인 (스크린샷 구조 그대로) -->
+  <section class="hero" id="hero">
+    <div class="hero-photo">
+      <img src="asset/hero.jpg" alt="offrame-hero">
+    </div>
+
+    <h1 class="hero-headline">
+      <span class="line"><span class="line-inner" data-delay="0">우리는 결정적</span></span>
+      <span class="line"><span class="line-inner" data-delay="80">장면만을 담는다—</span></span>
+      <span class="line"><span class="line-inner" data-delay="160">흘러가기 전에<span style="color:var(--primary);vertical-align:bottom;position:relative;top:0.12em">.</span></span></span>
+    </h1>
+
+    <div class="hero-wordmark">
+      <div class="hero-wordmark-clip">
+        <span class="hero-wordmark-of">OF</span>
+      </div>
+      <div class="hero-wordmark-rule"></div>
+      <div class="hero-wordmark-clip">
+        <span class="hero-wordmark-frame">FRAME</span>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ─── SCROLL TEXT SECTION ──────────────────────────── -->
+  <section class="scroll-text-section" id="studio">
+    <div class="scroll-text-sticky">
+      <div class="scroll-text-bg">
+        <img src="asset/section-1.jpg" alt="" />
+      </div>
+      <div class="scroll-text-content">
+        <p class="scroll-line" data-index="0">좋은 장면은 연출되지 않습니다. <br class="br-mobile" />다만 발견됩니다.</p>
+        <p class="scroll-line" data-index="1">우리는 그 발견의 순간을 <br class="br-mobile" />함께하는 사람들을 기록합니다.</p>
+        <p class="scroll-line" data-index="2">흘러가는 것들 사이에서, 남는 것을 압니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─────────────────────────────────────────── -->
+  <section class="section-about" id="about">
+    <!-- 상단 대형 헤드라인 -->
+    <p class="about-headline reveal" style="transition-delay: 0ms;">
+      We listen first, observe deeply,<br>and translate sincerity into images that last.
+    </p>
+
+    <!-- 하단 3열 그리드 -->
+    <div class="about-grid">
+      <!-- 좌: 라벨 + 도트 + 이미지 -->
+      <div class="about-left reveal" style="transition-delay: 120ms;">
+
+        <div class="about-img">
+          <img src="asset/about-1.jpg" alt="OFFFRAME Studio" />
+        </div>
+      </div>
+
+      <!-- 중: 본문 -->
+      <div class="reveal" style="transition-delay: 240ms;">
+        <p class="about-body-ko">
+          OFFRAME는 결정적 순간만을 선별하는 독립 미디어 플랫폼입니다.
+          누군가의 이야기에는 말로 다 담기지 않는 것이 있습니다.
+          우리는 그 결을 위해 카메라를 들기 전 먼저 물어보고,
+          당신의 이야기가 어디에서 시작되었는지, 무엇을 남기고 싶은지,
+          그렇게 파악한 이야기를 사진이 오래 머무는 이미지로 기록합니다.
+        </p>
+        <p class="about-body-en">
+          OFFRAME is a visual storytelling studio that translates your sincerity
+          into visual language. Every story carries a message that words alone cannot
+          capture. To fully understand the context, <br>we ask before we shoot—where your
+          story began, and what you want to leave behind. We then record that sincerity
+          into images where the heart resonates.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="custom-cursor" id="customCursor"></div>
+
+  <!-- ─── Series Hover Popup ─────────────────────────────── -->
+  <div class="series-popup" id="seriesPopup">
+    <img class="series-popup-img" id="seriesPopupImg" src="" alt="" />
+    <span class="series-popup-tag" id="seriesPopupTag"></span>
+    <p class="series-popup-title" id="seriesPopupTitle"></p>
+  </div>
+
+  <!-- ─── FEATURED SERIES ───────────────────────────────── -->
+  <section class="featured" id="series">
+    <div class="featured-header-row">
+      <h2 class="featured-title reveal">
+        OUR<br>WORKS<span class="dot">.</span>
+      </h2>
+    </div>
+
+    <!-- 4열 설명 블록: 1열 비움 / 2열 EN / 3열 KO / 4열 도트 -->
+    <div class="featured-desc">
+      <div class="featured-desc-empty"></div>
+      <p class="featured-desc-en reveal" style="transition-delay:120ms">
+        OFFFRAME captures stories in those unscripted moments—the beats where
+        truth is most visible. We do more than document; we study rhythm and
+        tempo to find the authentic narrative. It is a ritual of discovery,
+        revealing stories even the subject hasn't yet told.
+      </p>
+      <p class="featured-desc-ko reveal" style="transition-delay:240ms">
+        OFFFRAME는 일상의 정박에서 벗어난 엇박자의 순간,
+        가장 진실한 이야기를 포착하는 미디어를 제안합니다.
+        당신의 호흡과 리듬을 관찰하며 '가장 진실한 서사'를 찾아가는
+        과정을 함께합니다. 낯선 카메라 앞에서 긴장이 이완으로 바뀌는
+        그 찰나, 당신조차 몰랐던 진실한 이야기를 발견하는 시간입니다.
+      </p>
+    </div>
+
+    <div class="featured-layout">
+      <div class="featured-header-row-2">
+      <h2 class="featured-title reveal">
+        SERIES<span class="dot">.</span>
+      </h2>
+    </div>
+      <div class="featured-list-wrap">
+      <ul class="featured-list">
+        <li class="featured-item reveal" style="transition-delay:0ms" data-img="asset/series-1.jpg">
+          <span class="featured-item-name">The Frame Between Frames</span>
+          <span class="featured-item-tag">Documentary</span>
+        </li>
+        <li class="featured-item reveal" style="transition-delay:40ms" data-img="asset/series-2.jpg">
+          <span class="featured-item-name">OFFRAME와의 대화</span>
+          <span class="featured-item-tag">Interview</span>
+        </li>
+        <li class="featured-item reveal" style="transition-delay:80ms" data-img="asset/series-3.jpg">
+          <span class="featured-item-name">Scene / Seen</span>
+          <span class="featured-item-tag">Short Film</span>
+        </li>
+        <li class="featured-item reveal" style="transition-delay:120ms" data-img="asset/series-4.jpg">
+          <span class="featured-item-name">리듬과 소음</span>
+          <span class="featured-item-tag">Video Essay</span>
+        </li>
+        <li class="featured-item reveal" style="transition-delay:160ms" data-img="asset/series-5.jpg">
+          <span class="featured-item-name">무대 뒤 그리고 위</span>
+          <span class="featured-item-tag">Live Capture</span>
+        </li>
+        <li class="featured-item reveal" style="transition-delay:200ms" data-img="asset/series-6.jpg">
+          <span class="featured-item-name">The Long Take</span>
+          <span class="featured-item-tag">Documentary</span>
+        </li>
+        <li class="featured-item reveal" style="transition-delay:280ms" data-img="asset/series-7.jpg">
+          <span class="featured-item-name">서울의 엇박자</span>
+          <span class="featured-item-tag">Documentary</span>
+        </li>
+        <li class="featured-item reveal" style="transition-delay:320ms" data-img="asset/series-8.jpg">
+          <span class="featured-item-name">Resistance | 레지스탕스</span>
+          <span class="featured-item-tag">Film</span>
+        </li>
+        <li class="featured-item reveal" style="transition-delay:360ms" data-img="asset/series-9.jpg">
+          <span class="featured-item-name">애프터 컷!</span>
+          <span class="featured-item-tag">Behind the Scenes</span>
+        </li>
+        <li class="featured-item reveal" style="transition-delay:400ms" data-img="asset/series-10.jpg">
+          <span class="featured-item-name">런 어웨이</span>
+          <span class="featured-item-tag">Short Movie</span>
+        </li>
+      </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CURRENT SECTION ─────────────────────────────────── -->
+  <section class="current-section featured" id="current">
+    <!-- 동영상 배경 — src는 직접 첨부 -->
+    <div class="current-video-bg">
+      <video src="" autoplay muted loop playsinline></video>
+    </div>
+
+    <div class="current-inner">
+      <!-- 타이틀 행 — featured-header-row 재사용 -->
+      <div class="featured-header-row">
+        <h2 class="featured-title reveal">
+          CURRENT<span class="dot">.</span>
+        </h2>
+      </div>
+
+      <!-- desc — featured-layout 좌측 25% 오프셋 맞춤 -->
+      <div class="featured-desc featured-desc--current">
+        <div class="featured-desc-empty"></div>
+        <p class="featured-desc-ko reveal" style="transition-delay:120ms;">
+          지금 OFFRAME은 기록되지 않은 목소리들을 향해 카메라를 들고 있습니다.
+          우리가 주목하는 것은 완성된 무대가 아니라, 그 직전의 긴장과 숨결입니다.
+          각각의 프로젝트는 누군가의 진짜 이야기를 찾아가는 여정이며,
+          우리는 그 과정에서 속도보다 밀도를 선택합니다.
+          지금 이 순간도, OFFRAME은 결정적 장면을 향해 천천히 다가서고 있습니다.
+        </p>
+      </div>
+
+      <!-- 2컬럼 카드 그리드 -->
+      <div class="current-grid">
+        <div class="current-card reveal">
+          <div class="current-card-img">
+            <img src="asset/series-2.jpg" alt="OFFRAME Live Session" />
+          </div>
+          <p class="current-card-title">OFFRAME Live Session</p>
+        </div>
+        <div class="current-card reveal">
+          <div class="current-card-img">
+            <img src="asset/section-1.jpg" alt="Unscripted Vol.2" />
+          </div>
+          <p class="current-card-title">Unscripted Vol.2</p>
+        </div>
+        <div class="current-card reveal">
+          <div class="current-card-img">
+            <img src="asset/series-7.jpg" alt="서울의 엇박자" />
+          </div>
+          <p class="current-card-title">서울의 엇박자 — 시즌 2</p>
+        </div>
+        <div class="current-card reveal">
+          <div class="current-card-img">
+            <img src="asset/series-9.jpg" alt="논픽션" />
+          </div>
+          <p class="current-card-title">애프터 컷!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ────────────────────────────────────────── -->
+  <footer id="contact">
+    <div class="footer-left">
+      <a href="#" class="nav-logo" style="margin-bottom: 24px;">OFFRAME<em>.</em></a>
+      <nav class="footer-pages">
+        <a href="#studio">Studio</a>
+        <a href="#about">About</a>
+        <a href="#series">Stages</a>
+        <a href="#current">Current</a>
+      </nav>
+    </div>
+
+
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 OFFFRAME. All rights reserved.</span>
+      <span class="footer-credit"><a href="#">OFFFRAME Studio</a></span>
+    </div>
+  </footer>
+
+  <!-- ─── SCRIPTS ──────────────────────────────────────── -->
+  <script src="js/main.js"></script>
+</body>
+</html>

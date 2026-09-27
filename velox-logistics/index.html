@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VELOX — 연결이 멈추지 않는 물류 솔루션</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- GNB -->
+  <header class="gnb" id="gnb">
+    <div class="container">
+      <div class="gnb-inner">
+        <a class="gnb-logo" href="#">VELOX</a>
+        <nav class="gnb-nav" aria-label="주요 메뉴">
+          <a class="gnb-nav-link" href="#scale">영향력</a>
+          <a class="gnb-nav-link" href="#network">서비스</a>
+          <a class="gnb-nav-link" href="#flow">플로우</a>
+          <a class="gnb-nav-link" href="#launch">솔루션</a>
+          <a class="gnb-nav-link" href="#vision">비전</a>
+          <a class="gnb-nav-link" href="#news">뉴스</a>
+        </nav>
+        <button class="gnb-hamburger" id="hamburger" aria-label="메뉴 열기" aria-expanded="false" type="button">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <nav class="gnb-mobile-nav" id="mobile-nav" aria-label="모바일 메뉴">
+    <a href="#scale">성장</a>
+    <a href="#network">서비스</a>
+    <a href="#flow">플로우</a>
+    <a href="#launch">솔루션</a>
+    <a href="#vision">비전</a>
+    <a href="#news">뉴스</a>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero-outer" id="hero" aria-label="히어로">
+    <div class="hero-sticky">
+      <video class="hero-video" src="asset/hero-video.mp4" autoplay muted loop playsinline></video>
+
+      <!-- SVG mask: VELOX 글자 모양으로 영상 노출 -->
+      <svg class="hero-mask-svg" id="hero-mask-svg"
+           viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice"
+           xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <mask id="velox-mask">
+            <rect id="velox-mask-bg" width="1920" height="1080" fill="white"/>
+            <g id="velox-cutout">
+              <text
+                x="960" y="560"
+                text-anchor="middle"
+                dominant-baseline="central"
+                font-family="Pretendard, -apple-system, BlinkMacSystemFont, 'Apple SD Gothic Neo', sans-serif"
+                font-weight="800"
+                font-size="216"
+                letter-spacing="-6"
+                fill="black">VELOX</text>
+            </g>
+          </mask>
+        </defs>
+        <rect width="1920" height="1080" fill="#0D0A1A" mask="url(#velox-mask)"/>
+      </svg>
+
+      <!-- 텍스트: 스크롤 완료 후 등장 -->
+      <div class="hero-content" id="hero-text-content">
+        <p class="hero-line1">오늘 출발한 화물은, <br class="br-mo">내일 고객 손에 닿습니다</p>
+        <p class="hero-line2">VELOX는 물류의 <br class="br-mo">새 기준을 씁니다.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 규모 지표 -->
+  <section class="scale" id="scale">
+    <div class="scale-scroll-outer" id="scale-scroll-outer">
+      <div class="scale-sticky">
+        <!-- 좌: 원형 이미지 링 -->
+        <div class="scale-circle-side">
+          <div class="scale-circle-ring" id="scale-circle-ring">
+            <div class="scale-circle-item" style="--ba: 0deg">
+              <img src="asset/launch-1.jpg" alt="">
+            </div>
+            <div class="scale-circle-item" style="--ba: 60deg">
+              <img src="asset/launch-2.jpg" alt="">
+            </div>
+            <div class="scale-circle-item" style="--ba: 120deg">
+              <img src="asset/launch-3.jpg" alt="">
+            </div>
+            <div class="scale-circle-item" style="--ba: 180deg">
+              <img src="asset/launch-4.jpg" alt="">
+            </div>
+            <div class="scale-circle-item" style="--ba: 240deg">
+              <img src="asset/launch-5.jpg" alt="">
+            </div>
+            <div class="scale-circle-item" style="--ba: 300deg">
+              <img src="asset/launch-6.jpg" alt="">
+            </div>
+          </div>
+        </div>
+        <!-- 우: 통계 -->
+        <div class="scale-stats-side">
+          <div class="scale-stats-inner" id="scale-stats-inner">
+            <div class="scale-section-header">
+              <p class="scale-section-title">VELOX의 솔루션이<br>만드는 영향력</p>
+            </div>
+            <div class="scale-stat is-active">
+              <span class="scale-stat-num">250<span class="scale-stat-suffix">개+</span></span>
+              <span class="scale-stat-desc">전국 물류 거점</span>
+            </div>
+            <div class="scale-stat">
+              <span class="scale-stat-num">48<span class="scale-stat-suffix">만 건/일</span></span>
+              <span class="scale-stat-desc">일 처리 물량</span>
+            </div>
+            <div class="scale-stat">
+              <span class="scale-stat-num">99.8<span class="scale-stat-suffix">%</span></span>
+              <span class="scale-stat-desc">SLA 달성률</span>
+            </div>
+            <div class="scale-stat">
+              <span class="scale-stat-num">98<span class="scale-stat-suffix">%</span></span>
+              <span class="scale-stat-desc">전국 배송 커버리지</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 서비스 네트워크 -->
+  <section class="section products" id="network">
+    <div class="container">
+      <h2 class="products-display-title reveal">SERVICE</h2>
+    </div>
+    <div class="products-track" id="products-track">
+
+        <div class="product-card">
+          <svg class="product-card-icon icon-fulfillment" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path pathLength="1" d="M3 20V9l9-5 9 5v11"/>
+            <path d="M2 20h20"/>
+            <rect class="crate crate-1" pathLength="1" x="6.5" y="15" width="5" height="5" rx=".5"/>
+            <rect class="crate crate-2" pathLength="1" x="12.5" y="15" width="5" height="5" rx=".5"/>
+            <rect class="crate crate-3" pathLength="1" x="9.5" y="10" width="5" height="5" rx=".5"/>
+          </svg>
+          <div class="product-card-header">
+            <span class="product-card-arrow">→</span>
+            <p class="product-card-name">풀필먼트 센터</p>
+          </div>
+          <p class="product-card-desc">전국 12개 풀필먼트 거점에서 입고·검수·포장·출고를 일괄 처리합니다. 피크 시즌에도 SLA 99.8% 이상을 유지합니다.</p>
+        </div>
+
+        <div class="product-card">
+          <svg class="product-card-icon icon-lastmile" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="2" cy="19.5" r="1.2" fill="currentColor" stroke="none"/>
+            <path class="route" d="M5 19.5h8.5"/>
+            <g class="pin">
+              <path pathLength="1" d="M16 19.5s-5.5-5-5.5-10a5.5 5.5 0 0 1 11 0c0 5-5.5 10-5.5 10z"/>
+              <circle pathLength="1" cx="16" cy="9.5" r="2"/>
+            </g>
+          </svg>
+          <div class="product-card-header">
+            <span class="product-card-arrow">→</span>
+            <p class="product-card-name">라스트마일 배송</p>
+          </div>
+          <p class="product-card-desc">전국 250개 배송 거점과 자체 배송 기사 네트워크로 익일 배송을 실현합니다. AI 배차로 평균 배송 시간을 23% 단축했습니다.</p>
+        </div>
+
+        <div class="product-card">
+          <svg class="product-card-icon icon-cold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path pathLength="1" d="M7 14V5a2 2 0 0 1 4 0v9a4 4 0 1 1-4 0z"/>
+            <circle class="level" cx="9" cy="17.5" r="1.4" fill="currentColor" stroke="none"/>
+            <g class="flake">
+              <path d="M18 3.5v8"/>
+              <path d="M14.54 5.5l6.92 4"/>
+              <path d="M14.54 9.5l6.92-4"/>
+            </g>
+          </svg>
+          <div class="product-card-header">
+            <span class="product-card-arrow">→</span>
+            <p class="product-card-name">콜드체인 물류</p>
+          </div>
+          <p class="product-card-desc">-25°C부터 상온까지 온도 구간별 전용 창고와 냉장 차량을 운영합니다. 식품·의약품·바이오 제품의 콜드체인 무결성을 보장합니다.</p>
+        </div>
+
+        <div class="product-card">
+          <svg class="product-card-icon icon-return" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <g class="loop">
+              <path pathLength="1" d="M4 12a8 8 0 1 0 2.34-5.66L4 8.5"/>
+              <path d="M4 4v4.5h4.5"/>
+            </g>
+            <rect class="box" pathLength="1" x="10" y="10" width="4" height="4" rx=".75"/>
+          </svg>
+          <div class="product-card-header">
+            <span class="product-card-arrow">→</span>
+            <p class="product-card-name">역물류·반품 관리</p>
+          </div>
+          <p class="product-card-desc">반품 접수부터 검수·재입고·폐기까지 전 과정을 자동화합니다. 반품 처리 시간 평균 24시간 이내, 환불 정산 T+1일을 실현합니다.</p>
+        </div>
+
+        <div class="product-card">
+          <svg class="product-card-icon icon-global" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle pathLength="1" cx="10" cy="14" r="7"/>
+            <path d="M3 14h14"/>
+            <ellipse cx="10" cy="14" rx="3" ry="7"/>
+            <path class="traj" pathLength="1" d="M1 11C3 2 16 2 19 9"/>
+            <circle class="arrive" cx="19" cy="9" r="1.3" fill="currentColor" stroke="none"/>
+          </svg>
+          <div class="product-card-header">
+            <span class="product-card-arrow">→</span>
+            <p class="product-card-name">해외 직배송 포워딩</p>
+          </div>
+          <p class="product-card-desc">동남아 6개국·미주·유럽 직배송 노선을 운영합니다. 통관·세금 처리를 일괄 대행하여 셀러의 해외 진출 장벽을 낮춥니다.</p>
+        </div>
+
+        <div class="product-card">
+          <svg class="product-card-icon icon-platform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect pathLength="1" x="3" y="4.5" width="18" height="15" rx="2"/>
+            <path d="M3 8.5h18"/>
+            <path class="link" pathLength="1" d="M6.5 16l3.5-3 3 2 4.5-3"/>
+            <circle class="node node-1" cx="6.5" cy="16" r="1.2" fill="currentColor" stroke="none"/>
+            <circle class="node node-2" cx="10" cy="13" r="1.2" fill="currentColor" stroke="none"/>
+            <circle class="node node-3" cx="13" cy="15" r="1.2" fill="currentColor" stroke="none"/>
+            <circle class="node node-4" cx="17.5" cy="12" r="1.2" fill="currentColor" stroke="none"/>
+          </svg>
+          <div class="product-card-header">
+            <span class="product-card-arrow">→</span>
+            <p class="product-card-name">공급망 가시성 플랫폼</p>
+          </div>
+          <p class="product-card-desc">화물의 실시간 위치·상태를 대시보드 하나로 확인합니다. ERP·OMS와 API 연동으로 주문부터 배송 완료까지 전 구간을 추적합니다.</p>
+        </div>
+
+    </div>
+  </section>
+
+  <!-- 배송 플로우 -->
+  <section class="flow" id="flow">
+    <div class="flow-waves" aria-hidden="true">
+      <svg class="flow-wave" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,160 C240,280 480,40 720,160 C960,280 1200,40 1440,160 L1440,320 L0,320 Z"/>
+      </svg>
+    </div>
+    <div class="flow-header reveal">
+      <h2 class="flow-display-title">FLOW</h2>
+    </div>
+    <div class="flow-gantt">
+      <div class="flow-gantt-wrap">
+      <div class="flow-grid">
+        <div class="flow-grid-line"></div>
+        <div class="flow-grid-line"></div>
+        <div class="flow-grid-line"></div>
+        <div class="flow-grid-line"></div>
+        <div class="flow-grid-line"></div>
+        <div class="flow-grid-line"></div>
+      </div>
+      <div class="flow-gantt-body" id="flow-gantt-body">
+
+        <div class="flow-bar-row" style="--bar-start: 0%; --bar-width: 20%">
+          <div class="flow-bar-wrapper">
+            <div class="flow-bar" data-flow-idx="0">
+              <span class="flow-bar-label">주문 접수</span>
+            </div>
+          </div>
+          <div class="flow-step-desc">
+            <span class="flow-desc-line">실시간 WMS 자동 등록</span>
+            <span class="flow-desc-line">주문 즉시 재고·경로 사전 배정</span>
+          </div>
+        </div>
+
+        <div class="flow-bar-row" style="--bar-start: 20%; --bar-width: 20%">
+          <div class="flow-bar-wrapper">
+            <div class="flow-bar" data-flow-idx="1">
+              <span class="flow-bar-label">입고·검수</span>
+            </div>
+          </div>
+          <div class="flow-step-desc">
+            <span class="flow-desc-line">자동 스캔·품질 검수 처리</span>
+            <span class="flow-desc-line">불량 감지 시 즉시 반송 알림</span>
+          </div>
+        </div>
+
+        <div class="flow-bar-row" style="--bar-start: 40%; --bar-width: 20%">
+          <div class="flow-bar-wrapper">
+            <div class="flow-bar" data-flow-idx="2">
+              <span class="flow-bar-label">분류·포장</span>
+            </div>
+          </div>
+          <div class="flow-step-desc">
+            <span class="flow-desc-line">AI 최적 포장재·경로 배정</span>
+            <span class="flow-desc-line">박스 낭비 최소화·비용 절감</span>
+          </div>
+        </div>
+
+        <div class="flow-bar-row" style="--bar-start: 60%; --bar-width: 20%">
+          <div class="flow-bar-wrapper">
+            <div class="flow-bar" data-flow-idx="3">
+              <span class="flow-bar-label">간선 운송</span>
+            </div>
+          </div>
+          <div class="flow-step-desc">
+            <span class="flow-desc-line">허브 간 전용 차량 당일 이동</span>
+            <span class="flow-desc-line">실시간 위치 추적·ETA 보장</span>
+          </div>
+        </div>
+
+        <div class="flow-bar-row" style="--bar-start: 80%; --bar-width: 20%">
+          <div class="flow-bar-wrapper">
+            <div class="flow-bar" data-flow-idx="4">
+              <span class="flow-bar-label">배송 완료</span>
+            </div>
+          </div>
+          <div class="flow-step-desc">
+            <span class="flow-desc-line">라스트마일 지정 시간 도착</span>
+            <span class="flow-desc-line">배송 완료 즉시 고객 알림 발송</span>
+          </div>
+        </div>
+
+      </div>
+      <div class="flow-descs-row">
+        <div class="flow-bar-desc" style="--bar-start: 0%; --bar-width: 20%">
+          <span class="flow-desc-line">실시간 WMS 자동 등록</span>
+          <span class="flow-desc-line">주문 즉시 재고·경로 사전 배정</span>
+        </div>
+        <div class="flow-bar-desc" style="--bar-start: 20%; --bar-width: 20%">
+          <span class="flow-desc-line">자동 스캔·품질 검수 처리</span>
+          <span class="flow-desc-line">불량 감지 시 즉시 반송 알림</span>
+        </div>
+        <div class="flow-bar-desc" style="--bar-start: 40%; --bar-width: 20%">
+          <span class="flow-desc-line">AI 최적 포장재·경로 배정</span>
+          <span class="flow-desc-line">박스 낭비 최소화·비용 절감</span>
+        </div>
+        <div class="flow-bar-desc" style="--bar-start: 60%; --bar-width: 20%">
+          <span class="flow-desc-line">허브 간 전용 차량 당일 이동</span>
+          <span class="flow-desc-line">실시간 위치 추적·ETA 보장</span>
+        </div>
+        <div class="flow-bar-desc" style="--bar-start: 80%; --bar-width: 20%">
+          <span class="flow-desc-line">라스트마일 지정 시간 도착</span>
+          <span class="flow-desc-line">배송 완료 즉시 고객 알림 발송</span>
+        </div>
+      </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 신규 출시 -->
+  <section class="new-release" id="launch">
+    <div class="container">
+      <div class="new-release-header reveal">
+        <h2 class="new-release-title">SOLUTION</h2>
+      </div>
+    </div>
+    <div class="new-release-grid">
+
+      <article class="release-card reveal" data-delay="1">
+        <img class="release-card-bg" src="asset/launch-1.jpg" alt="Route Optimizer AI">
+        <div class="release-card-overlay"></div>
+        <div class="release-card-num"><span>01</span></div>
+        <span class="release-card-num-alt">01</span>
+        <div class="release-card-body">
+          <p class="release-card-name">Route Optimizer AI</p>
+          <p class="release-card-desc">수천 건의 배송 건을 밀리초 단위로 계산해 최적 경로를 자동 배정합니다. 배송 비용 평균 18% 절감 효과를 검증했습니다.</p>
+        </div>
+      </article>
+
+      <article class="release-card reveal" data-delay="2">
+        <img class="release-card-bg" src="asset/launch-2.jpg" alt="Dawn Express">
+        <div class="release-card-overlay"></div>
+        <div class="release-card-num"><span>02</span></div>
+        <span class="release-card-num-alt">02</span>
+        <div class="release-card-body">
+          <p class="release-card-name">Dawn Express</p>
+          <p class="release-card-desc">자정 전 입고된 주문은 다음 날 새벽 7시 전 도착 보장. 프리미엄 새벽배송 구독 서비스를 전국 광역시로 확대합니다.</p>
+        </div>
+      </article>
+
+      <article class="release-card reveal" data-delay="3">
+        <img class="release-card-bg" src="asset/launch-3.jpg" alt="FlexHub B2B">
+        <div class="release-card-overlay"></div>
+        <div class="release-card-num"><span>03</span></div>
+        <span class="release-card-num-alt">03</span>
+        <div class="release-card-body">
+          <p class="release-card-name">FlexHub B2B</p>
+          <p class="release-card-desc">중소기업 전용 풀필먼트 허브. 최소 계약 없이 사용량 기반 요금으로 대형 물류 인프라를 즉시 이용할 수 있습니다.</p>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- 비전 -->
+  <section class="expertise" id="vision">
+    <div class="expertise-sticky">
+      <div class="expertise-heading" id="expertise-heading">
+        <span class="expertise-title-word" id="expertise-title-left">Our</span>
+        <span class="expertise-title-word" id="expertise-title-right">Vision</span>
+      </div>
+      <div class="expertise-cards-container" id="expertise-cards-container">
+        <div class="expertise-cards-list" id="expertise-cards-list">
+          <div class="expertise-card">
+            <video class="expertise-card-video" src="asset/card-video-1.mp4" muted loop playsinline preload="none"></video>
+            <div class="expertise-card-overlay"></div>
+            <div class="expertise-card-content">
+              <h3 class="expertise-item-title">Zero Delay</h3>
+              <p class="expertise-item-desc">단 하루의 지연도 없는 물류를 만듭니다. 예외 없는 납기 준수가 고객 신뢰의 시작이라 믿습니다. VELOX의 모든 시스템은 이 한 가지 원칙을 위해 설계됩니다.</p>
+            </div>
+          </div>
+          <div class="expertise-card">
+            <video class="expertise-card-video" src="asset/card-video-2.mp4" muted loop playsinline preload="none"></video>
+            <div class="expertise-card-overlay"></div>
+            <div class="expertise-card-content">
+              <h3 class="expertise-item-title">Full Transparency</h3>
+              <p class="expertise-item-desc">고객이 화물의 모든 순간을 볼 수 있어야 합니다. 우리는 숨기는 것 없이 실시간으로 데이터를 공유하고, 문제가 생기면 먼저 알립니다.</p>
+            </div>
+          </div>
+          <div class="expertise-card">
+            <video class="expertise-card-video" src="asset/card-video-3.mp4" muted loop playsinline preload="none"></video>
+            <div class="expertise-card-overlay"></div>
+            <div class="expertise-card-content">
+              <h3 class="expertise-item-title">Sustainable Move</h3>
+              <p class="expertise-item-desc">다음 세대에도 달릴 수 있는 물류를 지향합니다. 전기 배송 차량 전환과 패키지 최소화, 탄소 배출 측정·감축을 구성원 모두의 과제로 삼습니다.</p>
+            </div>
+          </div>
+          <div class="expertise-card">
+            <video class="expertise-card-video" src="asset/card-video-4.mp4" muted loop playsinline preload="none"></video>
+            <div class="expertise-card-overlay"></div>
+            <div class="expertise-card-content">
+              <h3 class="expertise-item-title">People First</h3>
+              <p class="expertise-item-desc">현장의 사람이 최고의 기술입니다. 배송 기사, 물류 센터 작업자, 고객 지원 담당자 — 이들의 안전과 성장이 VELOX 성장의 유일한 토대입니다.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWS -->
+  <section class="section news" id="news">
+    <div class="container">
+      <h2 class="news-display-title reveal">NEWS</h2>
+    </div>
+    <div class="news-track" id="news-track">
+      <article class="news-card">
+        <span class="news-tag">보도자료</span>
+        <p class="news-title">VELOX, 수도권 풀필먼트 허브 3호점 인천 청라 개소… 총 연면적 12만㎡ 돌파</p>
+        <p class="news-date">2026. 08. 14</p>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">언론기사</span>
+        <p class="news-title">"국내 최초 AI 배차 전면 도입" — VELOX Route Optimizer, 물류 IT 어워드 대상 수상</p>
+        <p class="news-date">2026. 07. 29</p>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">보도자료</span>
+        <p class="news-title">VELOX, 베트남·말레이시아 직배송 노선 신설… 동남아 6개국 커버리지 확보</p>
+        <p class="news-date">2026. 07. 10</p>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">서비스출시</span>
+        <p class="news-title">Dawn Express 새벽배송 구독 서비스, 전국 광역시 전면 확대 시작</p>
+        <p class="news-date">2026. 06. 23</p>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">언론기사</span>
+        <p class="news-title">VELOX 콜드체인 물류, 국내 주요 제약·바이오 기업 공급망 표준으로 채택</p>
+        <p class="news-date">2026. 06. 05</p>
+      </article>
+      <article class="news-card">
+        <span class="news-tag">IR자료</span>
+        <p class="news-title">VELOX 2026 상반기 투자자 설명회 발표 자료 공개</p>
+        <p class="news-date">2026. 05. 19</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- 배너 -->
+  <section class="banner" id="banner">
+    <video class="banner-bg" src="asset/banner-video.mp4" autoplay muted loop playsinline></video>
+    <div class="banner-overlay"></div>
+    <div class="banner-content reveal">
+      <span class="banner-line">연결이 멈추지 않는 한,</span>
+      <span class="banner-line">VELOX는 달립니다.</span>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-info">
+          <p class="footer-info-label">VELOX CO., LTD.</p>
+          <p class="footer-info-text">
+            (주)벨록스 &nbsp;|&nbsp; 주소 : 경기도 이천시 마장면 작당로 24<br>
+            대표전화 : 031-640-7000 &nbsp;|&nbsp; 팩스 : 031-640-7001
+          </p>
+        </div>
+        <div class="footer-contact">
+          <div class="footer-contact-row">
+            <span class="footer-contact-label">고객센터</span>
+            <span class="footer-contact-num">1588-0724</span>
+          </div>
+          <div class="footer-contact-row">
+            <span class="footer-contact-label">화물 접수·문의</span>
+            <span class="footer-contact-num">031-640-7020</span>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-wordmark">VELOX</p>
+        <p class="footer-copy">Copyright © VELOX. ALL RIGHTS RESERVED.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FAB -->
+  <div class="drag-cursor" id="drag-cursor">Drag</div>
+
+  <div class="fab-top is-visible" id="fab-top" role="button" tabindex="0" aria-label="맨 위로 이동">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/>
+    </svg>
+  </div>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>urhome — 공간의 정제</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Custom cursor -->
+  <div id="cursor-dot"></div>
+  <div id="cursor-ring"></div>
+
+  <!-- ═══ Nav ════════════════════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <span class="nav__logo">urhome</span>
+      <ul class="nav__links">
+        <li><a href="#collection" class="nav__link">Collection</a></li>
+        <li><a href="#featured" class="nav__link">Feature</a></li>
+        <li><a href="#journal" class="nav__link">Journal</a></li>
+        <li><a href="#materials" class="nav__link">Materials</a></li>
+        <li><a href="#rooms" class="nav__link">Rooms</a></li>
+        <li><a href="#process" class="nav__link">Process</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ═══ Hero ═══════════════════════════════════════════════ -->
+  <section class="hero">
+    <!-- Background video -->
+    <div class="hero__visual">
+      <video class="hero__video" autoplay muted loop playsinline preload="auto">
+        <source src="asset/hero-video-2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <!-- Gradient overlay -->
+    <div class="hero__overlay"></div>
+    <!-- Scroll hint (vertical, top-right) -->
+    <div class="hero__scroll-hint">
+      <span class="hero__scroll-line"></span>
+      스크롤
+    </div>
+    <!-- Main text content -->
+    <div class="hero__content">
+      <h1 class="hero__headline">
+        <span>모든 방을</span>
+        <span>하나의 섬세한</span>
+        <span>작품으로.</span>
+      </h1>
+      <div class="hero__bottom">
+        <p class="hero__body">우리는 비례와 소재, 절제된 균형을 통해 당신의 공간에<br/>이미 존재하는 건축적 미학을 이끌어내는 가구와 오브제를 디자인합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Collection ═════════════════════════════════════════ -->
+  <section class="section" id="collection">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-eyebrow">신상품</p>
+          <h2 class="section-title">S/S 2026 에디트</h2>
+        </div>
+      </div>
+      <div class="carousel-outer" id="carousel">
+        <div class="carousel-track" id="carouselTrack">
+          <article class="product-card">
+            <div class="ph product-card__img">
+              <img src="asset/chair-4.jpg" alt="엑시스 라운지 체어" class="asset-img">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">의자</span>
+              <h3 class="product-card__name">엑시스 라운지 체어</h3>
+              <p class="product-card__sub">솔리드 오크 / 내추럴 린넨</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="ph product-card__img">
+              <img src="asset/table-1.jpg" alt="블랙 오크 협탁" class="asset-img">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">테이블</span>
+              <h3 class="product-card__name">블랙 오크 협탁</h3>
+              <p class="product-card__sub">착색 스틸 / 대리석</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="ph product-card__img">
+              <img src="asset/shelf-2.jpg" alt="볼륨 벽 선반 유닛" class="asset-img">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">선반</span>
+              <h3 class="product-card__name">볼륨 벽 선반 유닛</h3>
+              <p class="product-card__sub">화이트 애쉬 / 무광 황동</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="ph product-card__img">
+              <img src="asset/sofa-2.jpg" alt="플레인 2인용 소파" class="asset-img">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">소파</span>
+              <h3 class="product-card__name">플레인 2인용 소파</h3>
+              <p class="product-card__sub">월넛 프레임 / 부클레</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="ph product-card__img">
+              <img src="asset/bed-1.jpg" alt="데이텀 평상형 침대" class="asset-img asset-img--pos-left">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">침대</span>
+              <h3 class="product-card__name">데이텀 평상형 침대</h3>
+              <p class="product-card__sub">훈증 오크 / 린넨 혼방</p>
+            </div>
+          </article>
+          <article class="product-card">
+            <div class="ph product-card__img">
+              <img src="asset/lights-1.jpg" alt="서피스 펜던트 조명" class="asset-img">
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__tag">조명</span>
+              <h3 class="product-card__name">서피스 펜던트 조명</h3>
+              <p class="product-card__sub">스펀 황동 / 오팔 글라스</p>
+            </div>
+          </article>
+        </div>
+      </div>
+      <div class="carousel-dots" id="carouselDots" aria-hidden="true">
+        <div class="carousel-dot active"></div>
+        <div class="carousel-dot"></div>
+        <div class="carousel-dot"></div>
+        <div class="carousel-dot"></div>
+        <div class="carousel-dot"></div>
+        <div class="carousel-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Featured Object ════════════════════════════════════ -->
+  <section class="featured" id="featured">
+    <div class="featured__inner">
+      <div class="featured__visual">
+        <div class="ph featured__ph">
+          <img src="asset/chair-3.jpg" alt="메리디안 암체어" class="asset-img">
+        </div>
+        <span class="featured__badge">2026 디자인 어워드</span>
+      </div>
+      <div class="featured__text reveal">
+        <p class="featured__label">이달의 오브제</p>
+        <h2 class="featured__title">메리디안 암체어</h2>
+        <p class="featured__subtitle">솔리드 월넛 / 이탈리안 부클레</p>
+        <p class="featured__desc">휴식과 바른 자세 사이에 우아한 선을 그리는 메리디안 체어는 몸을 기분 좋은 긴장감 속 편안함으로 지탱해 줍니다. 서울 워크숍에서 주문 제작으로 제작되며, 주문 후 배송까지 4주일이 소요됩니다.</p>
+        <div class="featured__specs">
+          <div>
+            <p class="featured__spec-label">크기</p>
+            <p class="featured__spec-val">W 74 × D 80 × H 82 cm</p>
+          </div>
+          <div>
+            <p class="featured__spec-label">제작 기간</p>
+            <p class="featured__spec-val">4–5주</p>
+          </div>
+          <div>
+            <p class="featured__spec-label">제작지</p>
+            <p class="featured__spec-val">대한민국 서울</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Editorial ══════════════════════════════════════════ -->
+  <section class="section editorial" id="journal">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-eyebrow">저널</p>
+          <h2 class="section-title">공간 탐구</h2>
+        </div>
+      </div>
+      <div class="editorial__grid reveal">
+        <div class="editorial__main">
+          <div class="ph editorial__main-ph"></div>
+          <div class="editorial__caption">
+            <p class="editorial__caption-label">2026년 7월 기획전</p>
+            <p class="editorial__caption-title">비어있는 코너가 지닌<br>고요한 힘</p>
+          </div>
+        </div>
+        <div class="editorial__side">
+          <div class="editorial__sub">
+            <div class="ph editorial__sub-ph">
+              <img src="asset/oak.jpg" alt="에디토리얼" class="asset-img">
+            </div>
+            <div class="editorial__sub-caption">
+              <p class="editorial__sub-title">오크목의 영원성에 대하여</p>
+              <p>작업실 바닥에서 시작된 소재 연구, 그리고 30년을 함께할 가구가 나무에 요구하는 자세.</p>
+            </div>
+          </div>
+          <div class="editorial__sub">
+            <div class="ph editorial__sub-ph">
+              <img src="asset/decor-1.jpg" alt="에디토리얼" class="asset-img">
+            </div>
+            <div class="editorial__sub-caption">
+              <p class="editorial__sub-title">작은 아파트, <br class="br-mobile">영감이 되는 아이디어</p>
+              <p>마포의 34m² 공간이 우리에게 가장 영감을 주는 프로젝트가 되기까지의 기록.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Materials ══════════════════════════════════════════ -->
+  <section class="section" id="materials">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-eyebrow">장인정신</p>
+          <h2 class="section-title">소재 팔레트</h2>
+        </div>
+      </div>
+      <div class="materials__grid reveal">
+        <div class="material-card">
+          <div class="ph material-card__swatch">
+            <img src="asset/oak-2.jpg" alt="화이트 오크" class="asset-img">
+          </div>
+          <p class="material-card__name">화이트 오크</p>
+          <p class="material-card__desc">천연 오일 마감 처리된 활엽수. 세월이 흐를수록 따뜻한 앰버 톤으로 깊어집니다.</p>
+        </div>
+        <div class="material-card">
+          <div class="ph material-card__swatch">
+            <img src="asset/steel-1.jpg" alt="착색 스틸" class="asset-img">
+          </div>
+          <p class="material-card__name">착색 스틸</p>
+          <p class="material-card__desc">매트한 산화 마감을 위해 열처리된 냉간 압연 스틸. 사용할수록 길들여지는 멋이 있습니다.</p>
+        </div>
+        <div class="material-card">
+          <div class="ph material-card__swatch">
+            <img src="asset/boucle.jpg" alt="이탈리안 부클레" class="asset-img">
+          </div>
+          <p class="material-card__name">이탈리안 부클레</p>
+          <p class="material-card__desc">비엘라산 입체 루프 울 혼방. 탄성력이 좋고 따뜻하며 정전기를 방지합니다.</p>
+        </div>
+        <div class="material-card">
+          <div class="ph material-card__swatch">
+            <img src="asset/marble.jpg" alt="네로 마르키나" class="asset-img">
+          </div>
+          <p class="material-card__name">네로 마르키나</p>
+          <p class="material-card__desc">흰색 베인이 돋보이는 스페인산 블랙 대리석. 석판마다 고유한 패턴을 가집니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Shop by Room ═══════════════════════════════════════ -->
+<!-- ═══ Shop by Room ═══════════════════════════════════════ -->
+  <section class="section rooms" id="rooms">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-eyebrow">탐색</p>
+          <h2 class="section-title">공간별 쇼핑</h2>
+        </div>
+      </div>
+
+      <!-- [모바일 전용] 탭 버튼 바 -->
+      <div class="rooms__tabs" role="tablist">
+        <button class="room-tab active" role="tab" data-room="0">거실</button>
+        <button class="room-tab" role="tab" data-room="1">침실</button>
+        <button class="room-tab" role="tab" data-room="2">다이닝</button>
+        <button class="room-tab" role="tab" data-room="3">서재</button>
+      </div>
+
+      <!-- 카드 그리드 (모바일에서는 활성화된 카드 1개만 노출) -->
+      <div class="rooms__grid reveal">
+        <div class="room-card active" data-room-index="0">
+          <div class="ph" data-label="거실">
+            <img src="asset/living-room-1.jpg" alt="거실" class="asset-img">
+          </div>
+          <div class="room-card__label">거실</div>
+        </div>
+        <div class="room-card" data-room-index="1">
+          <div class="ph" data-label="침실">
+            <img src="asset/bed-room-2.jpg" alt="침실" class="asset-img">
+          </div>
+          <div class="room-card__label">침실</div>
+        </div>
+        <div class="room-card" data-room-index="2">
+          <div class="ph" data-label="다이닝">
+            <img src="asset/dining-room-1.jpg" alt="다이닝" class="asset-img">
+          </div>
+          <div class="room-card__label">다이닝</div>
+        </div>
+        <div class="room-card" data-room-index="3">
+          <div class="ph" data-label="서재">
+            <img src="asset/study-1.jpg" alt="서재" class="asset-img">
+          </div>
+          <div class="room-card__label">서재</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Process ════════════════════════════════════════════ -->
+  <section class="section process" id="process">
+    <div class="container">
+      <div class="section-header reveal">
+        <div>
+          <p class="section-eyebrow">작업 방식</p>
+          <h2 class="section-title">첫 번째 선에서 완벽한 공간까지</h2>
+        </div>
+      </div>
+      <div class="process__steps reveal">
+        <div class="process__step">
+          <p class="process__num">01</p>
+          <div class="ph process__ph" data-label="상담">
+            <img src="asset/consult.jpg" alt="상담" class="asset-img">
+          </div>
+          <p class="process__title">상담</p>
+          <p class="process__desc">고객이 공간을 누리는 방식 — 빛의 흐름, 하루의 리듬, 이미 소중히 다루는 오브제들에 대한 대화로 시작합니다.</p>
+        </div>
+        <div class="process__step">
+          <p class="process__num">02</p>
+          <div class="ph process__ph" data-label="디자인">
+            <img src="asset/design.jpg" alt="디자인 및 사양 결정" class="asset-img">
+          </div>
+          <p class="process__title">디자인 및 사양 결정</p>
+          <p class="process__desc">모든 치수는 공간 그 자체에서 도출됩니다. 재단에 들어가기 전 상세 도면과 소재 샘플을 제작하여 점검합니다.</p>
+        </div>
+        <div class="process__step">
+          <p class="process__num">03</p>
+          <div class="ph process__ph" data-label="제작">
+            <img src="asset/workshop.jpg" alt="워크숍 제작" class="asset-img">
+          </div>
+          <p class="process__title">워크숍 제작</p>
+          <p class="process__desc">서울 워크숍의 7인 장인 팀이 만듭니다. 모든 제품은 수작업으로 제작·마감되며, 서명 후 배송됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Philosophy ═════════════════════════════════════════ -->
+  <section class="section philosophy" id="about">
+    <div class="container">
+      <div class="philosophy__inner">
+        <div class="reveal">
+          <p class="philosophy__label">우리의 철학</p>
+          <h2 class="philosophy__headline">모든 프로젝트는<br>단 하나의 선에서 시작됩니다.</h2>
+          <p class="philosophy__body">그 선은 이어질 모든 요소를 규율하는 중심축이 됩니다. 우리는 가장 깊은 울림을 주는 인테리어는 의도적인 덜어냄을 통해, 공간에 늘 존재해 온 기하학적 형태를 드러낼 때 만들어진다고 믿습니다.</p>
+          <div class="philosophy__stats">
+            <div>
+              <div class="stat-num" data-counter data-target="14" data-suffix="년">0</div>
+              <div class="stat-label">디자인 경력</div>
+            </div>
+            <div>
+              <div class="stat-num" data-counter data-target="320" data-suffix="+">0</div>
+              <div class="stat-label">완성된 프로젝트</div>
+            </div>
+            <div>
+              <div class="stat-num" data-counter data-target="12">0</div>
+              <div class="stat-label">디자인 수상</div>
+            </div>
+          </div>
+        </div>
+        <div class="philosophy__visual reveal">
+          <div class="philosophy__ph-main">
+            <div class="ph" data-label="스튜디오 사진">
+              <img src="asset/studio.jpg" alt="스튜디오" class="asset-img">
+            </div>
+          </div>
+          <div class="philosophy__ph-pair">
+            <div class="ph" data-label="디테일">
+              <img src="asset/studio-inside.jpg" alt="디테일" class="asset-img">
+            </div>
+            <div class="ph" data-label="소재">
+              <img src="asset/material.jpg" alt="소재" class="asset-img">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Newsletter ═════════════════════════════════════════ -->
+  <section class="section newsletter">
+    <div class="container">
+      <div class="newsletter__inner reveal">
+        <p class="newsletter__eyebrow">구독하기</p>
+        <h2 class="newsletter__headline">새로운 컬렉션. 스튜디오 노트. 차분한 소식.</h2>
+        <p class="newsletter__sub">한 달에 한 번 전달되는 우리들의 이야기입니다.<br>우리가 사랑하는 오브제, 마음을 움직인 공간, 스튜디오의 최근 소식을 전합니다.</p>
+        <form class="newsletter__form" onsubmit="return false;">
+          <input class="newsletter__input" type="email" placeholder="your@email.com" />
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__body">
+          <p class="footer__brand-name">urhome</p>
+          <p class="footer__brand-desc">일상의 공간을 위한 건축적 미니멀리즘. <br class="br-mobile" />서울을 기반으로 미학을 정제합니다.</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 urhome Co., Ltd. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══ Scripts ════════════════════════════════════════════ -->
+  <script src="js/main.js"></script>
+</body>
+</html>

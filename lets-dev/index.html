@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lets — AI·개발 부트캠프</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAV ─────────────────────────────────────────────────── -->
+  <nav class="nav" id="nav">
+    <div class="nav__row">
+      <a href="#" class="nav__logo">Lets<span>.</span></a>
+      <ul class="nav__links">
+        <li><a href="#courses" class="nav__link">강의</a></li>
+        <li><a href="#how" class="nav__link">수강 방법</a></li>
+        <li><a href="#instructors" class="nav__link">강사진</a></li>
+        <li><a href="#" class="nav__link">커리어</a></li>
+      </ul>
+      <div class="nav__r">
+        <button class="btn btn-a btn-sm">지금 시작하기</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO ────────────────────────────────────────────────── -->
+  <section class="hero" data-bg="#07071a" data-theme="dark">
+    <div class="hero__bg"></div>
+
+    <!-- 좌상단 꺽쇠 ┌ : 오른쪽 위(55,5)에서 왼쪽으로, 그 다음 아래로 -->
+    <svg class="hero__bracket hero__bracket--tl" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 55 5 L 5 5 L 5 55" />
+    </svg>
+
+    <!-- 우하단 꺽쇠 ┘ : 왼쪽 아래(5,55)에서 오른쪽으로, 그 다음 위로 -->
+    <svg class="hero__bracket hero__bracket--br" width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+      <path d="M 5 55 L 55 55 L 55 5" />
+    </svg>
+
+    <div class="hero__inner">
+      <p class="hero__eyebrow">수년 뒤에도 살아남을 개발자의 필수 조건</p>
+      <h1 class="t-disp hero__h">
+        만드는 법을 알면<br>아무것도 두렵지 않습니다<em>.</em>
+      </h1>
+
+      <!-- Info cards -->
+      <div class="hero__cards">
+        <div class="hero__card">
+          <span class="hero__card-val">수강 방법</span>
+          <span class="hero__card-key">온라인 100%</span>
+          <span class="hero__card-sub">오프라인 실시간 피드백 포함</span>
+        </div>
+        <div class="hero__card">
+          <span class="hero__card-val">수강 기간</span>
+          <span class="hero__card-key">6 ~ 12주</span>
+          <span class="hero__card-sub">수료 후 포트폴리오 피드백 3개월 포함</span>
+        </div>
+        <div class="hero__card hero__card--accent">
+          <span class="hero__card-val">프로젝트 완성률</span>
+          <span class="hero__card-big">94%</span>
+          <span class="hero__card-sub">수강생 대상 해커톤 제출 가능</span>
+        </div>
+        <div class="hero__card">
+          <span class="hero__card-val">과정 소개</span>
+          <span class="hero__card-key">AI 활용 개발</span>
+          <span class="hero__card-sub">Claude Code Pro 포함</span>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="hero__cta-wrap">
+        <button class="btn btn-a hero__cta">지금 시작하기 →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUTCOMES ────────────────────────────────────────────── -->
+  <section class="sec sec--warm" data-bg="#FFFCF6" data-theme="light">
+    <div class="wrap">
+      <div class="rv">
+        <h2 class="t-h1 sec__title" style="color:#1c1c1c; margin-bottom:0;">강의가 끝나면<br>포트폴리오가 생깁니다.</h2>
+      </div>
+      <div class="outcomes__grid rv">
+        <div class="out-card out-card--full">
+          <div>
+            <div class="out-card__num">94%</div>
+            <h3 class="out-card__title">프로젝트 완성률</h3>
+            <p class="out-card__desc">대부분의 부트캠프는 강의만 제공합니다.<br>Lets는 실제로 작동하는 제품을 만들기 전까지 끝나지 않습니다. 그래서 94%가 완주합니다.</p>
+          </div>
+          <div class="out-card__visual">
+            <img src="asset/people.jpg" alt="프로젝트-이미지">
+          </div>
+        </div>
+        <div class="out-card">
+          <div class="out-card__num">3.2배</div>
+          <h3 class="out-card__title">평균 연봉 상승</h3>
+          <p class="out-card__desc">수료 후 6개월 내 취업한 수강생 기준. 포트폴리오가 달라지면 연봉이 달라집니다.</p>
+        </div>
+        <div class="out-card">
+          <div class="out-card__num">6주</div>
+          <h3 class="out-card__title">첫 제품 런칭까지</h3>
+          <p class="out-card__desc">빠른 트랙 기준. 6주 만에 실제로 운영 가능한 서비스를 만들고 배포합니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS ────────────────────────────────────────── -->
+  <section class="sec sec--dark" id="how" data-bg="#161616" data-theme="dark">
+    <div class="wrap">
+      <div class="rv">
+        <h2 class="t-h1" style="margin-bottom:0;">신청부터 런칭까지,<br>단 3단계입니다.</h2>
+      </div>
+      <div class="how__row rv">
+        <div class="how-step">
+          <div class="how-step__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8.5" stroke="#F66F00" stroke-width="1.6" stroke-opacity=".6"/><circle cx="12" cy="12" r="5" stroke="#F66F00" stroke-width="1.6"/><circle cx="12" cy="12" r="2.2" fill="#F66F00"/><line x1="12" y1="2" x2="12" y2="5" stroke="#F66F00" stroke-width="1.6" stroke-linecap="round"/><line x1="12" y1="19" x2="12" y2="22" stroke="#F66F00" stroke-width="1.6" stroke-linecap="round"/><line x1="2" y1="12" x2="5" y2="12" stroke="#F66F00" stroke-width="1.6" stroke-linecap="round"/><line x1="19" y1="12" x2="22" y2="12" stroke="#F66F00" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+          <h3 class="how-step__title">트랙 선택</h3>
+          <p class="how-step__desc">목표에 맞는 커리큘럼을 고르세요. AI부터 풀스택, 데이터, 모바일까지. 어디서든 시작할 수 있습니다.</p>
+          <span class="how-step__tag">→ 무료 상담 가능</span>
+        </div>
+        <div class="how-step">
+          <div class="how-step__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7 8.5L3.5 12L7 15.5" stroke="#F66F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M17 8.5L20.5 12L17 15.5" stroke="#F66F00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M14.5 5.5L10 18.5" stroke="#F66F00" stroke-width="2" stroke-linecap="round" stroke-opacity=".75"/></svg></div>
+          <h3 class="how-step__title">프로젝트 빌드</h3>
+          <p class="how-step__desc">강의를 들으며 실제로 작동하는 제품을 만듭니다. 코드리뷰와 주 1회 멘토링 세션이 함께합니다.</p>
+          <span class="how-step__tag">→ 현직 멘토 배정</span>
+        </div>
+        <div class="how-step">
+          <div class="how-step__icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C12 2 18.5 4.5 18.5 11C18.5 14.5 16.5 17 14 18L12 21.5L10 18C7.5 17 5.5 14.5 5.5 11C5.5 4.5 12 2 12 2Z" fill="#F66F00" fill-opacity=".2" stroke="#F66F00" stroke-width="1.6" stroke-linejoin="round"/><circle cx="12" cy="10.5" r="3" fill="#F66F00"/><path d="M10 18.5L9 22L12 20.5L15 22L14 18.5" fill="#F66F00" fill-opacity=".55"/></svg></div>
+          <h3 class="how-step__title">커리어 런칭</h3>
+          <p class="how-step__desc">완성된 포트폴리오로 취업하거나, 직접 서비스를 세상에 내보내세요. Lets가 끝까지 함께합니다.</p>
+          <span class="how-step__tag">→ 취업 연결 지원</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES ─────────────────────────────────────────────── -->
+  <section class="sec" id="courses" data-bg="#0d0d0d" data-theme="dark">
+    <div class="wrap">
+      <div class="courses__hd rv">
+        <div>
+          <h2 class="t-h1" style="margin-bottom:0;">Lets 커리큘럼</h2>
+        </div>
+      </div>
+      <div class="courses__grid">
+        <div class="cc rv">
+          <div class="cc__thumb">
+            <img src="asset/1.png" alt="AI 프롬프트 엔지니어링 실전" />
+          </div>
+          <div class="cc__body">
+            <div class="cc__tags"><span class="badge badge-a">AI</span><span class="badge badge-a">인기</span></div>
+            <h3 class="cc__name">AI 프롬프트 엔지니어링 실전</h3>
+            <div class="cc__meta">
+              <span class="cc__mi">8주</span><span class="cc__sep"></span>
+              <span class="cc__mi">입문</span><span class="cc__sep"></span>
+              <span class="cc__mi">3,240명 수강</span>
+            </div>
+          </div>
+        </div>
+        <div class="cc rv">
+          <div class="cc__thumb">
+            <img src="asset/2.png" alt="React 풀스택 개발 부트캠프" />
+          </div>
+          <div class="cc__body">
+            <div class="cc__tags"><span class="badge badge-b">웹개발</span></div>
+            <h3 class="cc__name">React 풀스택 개발 부트캠프</h3>
+            <div class="cc__meta">
+              <span class="cc__mi">12주</span><span class="cc__sep"></span>
+              <span class="cc__mi">중급</span><span class="cc__sep"></span>
+              <span class="cc__mi">2,810명 수강</span>
+            </div>
+          </div>
+        </div>
+        <div class="cc rv">
+          <div class="cc__thumb"><img src="asset/3.png" alt="Python 데이터 분석 & 시각화" /></div>
+          <div class="cc__body">
+            <div class="cc__tags"><span class="badge badge-b">데이터</span></div>
+            <h3 class="cc__name">Python 데이터 분석 & 시각화</h3>
+            <div class="cc__meta">
+              <span class="cc__mi">10주</span><span class="cc__sep"></span>
+              <span class="cc__mi">입문</span><span class="cc__sep"></span>
+              <span class="cc__mi">1,980명 수강</span>
+            </div>
+          </div>
+        </div>
+        <div class="cc rv">
+          <div class="cc__thumb">
+            <img src="asset/4.png" alt="iOS 앱 개발 입문 with Swift" />
+          </div>
+          <div class="cc__body">
+            <div class="cc__tags"><span class="badge badge-b">모바일</span></div>
+            <h3 class="cc__name">iOS 앱 개발 입문 with Swift</h3>
+            <div class="cc__meta">
+              <span class="cc__mi">10주</span><span class="cc__sep"></span>
+              <span class="cc__mi">입문</span><span class="cc__sep"></span>
+              <span class="cc__mi">1,540명 수강</span>
+            </div>
+          </div>
+        </div>
+        <div class="cc rv">
+          <div class="cc__thumb">
+            <img src="asset/5.png" alt="NoCode로 SaaS 만들기" />
+          </div>
+          <div class="cc__body">
+            <div class="cc__tags"><span class="badge badge-b">NoCode</span><span class="badge badge-a">신규</span></div>
+            <h3 class="cc__name">NoCode로 SaaS 만들기</h3>
+            <div class="cc__meta">
+              <span class="cc__mi">6주</span><span class="cc__sep"></span>
+              <span class="cc__mi">입문</span><span class="cc__sep"></span>
+              <span class="cc__mi">920명 수강</span>
+            </div>
+          </div>
+        </div>
+        <div class="cc rv">
+          <div class="cc__thumb">
+            <img src="asset/6.png" alt="백엔드 API 설계 with Node.js" />
+          </div>
+          <div class="cc__body">
+            <div class="cc__tags"><span class="badge badge-b">백엔드</span></div>
+            <h3 class="cc__name">백엔드 API 설계 with Node.js</h3>
+            <div class="cc__meta">
+              <span class="cc__mi">8주</span><span class="cc__sep"></span>
+              <span class="cc__mi">중급</span><span class="cc__sep"></span>
+              <span class="cc__mi">1,210명 수강</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="courses__dots" id="coursesDots" style="display:none;"></div>
+    </div>
+  </section>
+
+  <!-- INSTRUCTORS ─────────────────────────────────────────── -->
+  <section class="sec sec--warm" id="instructors" data-bg="#FFFCF6" data-theme="light">
+    <div class="wrap">
+      <div class="rv">
+        <h2 class="t-h1" style="color:#1c1c1c; margin-bottom:12px;">현업 종사자들의 <br/>실전 경험을 공유합니다.</h2>
+      </div>
+      <div class="ins__grid">
+        <div class="ic rv">
+          <div class="ic__body">
+            <h3 class="ic__name">이소연</h3>
+            <p class="ic__role">Google AI Research · AI 엔지니어</p>
+            <div class="ic__tags">
+              <span class="badge badge-b">AI / ML</span>
+              <span class="badge badge-b">프롬프트 엔지니어링</span>
+              <span class="badge badge-b">LLM</span>
+            </div>
+          </div>
+          <div class="ic__photo">
+            <img src="asset/person-2.png" alt="이소연" />
+          </div>
+        </div>
+        <div class="ic rv">
+          <div class="ic__body">
+            <h3 class="ic__name">김지훈</h3>
+            <p class="ic__role">전 Kakao · 시니어 풀스택 엔지니어</p>
+            <div class="ic__tags">
+              <span class="badge badge-b">React</span>
+              <span class="badge badge-b">Node.js</span>
+              <span class="badge badge-b">시스템 설계</span>
+            </div>
+          </div>
+          <div class="ic__photo">
+            <img src="asset/person-1.png" alt="김지훈" />
+          </div>
+        </div>
+        <div class="ic rv">
+          <div class="ic__body">
+            <h3 class="ic__name">박민준</h3>
+            <p class="ic__role">Y Combinator 수료 · 창업자</p>
+            <div class="ic__tags">
+              <span class="badge badge-b">Python</span>
+              <span class="badge badge-b">데이터 분석</span>
+              <span class="badge badge-b">스타트업</span>
+            </div>
+          </div>
+          <div class="ic__photo">
+            <img src="asset/person-1.png" alt="박민준" />
+          </div>
+        </div>
+      </div>
+      <div class="ins__dots" id="insDots" style="display:none;"></div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIAL ─────────────────────────────────────────── -->
+  <section class="testi" data-bg="#161616" data-theme="dark">
+    <div class="wrap">
+      <div class="testi__carousel">
+        <div class="testi__overflow">
+          <div class="testi__track" id="testiTrack">
+
+            <!-- Slide 1 -->
+            <div class="testi__inner">
+              <div>
+                <p class="t-h1">
+                  처음에는 코드 한 줄 못 썼어요.<br>
+                  6개월 뒤, <em>직접 만든 앱</em>이<br>앱스토어에 올라갔습니다.
+                </p>
+                <div class="testi__attr">
+                  <div>
+                    <p class="testi__name">박세영</p>
+                    <p class="testi__sub">Lets iOS 트랙 수료 · 현 iOS 개발자</p>
+                  </div>
+                </div>
+              </div>
+              <div class="testi__result">
+                <div class="testi__stat">
+                  <div class="testi__stat-n"><em>6</em>개월</div>
+                  <p class="testi__stat-l">수강 시작부터 취업까지</p>
+                </div>
+                <div class="testi__divider"></div>
+                <div class="testi__stat">
+                  <div class="testi__stat-n"><em>2.8</em>×</div>
+                  <p class="testi__stat-l">이전 연봉 대비 상승</p>
+                </div>
+                <div class="testi__divider"></div>
+                <div class="testi__stat">
+                  <div class="testi__stat-n"><em>1</em>개</div>
+                  <p class="testi__stat-l">취업 지원 회사 수 (즉시 합격)</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="testi__inner">
+              <div>
+                <p class="t-h1">
+                  Python도 몰랐던 제가<br>
+                  지금은 <em>데이터로 의사결정</em>하는<br>팀을 이끌고 있습니다.
+                </p>
+                <div class="testi__attr">
+                  <div>
+                    <p class="testi__name">김민서</p>
+                    <p class="testi__sub">Lets 데이터 트랙 수료 · 현 데이터 분석가</p>
+                  </div>
+                </div>
+              </div>
+              <div class="testi__result">
+                <div class="testi__stat">
+                  <div class="testi__stat-n"><em>8</em>주</div>
+                  <p class="testi__stat-l">첫 분석 프로젝트 완성까지</p>
+                </div>
+                <div class="testi__divider"></div>
+                <div class="testi__stat">
+                  <div class="testi__stat-n"><em>3.1</em>×</div>
+                  <p class="testi__stat-l">이전 연봉 대비 상승</p>
+                </div>
+                <div class="testi__divider"></div>
+                <div class="testi__stat">
+                  <div class="testi__stat-n"><em>4</em>개사</div>
+                  <p class="testi__stat-l">동시 오퍼를 받은 기업 수</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="testi__inner">
+              <div>
+                <p class="t-h1">
+                  퇴근 후 3개월 만에<br>
+                  사이드 프로젝트가<br><em>월 매출 800만 원</em>을 찍었습니다.
+                </p>
+                <div class="testi__attr">
+                  <div>
+                    <p class="testi__name">이준혁</p>
+                    <p class="testi__sub">Lets React 트랙 수료 · 인디 해커</p>
+                  </div>
+                </div>
+              </div>
+              <div class="testi__result">
+                <div class="testi__stat">
+                  <div class="testi__stat-n"><em>3</em>개월</div>
+                  <p class="testi__stat-l">수강 시작부터 첫 매출까지</p>
+                </div>
+                <div class="testi__divider"></div>
+                <div class="testi__stat">
+                  <div class="testi__stat-n"><em>800</em>만</div>
+                  <p class="testi__stat-l">월 매출 (런칭 6개월 차)</p>
+                </div>
+                <div class="testi__divider"></div>
+                <div class="testi__stat">
+                  <div class="testi__stat-n"><em>0</em>원</div>
+                  <p class="testi__stat-l">외주 없이 혼자 만든 비용</p>
+                </div>
+              </div>
+            </div>
+
+          </div><!-- /track -->
+        </div><!-- /overflow -->
+
+        <div class="testi__footer">
+          <div class="testi__dots" id="testiDots">
+            <button class="testi__dot testi__dot--active"></button>
+            <button class="testi__dot"></button>
+            <button class="testi__dot"></button>
+          </div>
+          <div class="testi__arrows">
+            <button class="testi__arrow" id="testiPrev">←</button>
+            <button class="testi__arrow" id="testiNext">→</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA CLOSE ───────────────────────────────────────────── -->
+  <section class="ctaclose" data-bg="#f66f00" data-theme="dark">
+    <div class="wrap">
+      <div class="ctaclose__in rv">
+        <h2 class="t-h1 ctaclose__h">아이디어가 있다면,<br>이미 절반은 된 겁니다.</h2>
+        <p class="ctaclose__s">AI 시대의 리더, Lets로 도전해보세요.</p>
+        <div class="ctaclose__pw">
+          <div class="pill">
+            <input type="email" placeholder="이메일 주소 입력" />
+            <button>신청하기</button>
+          </div>
+        </div>
+        <p class="ctaclose__n">이미 12,400명이 함께하고 있습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER ──────────────────────────────────────────────── -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__top">
+        <div>
+          <p class="footer__logo">Lets<span>.</span></p>
+          <p class="footer__tag">만드는 사람이 되는 가장 빠른 방법.</p>
+        </div>
+      </div>
+      <div class="footer__bot">
+        <p class="footer__copy">© 2025 Lets, Inc.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/main.js"></script>
+
+  <!-- COURSES CAROUSEL (mobile) ──────────────────────────────── -->
+  <script src="js/main.js"></script>
+
+  <!-- INSTRUCTORS CAROUSEL (mobile) ─────────────────────────── -->
+  <script src="js/main.js"></script>
+
+  <!-- CUSTOM CURSOR ───────────────────────────────────────── -->
+  <script src="js/main.js"></script>
+
+  <!-- FLOATING CTA BAR ────────────────────────────────────── -->
+  <div class="float-bar float-bar--hidden">
+    <p class="float-bar__text">
+      <strong>인턴십 기회까지! </strong><br class="mo-br">지금 시작하면 <em>Claude Code </em>포함
+    </p>
+    <button class="float-bar__btn">신청하기</button>
+  </div>
+  <script src="js/main.js"></script>
+
+</body>
+</html>
