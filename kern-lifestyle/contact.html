@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KERN — Contact</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="contact">
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- GNB -->
+  <header class="gnb">
+    <a class="gnb__logo" href="index.html">KERN</a>
+    <div class="gnb__wrap" id="gnbWrap">
+      <div class="gnb__toggle" role="button" tabindex="0" aria-label="메뉴" aria-expanded="false">
+        <svg class="gnb__icon gnb__icon--ham" viewBox="0 0 14 10" fill="none" width="14" height="10" aria-hidden="true">
+          <path d="M0 1H14M0 5H14M0 9H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="gnb__icon gnb__icon--close" viewBox="0 0 12 12" fill="none" width="12" height="12" aria-hidden="true">
+          <path d="M1 1L11 11M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="gnb__label" aria-hidden="true">menu</span>
+      <nav class="gnb__nav" aria-label="주요 메뉴">
+        <a class="gnb__item" href="index.html" data-page="index">
+          <svg class="gnb__bullet" viewBox="0 0 6 6" width="6" height="6" aria-hidden="true"><circle cx="3" cy="3" r="3" fill="currentColor"/></svg>
+          Collections
+        </a>
+        <a class="gnb__item" href="about.html" data-page="about">
+          <svg class="gnb__bullet" viewBox="0 0 6 6" width="6" height="6" aria-hidden="true"><circle cx="3" cy="3" r="3" fill="currentColor"/></svg>
+          About
+        </a>
+        <a class="gnb__item" href="contact.html" data-page="contact">
+          <svg class="gnb__bullet" viewBox="0 0 6 6" width="6" height="6" aria-hidden="true"><circle cx="3" cy="3" r="3" fill="currentColor"/></svg>
+          Contact
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contact Modal -->
+  <div class="modal" id="contactModal" role="dialog" aria-modal="true" aria-label="문의 양식" aria-hidden="true">
+    <div class="modal__box">
+      <span class="modal__close" id="modalClose" role="button" tabindex="0" aria-label="닫기">×</span>
+      <h3 class="modal__title">문의하기</h3>
+      <p class="modal__desc">아래 내용을 작성해 주시면 2영업일 이내 답변드립니다.</p>
+      <div class="modal__form">
+        <input class="modal__input" type="text" placeholder="이름" aria-label="이름">
+        <input class="modal__input" type="email" placeholder="이메일" aria-label="이메일">
+        <textarea class="modal__textarea" placeholder="문의 내용을 입력해 주세요." aria-label="문의 내용" rows="5"></textarea>
+        <span class="modal__submit" id="modalSubmit" role="button" tabindex="0">보내기 →</span>
+      </div>
+    </div>
+    <div class="modal__overlay" id="modalOverlay"></div>
+  </div>
+
+  <main class="contact-page">
+    <div class="contact-layout">
+
+      <div class="contact-left">
+        <h1 class="contact-title reveal">KERN과<br>함께하세요</h1>
+        <p class="contact-intro reveal">구매 문의, 리셀러 파트너십, 프레스 문의 모두 환영합니다.</p>
+
+        <div class="contact-details reveal">
+          <div class="contact-detail">
+            <span class="contact-detail__label">Head office</span>
+            <p class="contact-detail__value">서울시 성동구 서울숲2길 32<br>KERN Studio 2F</p>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__label">Mail</span>
+            <p class="contact-detail__value">info@kern-studio.kr</p>
+          </div>
+          <div class="contact-detail">
+            <span class="contact-detail__label">Phone</span>
+            <p class="contact-detail__value">+82 2 1234 5678</p>
+          </div>
+        </div>
+
+        <div class="contact-cards reveal">
+          <div class="contact-card" id="contactFormCard" role="button" tabindex="0" aria-label="문의 양식 열기">
+            <div>
+              <p class="contact-card__sub">문의하기</p>
+              <p class="contact-card__title">양식 작성</p>
+            </div>
+            <span class="contact-card__arrow">→</span>
+          </div>
+          <div class="contact-card" id="contactPartnerCard" role="button" tabindex="0" aria-label="리셀러 파트너십 문의">
+            <div>
+              <p class="contact-card__sub">파트너십</p>
+              <p class="contact-card__title">리셀러 문의</p>
+            </div>
+            <span class="contact-card__arrow">→</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-right reveal">
+        <div class="contact-image"></div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__cols">
+      <div class="footer__col">
+        <a class="footer__nav-link" href="index.html">Collections</a>
+        <a class="footer__nav-link" href="about.html">About</a>
+        <a class="footer__nav-link" href="contact.html">Contact</a>
+      </div>
+      <div class="footer__col footer__col--info">
+        <p>info@kern-studio.kr</p>
+        <p>+82 2 1234 5678</p>
+        <p>서울시 성동구 서울숲2길 32</p>
+        <div class="footer__social">
+          <span class="footer__social-link" role="button" tabindex="0" aria-label="인스타그램">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div class="footer__col footer__col--nl">
+        <div class="footer__newsletter">
+          <p class="footer__nl-title">뉴스레터</p>
+          <p class="footer__nl-desc">새 컬렉션 출시와 브랜드 이야기를 가장 먼저 받아보세요.</p>
+          <div class="footer__nl-form">
+            <input class="footer__nl-input" type="email" id="nlEmail" placeholder="이메일 주소를 입력해 주세요." aria-label="이메일 주소">
+            <span class="footer__nl-submit" id="nlSubmit" role="button" tabindex="0">구독 →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© KERN 2026</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

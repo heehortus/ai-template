@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KERN — About</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="about">
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <!-- GNB -->
+  <header class="gnb">
+    <a class="gnb__logo" href="index.html">KERN</a>
+    <div class="gnb__wrap" id="gnbWrap">
+      <div class="gnb__toggle" role="button" tabindex="0" aria-label="메뉴" aria-expanded="false">
+        <svg class="gnb__icon gnb__icon--ham" viewBox="0 0 14 10" fill="none" width="14" height="10" aria-hidden="true">
+          <path d="M0 1H14M0 5H14M0 9H14" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <svg class="gnb__icon gnb__icon--close" viewBox="0 0 12 12" fill="none" width="12" height="12" aria-hidden="true">
+          <path d="M1 1L11 11M11 1L1 11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <span class="gnb__label" aria-hidden="true">menu</span>
+      <nav class="gnb__nav" aria-label="주요 메뉴">
+        <a class="gnb__item" href="index.html" data-page="index">
+          <svg class="gnb__bullet" viewBox="0 0 6 6" width="6" height="6" aria-hidden="true"><circle cx="3" cy="3" r="3" fill="currentColor"/></svg>
+          Collections
+        </a>
+        <a class="gnb__item" href="about.html" data-page="about">
+          <svg class="gnb__bullet" viewBox="0 0 6 6" width="6" height="6" aria-hidden="true"><circle cx="3" cy="3" r="3" fill="currentColor"/></svg>
+          About
+        </a>
+        <a class="gnb__item" href="contact.html" data-page="contact">
+          <svg class="gnb__bullet" viewBox="0 0 6 6" width="6" height="6" aria-hidden="true"><circle cx="3" cy="3" r="3" fill="currentColor"/></svg>
+          Contact
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="about-page">
+
+    <!-- Editorial Quote -->
+    <section class="about-hero" aria-label="브랜드 철학">
+      <h1 class="about-hero__title reveal">
+        입는 것이 아니라,<br><em>태도를 고른다.</em>
+      </h1>
+      <p class="about-hero__body reveal">
+        KERN은 계절의 소비 압박에서 벗어나 오래 입을 수 있는 옷을 만듭니다.<br>
+        형태가 곧 철학이고, 소재가 곧 태도입니다.
+      </p>
+    </section>
+
+    <!-- Photo Grid -->
+    <section class="about-media" aria-label="룩북 이미지">
+      <div class="about-media__photo about-media__photo--1 reveal"></div>
+      <div class="about-media__photo about-media__photo--2 reveal"></div>
+      <div class="about-media__photo about-media__photo--3 reveal"></div>
+    </section>
+
+    <!-- Our Story -->
+    <section class="about-story" aria-label="브랜드 스토리">
+      <div class="about-story__left">
+        <h2 class="about-story__title reveal">Our Story</h2>
+        <p class="about-story__body reveal">
+          KERN은 2024년 서울에서 시작된 슬로우 패션 브랜드입니다. 독일어로 '본질'과 '핵심'을 뜻하는 이름처럼, 우리는 유행을 좇지 않습니다. 계절마다 새것을 사야 한다는 강박에서 벗어나, KERN의 옷은 시간이 지나도 낡지 않는 형태를 추구합니다.
+        </p>
+      </div>
+      <div class="about-story__right">
+        <p class="about-story__body reveal">
+          린넨, 울, 오가닉 코튼. 땅에서 온 소재로 만든 옷은 입는 사람의 몸에 맞게 길들여집니다. 매 시즌 4개의 컬렉션을 선보이며, 각 컬렉션은 하나의 감정이나 자연 현상에서 영감을 받습니다. 좋은 소재, 정직한 구조, 그리고 당신의 일상.
+        </p>
+        <p class="about-story__body reveal" style="margin-top:24px;">
+          우리는 소비를 줄이되, 선택의 질을 높이는 것을 지향합니다. 덜 사고, 더 오래 입는 것. 그것이 KERN이 말하는 진정한 스타일입니다.
+        </p>
+      </div>
+    </section>
+
+    <!-- Brand Values -->
+    <section class="about-values" aria-label="브랜드 가치">
+      <div class="about-values__item reveal">
+        <p class="about-values__num">01</p>
+        <p class="about-values__label">Form</p>
+        <p class="about-values__desc">구조적 실루엣을 중심으로 한 디자인. 유행을 타지 않는 형태가 KERN의 시작점이자 끝입니다.</p>
+      </div>
+      <div class="about-values__item reveal">
+        <p class="about-values__num">02</p>
+        <p class="about-values__label">Material</p>
+        <p class="about-values__desc">린넨, 울, 오가닉 코튼만을 사용합니다. 소재의 정직함이 옷의 품격을 결정합니다.</p>
+      </div>
+      <div class="about-values__item reveal">
+        <p class="about-values__num">03</p>
+        <p class="about-values__label">Longevity</p>
+        <p class="about-values__desc">한 벌을 오래 입는 것이 가장 지속 가능한 선택입니다. 우리는 당신의 오랜 친구가 될 옷을 만듭니다.</p>
+      </div>
+    </section>
+
+    <!-- Editorial Closer -->
+    <section class="about-closer" aria-label="클로징 문구">
+      <p class="about-closer__text reveal">
+        "형태가 곧 태도다."
+      </p>
+      <p class="about-closer__sub reveal">— KERN, Seoul 2024</p>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__cols">
+      <div class="footer__col">
+        <a class="footer__nav-link" href="index.html">Collections</a>
+        <a class="footer__nav-link" href="about.html">About</a>
+        <a class="footer__nav-link" href="contact.html">Contact</a>
+      </div>
+      <div class="footer__col footer__col--info">
+        <p>info@kern-studio.kr</p>
+        <p>+82 2 1234 5678</p>
+        <p>서울시 성동구 서울숲2길 32</p>
+        <div class="footer__social">
+          <span class="footer__social-link" role="button" tabindex="0" aria-label="인스타그램">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/>
+            </svg>
+          </span>
+        </div>
+      </div>
+      <div class="footer__col footer__col--nl">
+        <div class="footer__newsletter">
+          <p class="footer__nl-title">뉴스레터</p>
+          <p class="footer__nl-desc">새 컬렉션 출시와 브랜드 이야기를 가장 먼저 받아보세요.</p>
+          <div class="footer__nl-form">
+            <input class="footer__nl-input" type="email" id="nlEmail" placeholder="이메일 주소를 입력해 주세요." aria-label="이메일 주소">
+            <span class="footer__nl-submit" id="nlSubmit" role="button" tabindex="0">구독 →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span class="footer__copy">© KERN 2026</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
