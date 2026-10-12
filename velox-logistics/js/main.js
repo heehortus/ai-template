@@ -364,11 +364,6 @@
         card.style.transform = `translateY(calc(-50% + ${translateY}px)) scale(${scale.toFixed(4)})`;
         card.style.opacity = cardOpacity.toFixed(4);
         card.style.zIndex = Math.round(10 - absDist * 3);
-        const video = card.querySelector('.expertise-card-video');
-        if (video) {
-          if (absDist < 0.4) { if (video.paused) video.play().catch(() => {}); }
-          else { if (!video.paused) video.pause(); }
-        }
       });
     }
 

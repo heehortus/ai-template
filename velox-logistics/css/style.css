@@ -552,7 +552,7 @@
       will-change: transform, opacity;
       transform-origin: center center;
     }
-    .expertise-card-video {
+    .expertise-card-img {
       position: absolute;
       inset: 0;
       width: 100%; height: 100%;
