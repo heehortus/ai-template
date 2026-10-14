@@ -114,6 +114,38 @@
       color: var(--white);
     }
 
+    /* Download button */
+    .card-dl {
+      position: absolute;
+      top: 40px;
+      right: 48px;
+      z-index: 2;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      color: rgba(255,255,255,0.35);
+      transition: color 0.2s;
+    }
+    .card-dl:hover {
+      color: #fff;
+    }
+    .card:hover .card-dl {
+      color: rgba(255,255,255,0.65);
+    }
+    .card-dl.is-loading {
+      pointer-events: none;
+      color: rgba(255,255,255,0.5);
+    }
+    .card-dl.is-done {
+      pointer-events: none;
+      color: #4ade80;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .card-dl.is-loading svg { animation: spin 0.7s linear infinite; }
+
     @media (max-width: 1024px) {
       .grid { grid-template-columns: repeat(2, 1fr); }
     }
@@ -121,6 +153,7 @@
       .header { padding: 48px 24px 32px; }
       .grid { grid-template-columns: 1fr; }
       .card { padding: 32px 24px; }
+      .card-dl { top: 32px; right: 24px; }
     }
   </style>
 </head>
@@ -134,6 +167,11 @@
 
     <a class="card" href="velox-logistics/">
       <span class="card-index">01</span>
+      <span class="card-dl" data-folder="velox-logistics" title="소스 다운로드">
+        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/>
+        </svg>
+      </span>
       <div class="card-body">
         <p class="card-name">VELOX Logistics</p>
         <p class="card-desc">스마트 물류 테크 기업 랜딩 페이지</p>
@@ -143,6 +181,11 @@
 
     <a class="card" href="alto-marketing/">
       <span class="card-index">02</span>
+      <span class="card-dl" data-folder="alto-marketing" title="소스 다운로드">
+        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/>
+        </svg>
+      </span>
       <div class="card-body">
         <p class="card-name">Alto Marketing</p>
         <p class="card-desc">브랜드 퍼포먼스 마케팅 에이전시 페이지</p>
@@ -152,6 +195,11 @@
 
     <a class="card" href="cheongrim-farm/">
       <span class="card-index">03</span>
+      <span class="card-dl" data-folder="cheongrim-farm" title="소스 다운로드">
+        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/>
+        </svg>
+      </span>
       <div class="card-body">
         <p class="card-name">청림농장</p>
         <p class="card-desc">친환경 농산물 직거래 브랜드 랜딩 페이지</p>
@@ -161,8 +209,13 @@
 
     <a class="card" href="clover-fnb/">
       <span class="card-index">04</span>
+      <span class="card-dl" data-folder="clover-fnb" title="소스 다운로드">
+        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/>
+        </svg>
+      </span>
       <div class="card-body">
-        <p class="card-name">Clover F&B</p>
+        <p class="card-name">Clover F&amp;B</p>
         <p class="card-desc">식음료 프랜차이즈 브랜드 페이지</p>
       </div>
       <span class="card-arrow">→</span>
@@ -170,6 +223,11 @@
 
     <a class="card" href="galileo-mobility/">
       <span class="card-index">05</span>
+      <span class="card-dl" data-folder="galileo-mobility" title="소스 다운로드">
+        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/>
+        </svg>
+      </span>
       <div class="card-body">
         <p class="card-name">Galileo Mobility</p>
         <p class="card-desc">모빌리티 테크 스타트업 랜딩 페이지</p>
@@ -179,6 +237,11 @@
 
     <a class="card" href="goodnuff-health/">
       <span class="card-index">06</span>
+      <span class="card-dl" data-folder="goodnuff-health" title="소스 다운로드">
+        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/>
+        </svg>
+      </span>
       <div class="card-body">
         <p class="card-name">Goodnuff Health</p>
         <p class="card-desc">헬스케어 웰니스 브랜드 랜딩 페이지</p>
@@ -188,6 +251,11 @@
 
     <a class="card" href="lets-dev/">
       <span class="card-index">07</span>
+      <span class="card-dl" data-folder="lets-dev" title="소스 다운로드">
+        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/>
+        </svg>
+      </span>
       <div class="card-body">
         <p class="card-name">Let's Dev</p>
         <p class="card-desc">개발자 커뮤니티 & 교육 플랫폼 랜딩 페이지</p>
@@ -197,6 +265,11 @@
 
     <a class="card" href="locus-it/">
       <span class="card-index">08</span>
+      <span class="card-dl" data-folder="locus-it" title="소스 다운로드">
+        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/>
+        </svg>
+      </span>
       <div class="card-body">
         <p class="card-name">Locus IT</p>
         <p class="card-desc">IT 솔루션 & 시스템 통합 기업 페이지</p>
@@ -206,6 +279,11 @@
 
     <a class="card" href="nexagen-bio/">
       <span class="card-index">09</span>
+      <span class="card-dl" data-folder="nexagen-bio" title="소스 다운로드">
+        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/>
+        </svg>
+      </span>
       <div class="card-body">
         <p class="card-name">Nexagen Bio</p>
         <p class="card-desc">바이오테크 & 신약 개발 기업 랜딩 페이지</p>
@@ -215,6 +293,11 @@
 
     <a class="card" href="offrame-media/">
       <span class="card-index">10</span>
+      <span class="card-dl" data-folder="offrame-media" title="소스 다운로드">
+        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/>
+        </svg>
+      </span>
       <div class="card-body">
         <p class="card-name">Offrame Media</p>
         <p class="card-desc">영상 제작 & 콘텐츠 스튜디오 브랜드 페이지</p>
@@ -224,6 +307,11 @@
 
     <a class="card" href="precix-production/">
       <span class="card-index">11</span>
+      <span class="card-dl" data-folder="precix-production" title="소스 다운로드">
+        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/>
+        </svg>
+      </span>
       <div class="card-body">
         <p class="card-name">Precix Production</p>
         <p class="card-desc">정밀 제조 & 생산 설비 기업 랜딩 페이지</p>
@@ -233,6 +321,11 @@
 
     <a class="card" href="urhome-lifestyle/">
       <span class="card-index">12</span>
+      <span class="card-dl" data-folder="urhome-lifestyle" title="소스 다운로드">
+        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/>
+        </svg>
+      </span>
       <div class="card-body">
         <p class="card-name">Urhome Lifestyle</p>
         <p class="card-desc">홈 인테리어 & 라이프스타일 브랜드 페이지</p>
@@ -242,6 +335,11 @@
 
     <a class="card" href="kern-lifestyle/">
       <span class="card-index">13</span>
+      <span class="card-dl" data-folder="kern-lifestyle" title="소스 다운로드">
+        <svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/>
+        </svg>
+      </span>
       <div class="card-body">
         <p class="card-name">KERN</p>
         <p class="card-desc">슬로우 패션 브랜드 랜딩 페이지</p>
@@ -250,5 +348,155 @@
     </a>
 
   </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/jszip@3.10.1/dist/jszip.min.js"></script>
+  <script>
+    const ICON_DL = `<svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M7 1.5v7M4.5 6.5 7 9l2.5-2.5M2 11.5h10"/></svg>`;
+    const ICON_SPIN = `<svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="7" cy="7" r="5" stroke-dasharray="16 14" stroke-linecap="round"/></svg>`;
+    const ICON_CHECK = `<svg width="20" height="20" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2.5 7.5 5.5 10.5 11.5 4"/></svg>`;
+
+    const PROJECTS = {
+      'velox-logistics': [
+        'index.html', 'css/style.css', 'js/main.js',
+        'asset/banner-thumb.jpg',
+        'asset/card-thumb-1.jpg', 'asset/card-thumb-2.jpg', 'asset/card-thumb-3.jpg', 'asset/card-thumb-4.jpg',
+        'asset/hero-video.mp4',
+        'asset/launch-1.jpg', 'asset/launch-2.jpg', 'asset/launch-3.jpg',
+        'asset/launch-4.jpg', 'asset/launch-5.jpg', 'asset/launch-6.jpg'
+      ],
+      'alto-marketing': [
+        'index.html', 'css/style.css', 'js/main.js',
+        'asset/Alto.svg', 'asset/about-1.png', 'asset/about-2.jpg',
+        'asset/icon.svg', 'asset/icon-2.svg',
+        'asset/section-video-1.mp4',
+        'asset/work-3.jpg', 'asset/works-1.jpg', 'asset/works-2.jpg'
+      ],
+      'cheongrim-farm': [
+        'index.html', 'css/style.css', 'js/main.js',
+        'asset/hero-video.mp4',
+        'asset/1.jpg', 'asset/2.jpg', 'asset/3.png', 'asset/4.png', 'asset/5.png', 'asset/6.png',
+        'asset/7.jpg', 'asset/8.jpg', 'asset/9.jpg', 'asset/10.jpg',
+        'asset/11.jpg', 'asset/12.jpg', 'asset/13.jpg', 'asset/14.jpg', 'asset/15.jpg',
+        'asset/16.jpg', 'asset/17.jpg', 'asset/18.jpg', 'asset/19.png',
+        'asset/process-1.png', 'asset/process-2.jpg', 'asset/process-3.jpg',
+        'asset/process-4.jpg', 'asset/process-5.png'
+      ],
+      'clover-fnb': [
+        'index.html', 'css/style.css', 'js/main.js',
+        'asset/hero-1.png', 'asset/hero-2.png', 'asset/hero-3.png',
+        'asset/product-1.png', 'asset/product-2.png', 'asset/product-3.png',
+        'asset/product-4.png', 'asset/product-5.png', 'asset/product-6.png'
+      ],
+      'galileo-mobility': [
+        'index.html', 'css/style.css', 'js/main.js'
+      ],
+      'goodnuff-health': [
+        'index.html', 'css/style.css', 'js/main.js',
+        'asset/banner-1.jpg', 'asset/hero-video.mp4',
+        'asset/expertise-1-thumb.jpg', 'asset/expertise-1.mp4',
+        'asset/expertise-2-thumb.jpg', 'asset/expertise-2.mp4',
+        'asset/expertise-3-thumb.jpg', 'asset/expertise-3.mp4',
+        'asset/expertise-4-thumb.jpg', 'asset/expertise-4.mp4',
+        'asset/product-1.jpg', 'asset/product-2.jpg', 'asset/product-3.jpg'
+      ],
+      'lets-dev': [
+        'index.html', 'css/style.css', 'js/main.js',
+        'asset/1.png', 'asset/2.png', 'asset/3.png', 'asset/4.png', 'asset/5.png', 'asset/6.png',
+        'asset/people.jpg', 'asset/person-1.png', 'asset/person-2.png'
+      ],
+      'locus-it': [
+        'index.html', 'css/style.css', 'js/main.js'
+      ],
+      'nexagen-bio': [
+        'index.html', 'css/style.css', 'js/main.js',
+        'asset/1.jpg', 'asset/2.jpg', 'asset/3.jpg', 'asset/4.jpg', 'asset/5.jpg', 'asset/6.jpg',
+        'asset/video-1.mp4'
+      ],
+      'offrame-media': [
+        'index.html', 'css/style.css', 'js/main.js',
+        'asset/about-1.jpg', 'asset/hero.jpg', 'asset/section-1.jpg',
+        'asset/series-1.jpg', 'asset/series-2.jpg', 'asset/series-3.jpg', 'asset/series-4.jpg',
+        'asset/series-5.jpg', 'asset/series-6.jpg', 'asset/series-7.jpg', 'asset/series-8.jpg',
+        'asset/series-9.jpg', 'asset/series-10.jpg'
+      ],
+      'precix-production': [
+        'index.html', 'css/style.css', 'js/main.js',
+        'asset/capa-1.jpg', 'asset/capa-2.jpg', 'asset/capa-3.jpg', 'asset/capa-4.jpg',
+        'asset/hero-video.mp4', 'asset/hero-video-2.mp4',
+        'asset/works-1.jpg', 'asset/works-2.jpg', 'asset/works-3.jpg', 'asset/works-4.jpg'
+      ],
+      'urhome-lifestyle': [
+        'index.html', 'css/style.css', 'js/main.js',
+        'asset/bed-1.jpg', 'asset/bed-room-2.jpg', 'asset/boucle.jpg',
+        'asset/chair-3.jpg', 'asset/chair-4.jpg', 'asset/consult.jpg', 'asset/corner-1.jpg',
+        'asset/decor-1.jpg', 'asset/design.jpg', 'asset/dining-room-1.jpg',
+        'asset/hero-video-2.mp4',
+        'asset/lights-1.jpg', 'asset/living-room-1.jpg', 'asset/marble.jpg', 'asset/material.jpg',
+        'asset/oak-2.jpg', 'asset/oak.jpg', 'asset/shelf-2.jpg', 'asset/sofa-2.jpg',
+        'asset/steel-1.jpg', 'asset/studio-inside.jpg', 'asset/studio.jpg', 'asset/study-1.jpg',
+        'asset/table-1.jpg', 'asset/workshop.jpg'
+      ],
+      'kern-lifestyle': [
+        'index.html', 'about.html', 'contact.html', 'style.css', 'script.js',
+        'asset/product-image-1.png', 'asset/product-image-2.png', 'asset/product-image-3.png',
+        'asset/product-image-4.png', 'asset/product-image-5.png', 'asset/product-image-6.png',
+        'asset/product-image-7.png', 'asset/product-image-8.png', 'asset/product-image-9.png',
+        'asset/product-image-10.png', 'asset/product-image-11.png', 'asset/product-image-12.png',
+        'asset/product-image-13.png', 'asset/product-image-14.png', 'asset/product-image-15.png'
+      ]
+    };
+
+    async function downloadProject(folder, btn) {
+      if (btn.classList.contains('is-loading') || btn.classList.contains('is-done')) return;
+
+      btn.classList.add('is-loading');
+      btn.innerHTML = ICON_SPIN;
+
+      try {
+        const zip = new JSZip();
+        const dir = zip.folder(folder);
+        const files = PROJECTS[folder] || [];
+
+        await Promise.all(files.map(async (file) => {
+          try {
+            const res = await fetch(`${folder}/${file}`);
+            if (!res.ok) return;
+            const buf = await res.arrayBuffer();
+            dir.file(file, buf);
+          } catch (_) {}
+        }));
+
+        const blob = await zip.generateAsync({ type: 'blob', compression: 'DEFLATE', compressionOptions: { level: 6 } });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `${folder}.zip`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+
+        btn.classList.remove('is-loading');
+        btn.classList.add('is-done');
+        btn.innerHTML = ICON_CHECK;
+        setTimeout(() => {
+          btn.classList.remove('is-done');
+          btn.innerHTML = ICON_DL;
+        }, 2000);
+      } catch (_) {
+        btn.classList.remove('is-loading');
+        btn.innerHTML = ICON_DL;
+      }
+    }
+
+    document.querySelectorAll('.card-dl').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        downloadProject(this.dataset.folder, this);
+      });
+    });
+  </script>
+
 </body>
 </html>
