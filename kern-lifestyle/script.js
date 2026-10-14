@@ -93,17 +93,18 @@
 
   if (canvasWrap && canvasScaler && canvasInner) {
 
-    let wrapScale = 1.4;
+    const isMobile = window.innerWidth < 768;
+    let wrapScale = isMobile ? 1.0 : 1.4;
 
     /* ── Grid layout ── */
-    const ITEM_H = 300;
-    const ROW_GAP = 120;
-    const CANVAS_PAD_V = 120;
-    const COLS = 4;
+    const ITEM_H       = 300;
+    const ROW_GAP      = isMobile ?  60 : 120;
+    const CANVAS_PAD_V = isMobile ?  0 : 120;
+    const COLS         = 4;
 
     const allProducts = PRODUCTS;
 
-    const CANVAS_W = canvasWrap.clientWidth;
+    const CANVAS_W = isMobile ? canvasWrap.clientWidth * 2 : canvasWrap.clientWidth;
     const COL_W = CANVAS_W / COLS;
     const TOTAL_ROWS = Math.ceil(allProducts.length / COLS);
     const CANVAS_H = TOTAL_ROWS * ITEM_H + (TOTAL_ROWS - 1) * ROW_GAP + CANVAS_PAD_V * 2;
@@ -167,7 +168,8 @@ function clampTarget() {
     }
 
     function initPan() {
-      targetPanX = 0; targetPanY = 0;
+      targetPanX = isMobile ? -canvasWrap.clientWidth / 2 : 0;
+      targetPanY = 0;
       clampTarget();
       panX = targetPanX; panY = targetPanY;
       canvasInner.style.transition = 'none';
@@ -241,18 +243,20 @@ function clampTarget() {
       clampTarget();
     }, { passive: true });
 
-    /* ── Custom cursor ── */
-    const cursor      = document.getElementById('cursor');
-    const cursorLabel = document.getElementById('cursorLabel');
+    /* ── Custom cursor (desktop only) ── */
+    const cursor      = isMobile ? null : document.getElementById('cursor');
+    const cursorLabel = isMobile ? null : document.getElementById('cursorLabel');
     let mx = 0, my = 0, cx = 0, cy = 0;
 
-    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
-    (function tick() {
-      cx += (mx - cx) * 0.18;
-      cy += (my - cy) * 0.18;
-      if (cursor) cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
-      requestAnimationFrame(tick);
-    })();
+    if (!isMobile) {
+      document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; });
+      (function tick() {
+        cx += (mx - cx) * 0.18;
+        cy += (my - cy) * 0.18;
+        if (cursor) cursor.style.transform = `translate(${cx}px, ${cy}px) translate(-50%, -50%)`;
+        requestAnimationFrame(tick);
+      })();
+    }
 
     function cursorShow(label) {
       if (!cursor || !cursorLabel) return;
@@ -344,7 +348,7 @@ function clampTarget() {
 
     /* ── Intro sequence ── */
     canvasScaler.style.transition = 'none';
-    canvasScaler.style.transform  = `scale(1.2)`;
+    canvasScaler.style.transform  = `scale(${isMobile ? 0.9 : 1.2})`;
 
     setTimeout(() => {
       canvasScaler.style.transition = 'transform 0.9s cubic-bezier(0.16, 1, 0.3, 1)';
@@ -402,7 +406,15 @@ function clampTarget() {
         'asset/about-brand-06.png',
       ];
 
-      const SCATTER_POS = [
+      const isMobileSplash = window.innerWidth < 768;
+      const SCATTER_POS = isMobileSplash ? [
+        { x: 22, y: 20 },  // top-left
+        { x: 78, y: 20 },  // top-right
+        { x:  2, y: 52 },  // mid-left  (더 바깥)
+        { x: 98, y: 52 },  // mid-right (더 바깥)
+        { x: 22, y: 80 },  // bottom-left
+        { x: 78, y: 80 },  // bottom-right
+      ] : [
         { x: 22, y: 20 },  // top-left
         { x: 78, y: 20 },  // top-right
         { x: 12, y: 52 },  // mid-left
@@ -458,6 +470,18 @@ function clampTarget() {
         lbFrame.addEventListener('mouseenter', () => clearTimeout(lbTimer));
         lbFrame.addEventListener('mouseleave', () => closeLb());
       }
+
+      const lbClose = document.getElementById('splashLbClose');
+      if (lbClose) {
+        lbClose.addEventListener('click', closeLb);
+        lbClose.addEventListener('keydown', e => (e.key === 'Enter' || e.key === ' ') && closeLb());
+      }
+
+      /* story-img mouseenter → 라이트박스 */
+      document.querySelectorAll('.story-img img').forEach(img => {
+        img.addEventListener('mouseenter', () => openLb(img.src));
+        img.addEventListener('mouseleave', () => { lbTimer = setTimeout(closeLb, 160); });
+      });
 
       setTimeout(() => { if (gnbWrap) gnbWrap.classList.add('is-revealed'); }, 1500);
 
@@ -582,8 +606,6 @@ function clampTarget() {
 
       /* ── Scatter Cards ── */
       (function initScatterCards() {
-        if (window.innerWidth < 768) return;
-
         const media = document.querySelector('.about-media');
         if (!media) return;
 
@@ -594,15 +616,16 @@ function clampTarget() {
         let scattered = false;
 
         function stackCards() {
-          if (window.innerWidth < 768) return;
           const rects = cards.map(c => c.getBoundingClientRect());
           const cx2 = rects[1].left + rects[1].width * 0.5;
+          const spread = window.innerWidth * 0.1;
+          const offsets = [-spread, 0, spread];
 
           cards.forEach(c => { c.style.transition = 'none'; });
 
           rects.forEach((r, i) => {
             const cxi = r.left + r.width * 0.5;
-            const dx  = cx2 - cxi;
+            const dx  = cx2 - cxi + offsets[i];
             cards[i].style.transform = `translateX(${Math.round(dx)}px) rotate(${rotations[i]}deg)`;
           });
 
@@ -630,8 +653,10 @@ function clampTarget() {
         function restackCards() {
           const rects = cards.map(c => c.getBoundingClientRect());
           const cx2   = rects[1].left + rects[1].width * 0.5;
+          const spread = window.innerWidth * 0.1;
+          const offsets = [-spread, 0, spread];
           rects.forEach((r, i) => {
-            const dx = cx2 - (r.left + r.width * 0.5);
+            const dx = cx2 - (r.left + r.width * 0.5) + offsets[i];
             cards[i].style.transform = `translateX(${Math.round(dx)}px) rotate(${rotations[i]}deg)`;
           });
           media.classList.remove('is-scattered');
@@ -655,6 +680,48 @@ function clampTarget() {
         window.addEventListener('resize', () => {
           if (!scattered) stackCards();
         }, { passive: true });
+
+        /* ── Polaroid Lightbox ── */
+        const polaroidLb      = document.getElementById('polaroidLb');
+        const polaroidLbCard  = document.getElementById('polaroidLbCard');
+        const polaroidLbPhoto = document.getElementById('polaroidLbPhoto');
+        const polaroidLbLabel = document.getElementById('polaroidLbLabel');
+        const polaroidLbDesc  = document.getElementById('polaroidLbDesc');
+        const polaroidLbClose = document.getElementById('polaroidLbClose');
+        const polaroidLbOverlay = document.getElementById('polaroidLbOverlay');
+
+        const PHOTO_SRCS = [
+          'asset/about-media-1.jpg',
+          'asset/about-media-2.jpg',
+          'asset/about-media-3.jpg',
+        ];
+
+        function openPolaroidLb(i) {
+          if (!polaroidLb) return;
+          const label = cards[i].querySelector('.about-values__label');
+          const desc  = cards[i].querySelector('.about-values__desc');
+          polaroidLbPhoto.style.backgroundImage = `url(${PHOTO_SRCS[i]})`;
+          polaroidLbLabel.textContent = label ? label.textContent : '';
+          polaroidLbDesc.textContent  = desc  ? desc.textContent  : '';
+          polaroidLbCard.style.setProperty('--init-rot', rotations[i] + 'deg');
+          polaroidLb.setAttribute('aria-hidden', 'false');
+          requestAnimationFrame(() => polaroidLb.classList.add('is-open'));
+        }
+
+        function closePolaroidLb() {
+          if (!polaroidLb) return;
+          polaroidLb.classList.remove('is-open');
+          polaroidLb.setAttribute('aria-hidden', 'true');
+        }
+
+        cards.forEach((card, i) => {
+          card.style.cursor = 'pointer';
+          card.addEventListener('click', () => openPolaroidLb(i));
+        });
+
+        if (polaroidLbClose)   polaroidLbClose.addEventListener('click', closePolaroidLb);
+        if (polaroidLbOverlay) polaroidLbOverlay.addEventListener('click', closePolaroidLb);
+        document.addEventListener('keydown', e => { if (e.key === 'Escape') closePolaroidLb(); });
       })();
 
     } else {

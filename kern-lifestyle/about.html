@@ -57,6 +57,11 @@
     <div class="splash-lb" id="splashLb" aria-hidden="true">
       <div class="splash-lb__frame" id="splashLbFrame">
         <img class="splash-lb__img" id="splashLbImg" src="" alt="">
+        <span class="splash-lb__close" id="splashLbClose" role="button" tabindex="0" aria-label="닫기">
+          <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+            <path d="M1 1L11 11M11 1L1 11"/>
+          </svg>
+        </span>
         <a class="splash-lb__cta" href="index.html">
           collection
           <svg class="splash-lb__cta-arrow" width="14" height="14" viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -64,6 +69,23 @@
           </svg>
         </a>
       </div>
+    </div>
+
+    <!-- Polaroid Lightbox -->
+    <div class="polaroid-lb" id="polaroidLb" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="polaroid-lb__card" id="polaroidLbCard">
+        <div class="polaroid-lb__photo" id="polaroidLbPhoto"></div>
+        <div class="polaroid-lb__caption">
+          <p class="polaroid-lb__label" id="polaroidLbLabel"></p>
+          <p class="polaroid-lb__desc" id="polaroidLbDesc"></p>
+        </div>
+      </div>
+      <span class="polaroid-lb__close" id="polaroidLbClose" role="button" tabindex="0" aria-label="닫기">
+        <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+          <path d="M1 1L11 11M11 1L1 11"/>
+        </svg>
+      </span>
+      <div class="polaroid-lb__overlay" id="polaroidLbOverlay"></div>
     </div>
 
     <!-- Our Story -->
@@ -112,6 +134,7 @@
           </div>
         </div>
       </section>
+      <p class="about-media__hint">click any card</p>
     </div>
 
     <!-- Editorial Closer -->
