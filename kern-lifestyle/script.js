@@ -17,26 +17,14 @@
     { name: '미디엄 니트 베스트',    type: 'vest',  color: '#B0AAA4', desc: '미디엄 게이지 니트 베스트. 핵심 레이어링 피스.',                                                    material: 'Wool 80% Cotton 20%',      img: 'asset/product-image-3.png' },
     { name: '오버 코튼 니트',        type: 'top',   color: '#D4CEC8', desc: '오버사이즈 핏의 코튼 니트. 부드러운 질감과 편안한 착용감.',                                         material: 'Organic Cotton 100%',      img: 'asset/product-image-2.png' },
     { name: '울-캐시미어 크롭 재킷', type: 'coat',  color: '#846454', desc: '울-캐시미어 혼방 크롭 재킷. 흙의 거친 질감을 소재로 표현했다.',                                     material: 'Wool 80% Cashmere 20%',    img: 'asset/product-image-8.png' },
-    { name: '미네랄 오버코트',       type: 'coat',  color: '#3C3C38', desc: '더블 페이스 울 소재의 오버핏 코트. 광물의 견고함을 형태로 옮긴 겨울의 외피.',                       material: 'Wool 100%', img: 'asset/product-image-9.png' },
+    { name: '미네랄 오버코트',       type: 'coat',  color: '#3C3C38', desc: '더블 페이스 울 소재의 오버핏 코트. 광물의 견고함을 형태로 옮긴 겨울의 외피.',                       material: 'Wool 100%',              img: 'asset/product-image-9.png' },
     { name: '쉬폰 롱 드레스',        type: 'dress', color: '#4C4C48', desc: '스카프 타이 넥라인의 미디 쉬폰 드레스. 미네랄 시즌에 스며든 한 줄기 빛.',                          material: 'Polyester Chiffon 100%', img: 'asset/product-image-10.png' },
     { name: '헤비 울 와이드 팬츠',   type: 'pants', color: '#2E2E2A', desc: '헤비웨이트 울 블렌드 와이드 팬츠. 겨울을 버티는 무게감과 보온성.',                                  material: 'Wool 70% Polyester 30%', img: 'asset/product-image-11.png' },
-    { name: '패딩 크롭 재킷',        type: 'top',   color: '#5A5A56', desc: '숄더 패딩이 들어간 크롭 재킷.',                                                                      material: 'Wool 60% Linen 40%', img: 'asset/product-image-12.png' },
-    { name: '파인 울 터틀넥',        type: 'shirt', color: '#444440', desc: '파인 게이지 울 터틀넥. 피부에 닿는 부드러움.',                                                       material: 'Merino Wool 100%', img: 'asset/product-image-13.png' },
-    { name: '리브 니트 스커트',      type: 'skirt',  color: '#383834', desc: '미니 길이 니트 플리츠 스커트. 레이스 장식이 귀여운 분위기를 연출한다.',                                      material: 'Wool 85% Cotton 15%', img: 'asset/product-image-14.png' },
-    { name: '세미-리지드 숄더백',    type: 'bag',   color: '#4A4A46', desc: '세미-리지드 구조의 숄더백. 소가죽, 무광 금속 클래스프.',                                                  material: '소가죽 100%', img: 'asset/product-image-15.png' },
-    { name: '오리진 트렌치코트',     type: 'coat',  color: '#8C7060', desc: '면-울 혼방 소재의 구조적 트렌치코트. 모든 것의 시작점.',                                             material: 'Cotton 60% Wool 40%', img: 'asset/product-image-16.png' },
-    { name: '어스 미디 드레스',      type: 'dress', color: '#9C8070', desc: '흙의 색을 담은 미디 드레스. 비대칭 헴라인이 유기적 형태를 만든다.',                                  material: 'Organic Cotton 100%', img: 'asset/product-image-17.png' },
-    { name: '어스 와이드 팬츠',      type: 'pants', color: '#7C6050', desc: '어스 팔레트의 코어 보텀. 두꺼운 울 소재의 와이드 실루엣.',                                           material: 'Wool 80% Linen 20%', img: 'asset/product-image-18.png' },
-    { name: '오버 린넨-코튼 셔츠',   type: 'shirt', color: '#A08070', desc: '면-린넨 혼방의 오버사이즈 셔츠.',                                                                    material: 'Cotton 50% Linen 50%' },
-    { name: '코스 게이지 카디건',    type: 'vest',  color: '#988068', desc: '코스 게이지 니트 카디건. 가장 부드러운 레이어.',                                                     material: 'Wool 70% Cotton 30%' },
-    { name: '풀그레인 레더 백',      type: 'bag',   color: '#7A6058', desc: '풀그레인 소가죽 숄더백. 자연스러운 에이징.',                                                         material: '소가죽 100%' },
-    { name: '보이드 롱 코트',        type: 'coat',  color: '#D0CCC4', desc: '초경량 재생 폴리에스터 소재의 롱 코트. 비어있음을 향한 브랜드의 첫 선언.',                           material: 'Recycled Polyester 100%' },
-    { name: '보일 레이어드 드레스',  type: 'dress', color: '#E0DCD4', desc: '얇고 반투명한 소재의 레이어드 드레스. 빛이 통과하는 감각.',                                          material: 'Organic Cotton Voile 100%' },
-    { name: '코튼 와이드 팬츠',      type: 'pants', color: '#C0BCB4', desc: '페일 애시 컬러의 코튼 와이드 팬츠. 최소한의 절개선으로 구성된 실루엣.',                              material: 'Organic Cotton 100%' },
-    { name: '숄더리스 슬리브리스 탑', type: 'top',  color: '#CCCAC2', desc: '숄더리스 구조의 슬리브리스 탑.',                                                                     material: 'Organic Linen 100%' },
-    { name: '셔링 오버 셔츠',        type: 'shirt', color: '#D8D4CC', desc: '셔링 디테일의 오버사이즈 셔츠. 빛에 따라 텍스처가 달라지는 표면.',                                  material: 'Cotton 80% Linen 20%' },
-    { name: '파인 코튼 베스트',      type: 'vest',  color: '#B8B4AC', desc: '파인 게이지 니트 베스트. 무게 없는 레이어링.',                                                       material: 'Organic Cotton 100%' },
-    { name: '소가죽 미니 크로스 백', type: 'bag',   color: '#BCBAB2', desc: '미니멀 디자인의 크로스바디 백. 실버 하드웨어.',                                                      material: '소가죽 100%' },
+    { name: '패딩 크롭 재킷',        type: 'top',   color: '#5A5A56', desc: '숄더 패딩이 들어간 크롭 재킷.',                                                                      material: 'Wool 60% Linen 40%',     img: 'asset/product-image-12.png' },
+    { name: '파인 울 터틀넥',        type: 'shirt', color: '#444440', desc: '파인 게이지 울 터틀넥. 피부에 닿는 부드러움.',                                                       material: 'Merino Wool 100%',        img: 'asset/product-image-13.png' },
+    { name: '리브 니트 스커트',      type: 'skirt', color: '#383834', desc: '미니 길이 니트 플리츠 스커트. 레이스 장식이 귀여운 분위기를 연출한다.',                              material: 'Wool 85% Cotton 15%',    img: 'asset/product-image-14.png' },
+    { name: '세미-리지드 숄더백',    type: 'bag',   color: '#4A4A46', desc: '세미-리지드 구조의 숄더백. 소가죽, 무광 금속 클래스프.',                                            material: '소가죽 100%',             img: 'asset/product-image-15.png' },
+    { name: '오리진 트렌치코트',     type: 'coat',  color: '#8C7060', desc: '면-울 혼방 소재의 구조적 트렌치코트. 모든 것의 시작점.',                                             material: 'Cotton 60% Wool 40%',    img: 'asset/product-image-1.png' },
   ];
 
   /* ────────────────────────────────────────────
@@ -130,12 +118,13 @@
         const x = (col + 0.5) * COL_W;
         const y = CANVAS_PAD_V + row * (ITEM_H + ROW_GAP) + ITEM_H / 2;
         const el = document.createElement('div');
-        el.className = `col-item${p.img ? ' col-item--image' : ` col-item--${p.type}`}`;
+        const imgs = p.imgs && p.imgs.length ? p.imgs : (p.img ? [p.img] : []);
+        el.className = `col-item${imgs.length ? ' col-item--image' : ` col-item--${p.type}`}`;
         el.dataset.name     = p.name;
         el.dataset.desc     = p.desc;
         el.dataset.material = p.material;
         el.dataset.color    = p.color;
-        if (p.img) el.dataset.img = p.img;
+        if (imgs.length) el.dataset.imgs = JSON.stringify(imgs);
         el.style.left       = x + 'px';
         el.style.top        = y + 'px';
         el.setAttribute('role', 'button');
@@ -147,10 +136,10 @@
         el.appendChild(shadow);
 
         let swatch;
-        if (p.img) {
+        if (imgs.length) {
           swatch = document.createElement('img');
           swatch.className = 'col-item__swatch';
-          swatch.src = p.img;
+          swatch.src = imgs[0];
           swatch.alt = p.name;
           swatch.draggable = false;
         } else {
@@ -279,46 +268,45 @@ function clampTarget() {
     const panelOverlay = document.getElementById('panelOverlay');
     const panelClose   = document.getElementById('panelClose');
     const panelName    = document.getElementById('panelName');
-    const panelThumbs  = document.getElementById('panelThumbs');
     const panelFeat    = document.getElementById('panelFeatured');
     const panelDesc    = document.getElementById('panelDesc');
     const panelMat     = document.getElementById('panelMaterial');
 
-    function colorVariants(hex) {
-      const r = parseInt(hex.slice(1,3), 16);
-      const g = parseInt(hex.slice(3,5), 16);
-      const b = parseInt(hex.slice(5,7), 16);
-      const c = (r2,g2,b2) => `rgb(${Math.max(0,Math.min(255,r2))},${Math.max(0,Math.min(255,g2))},${Math.max(0,Math.min(255,b2))})`;
-      return [hex, c(r+22,g+22,b+22), c(r-22,g-22,b-22), c(r+10,g-12,b-20)];
-    }
+    const panelImgThumbs = document.getElementById('panelImgThumbs');
 
     function openPanel(el) {
       const name     = el.dataset.name;
       const desc     = el.dataset.desc;
       const material = el.dataset.material;
       const color    = el.dataset.color;
+      const imgs     = el.dataset.imgs ? JSON.parse(el.dataset.imgs) : [];
 
-      panelName.textContent   = name;
-      panelDesc.textContent   = desc;
-      panelMat.textContent    = material;
+      panelName.textContent = name;
+      panelDesc.textContent = desc;
+      panelMat.textContent  = material;
 
-      const variants = colorVariants(color);
-      panelThumbs.innerHTML = '';
-      variants.forEach((v, i) => {
-        const t = document.createElement('div');
-        t.className = 'panel__thumb' + (i === 0 ? ' is-active' : '');
-        t.style.background = v;
-        t.addEventListener('click', () => {
-          panelThumbs.querySelectorAll('.panel__thumb').forEach(x => x.classList.remove('is-active'));
-          t.classList.add('is-active');
-          panelFeat.querySelector('.panel__featured-inner').style.background = v;
-        });
-        panelThumbs.appendChild(t);
-      });
-      if (el.dataset.img) {
-        panelFeat.innerHTML = `<img class="panel__featured-img" src="${el.dataset.img}" alt="${name}">`;
+      if (imgs.length) {
+        panelFeat.innerHTML = `<img class="panel__featured-img" src="${imgs[0]}" alt="${name}">`;
       } else {
         panelFeat.innerHTML = `<div class="panel__featured-inner" style="background:${color}"></div>`;
+      }
+
+      panelImgThumbs.innerHTML = '';
+      if (imgs.length > 1) {
+        const featImg = panelFeat.querySelector('.panel__featured-img');
+        imgs.forEach((src, i) => {
+          const thumb = document.createElement('img');
+          thumb.className = 'panel__img-thumb' + (i === 0 ? ' is-active' : '');
+          thumb.src = src;
+          thumb.alt = `${name} ${i + 1}`;
+          thumb.draggable = false;
+          thumb.addEventListener('click', () => {
+            panelImgThumbs.querySelectorAll('.panel__img-thumb').forEach(t => t.classList.remove('is-active'));
+            thumb.classList.add('is-active');
+            featImg.src = src;
+          });
+          panelImgThumbs.appendChild(thumb);
+        });
       }
 
       panel.classList.add('is-open');
@@ -385,8 +373,307 @@ function clampTarget() {
     if (zoomInBtn)  zoomInBtn.addEventListener('keydown', e => (e.key === 'Enter' || e.key === ' ') && setZoom(wrapScale + 0.25));
     if (zoomOutBtn) zoomOutBtn.addEventListener('keydown', e => (e.key === 'Enter' || e.key === ' ') && setZoom(wrapScale - 0.25));
   } else {
-    /* Non-canvas pages: reveal nav immediately */
-    if (gnbWrap) gnbWrap.classList.add('is-revealed');
+    /* Non-canvas pages — Lenis smooth scroll */
+    let lenis = null;
+    if (typeof Lenis !== 'undefined') {
+      lenis = new Lenis({
+        duration: 1.2,
+        easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+        smoothWheel: true,
+      });
+      (function lenisRaf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(lenisRaf);
+      }(0));
+    }
+
+    const aboutSplash = document.getElementById('aboutSplash');
+    if (aboutSplash) {
+      /* 스플래시 이미지 전부 흩어지기 전까지 스크롤 잠금 */
+      if (lenis) lenis.stop();
+
+      /* ── About splash animation ── */
+      const BRAND_IMGS = [
+        'asset/about-brand-01.png',
+        'asset/about-brand-02.png',
+        'asset/about-brand-03.png',
+        'asset/about-brand-04.png',
+        'asset/about-brand-05.png',
+        'asset/about-brand-06.png',
+      ];
+
+      const SCATTER_POS = [
+        { x: 22, y: 20 },  // top-left
+        { x: 78, y: 20 },  // top-right
+        { x: 12, y: 52 },  // mid-left
+        { x: 88, y: 52 },  // mid-right
+        { x: 22, y: 80 },  // bottom-left
+        { x: 78, y: 80 },  // bottom-right
+      ];
+
+      const W = aboutSplash.offsetWidth;
+      const H = aboutSplash.offsetHeight;
+      const cx = W / 2;
+      const cy = H / 2;
+
+      BRAND_IMGS.forEach((src, i) => {
+        const pos = SCATTER_POS[i];
+        const finalX = (pos.x / 100) * W;
+        const finalY = (pos.y / 100) * H;
+
+        const el = document.createElement('img');
+        el.className = 'splash-prod';
+        el.src = src;
+        el.alt = '';
+        el.draggable = false;
+        el.style.left = finalX + 'px';
+        el.style.top  = finalY + 'px';
+        el.style.setProperty('--dx', (cx - finalX) + 'px');
+        el.style.setProperty('--dy', (cy - finalY) + 'px');
+        aboutSplash.appendChild(el);
+
+        setTimeout(() => el.classList.add('is-scattered'), 1300 + i * 80);
+
+        el.addEventListener('mouseenter', () => openLb(src));
+        el.addEventListener('mouseleave', () => { lbTimer = setTimeout(closeLb, 160); });
+      });
+
+      const lb      = document.getElementById('splashLb');
+      const lbImg   = document.getElementById('splashLbImg');
+      const lbFrame = document.getElementById('splashLbFrame');
+      let lbTimer   = null;
+
+      function openLb(src) {
+        clearTimeout(lbTimer);
+        lbImg.src = src;
+        lb.classList.add('is-open');
+        lb.setAttribute('aria-hidden', 'false');
+      }
+      function closeLb() {
+        lb.classList.remove('is-open');
+        lb.setAttribute('aria-hidden', 'true');
+      }
+
+      if (lbFrame) {
+        lbFrame.addEventListener('mouseenter', () => clearTimeout(lbTimer));
+        lbFrame.addEventListener('mouseleave', () => closeLb());
+      }
+
+      setTimeout(() => { if (gnbWrap) gnbWrap.classList.add('is-revealed'); }, 1500);
+
+      /* 마지막 이미지 흩어짐(1700ms) + 300ms 여유 후 스크롤 잠금 해제 */
+      const splashUnlockMs = 1300 + (BRAND_IMGS.length - 1) * 80 + 300;
+      setTimeout(() => { if (lenis) lenis.start(); }, splashUnlockMs);
+
+      /* ── Scroll Line Track ── */
+      (function initScrollLine() {
+        const svgEl   = document.getElementById('scrollLine');
+        const pathEl  = document.getElementById('scrollLinePath');
+        const story   = document.querySelector('.about-story');
+        const storyR  = document.querySelector('.about-story__right');
+        if (!svgEl || !pathEl || !story || !storyR) return;
+
+        let totalLen  = 0;
+        let lineEndAt = 0;  // 선이 완전히 그려지는 scrollY 기준
+
+        function buildPath() {
+          const pageH = document.querySelector('.about-page').scrollHeight;
+          const pageW = window.innerWidth;
+
+          svgEl.setAttribute('viewBox', `0 0 ${pageW} ${pageH}`);
+          svgEl.setAttribute('width',  pageW);
+          svgEl.setAttribute('height', pageH);
+
+          const sx    = pageW * 0.5;
+          const sy    = aboutSplash.offsetTop + aboutSplash.offsetHeight * 0.70;
+          const stTop = story.offsetTop;
+          const stH   = story.offsetHeight;
+          const rLeft = storyR.offsetLeft;
+          const rW    = storyR.offsetWidth;
+
+          /*
+           * S-curve — Our Story S자 → Material 카드 세로 50% 지점까지 연장.
+           *  x0=sx, x1=Image1우측, x2=Image2좌측, x3=Image3우측, x4=sx
+           *  y4 = Material 카드(.about-media__card:nth-child(2)) 상단 + 높이*0.5
+           */
+          const y0 = stTop + stH * 0.04;
+          const y1 = stTop + stH * 0.28;
+          const y2 = stTop + stH * 0.50;
+          const y3 = stTop + stH * 0.72;
+
+          // y4 — Material 카드 세로 50% 지점
+          const card2  = document.querySelector('.about-media__card:nth-child(2)');
+          let   y4     = stTop + stH * 0.92;  // fallback
+          if (card2) {
+            const card2Top = card2.getBoundingClientRect().top + window.scrollY;
+            y4 = card2Top + card2.offsetHeight * 0.5;
+            // 선이 완전히 그려지는 시점: card2 중앙이 뷰포트 중앙에 올 때
+            lineEndAt = card2Top + card2.offsetHeight * 0.5 - window.innerHeight * 0.5;
+          } else {
+            lineEndAt = stTop + stH - window.innerHeight;
+          }
+
+          const x0 = sx,               x1 = rLeft + rW * 0.84,
+                x2 = rLeft + rW * 0.12, x3 = rLeft + rW * 0.84,
+                x4 = sx;
+
+          const m01 = (y0 + y1) * 0.5;
+          const m12 = (y1 + y2) * 0.5;
+          const m23 = (y2 + y3) * 0.5;
+          const m34 = (y3 + y4) * 0.5;
+
+          const d = [
+            `M ${f(sx)} ${f(sy)}`,
+            `L ${f(sx)} ${f(y0)}`,
+            `C ${f(x0)} ${f(m01)} ${f(x1)} ${f(m01)} ${f(x1)} ${f(y1)}`,
+            `C ${f(x1)} ${f(m12)} ${f(x2)} ${f(m12)} ${f(x2)} ${f(y2)}`,
+            `C ${f(x2)} ${f(m23)} ${f(x3)} ${f(m23)} ${f(x3)} ${f(y3)}`,
+            `C ${f(x3)} ${f(m34)} ${f(x4)} ${f(m34)} ${f(x4)} ${f(y4)}`,
+          ].join(' ');
+
+          pathEl.setAttribute('d', d);
+          totalLen = pathEl.getTotalLength();
+          pathEl.style.strokeDasharray  = totalLen;
+          pathEl.style.strokeDashoffset = totalLen;
+        }
+
+        function f(n) { return Math.round(n * 100) / 100; }
+
+        function updateLine(scrollY) {
+          if (!totalLen) return;
+          scrollY = scrollY !== undefined ? scrollY : window.scrollY;
+          const progress = Math.max(0, Math.min(1, scrollY / Math.max(1, lineEndAt)));
+          pathEl.style.strokeDashoffset = totalLen * (1 - progress);
+        }
+
+        /* Story image reveal (one by one as each enters the viewport) */
+        const storyImgs = document.querySelectorAll('.story-img');
+        if (storyImgs.length) {
+          const imgObs = new IntersectionObserver(entries => {
+            entries.forEach(e => {
+              if (e.isIntersecting) { e.target.classList.add('is-visible'); imgObs.unobserve(e.target); }
+            });
+          }, { threshold: 0.12 });
+          storyImgs.forEach(el => imgObs.observe(el));
+        }
+
+        /* ── About Closer Parallax ── */
+        const closerEl = document.querySelector('.about-closer');
+        const closerBg = document.getElementById('aboutCloserBg');
+        function updateCloserParallax() {
+          if (!closerEl || !closerBg) return;
+          const rect   = closerEl.getBoundingClientRect();
+          const offset = (rect.top + rect.height * 0.5 - window.innerHeight * 0.5) * 0.18;
+          closerBg.style.transform = `translateY(${offset}px)`;
+        }
+
+        buildPath();
+        window.addEventListener('resize', () => { buildPath(); updateLine(); }, { passive: true });
+
+        /* Drive SVG animation from Lenis (smooth) or native scroll (fallback) */
+        if (lenis) {
+          lenis.on('scroll', ({ scroll }) => { updateLine(scroll); updateCloserParallax(); });
+        } else {
+          window.addEventListener('scroll', () => { updateLine(); updateCloserParallax(); }, { passive: true });
+        }
+        updateLine();
+        updateCloserParallax();
+      })();
+
+      /* ── Scatter Cards ── */
+      (function initScatterCards() {
+        if (window.innerWidth < 768) return;
+
+        const media = document.querySelector('.about-media');
+        if (!media) return;
+
+        const cards = Array.from(media.querySelectorAll('.about-media__card'));
+        if (cards.length < 3) return;
+
+        const rotations = [-1.5, 1, -0.8];
+        let scattered = false;
+
+        function stackCards() {
+          if (window.innerWidth < 768) return;
+          const rects = cards.map(c => c.getBoundingClientRect());
+          const cx2 = rects[1].left + rects[1].width * 0.5;
+
+          cards.forEach(c => { c.style.transition = 'none'; });
+
+          rects.forEach((r, i) => {
+            const cxi = r.left + r.width * 0.5;
+            const dx  = cx2 - cxi;
+            cards[i].style.transform = `translateX(${Math.round(dx)}px) rotate(${rotations[i]}deg)`;
+          });
+
+          requestAnimationFrame(() => {
+            requestAnimationFrame(() => {
+              cards.forEach(c => { c.style.transition = ''; });
+            });
+          });
+        }
+
+        stackCards();
+
+        /* Observer 1 — fade in when section enters viewport */
+        const fadeObs = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting) {
+              media.classList.add('is-visible');
+              fadeObs.unobserve(e.target);
+            }
+          });
+        }, { threshold: 0.1 });
+        fadeObs.observe(media);
+
+        /* 트리거 존 이탈 시 카드 재합침 (트랜지션 유지) */
+        function restackCards() {
+          const rects = cards.map(c => c.getBoundingClientRect());
+          const cx2   = rects[1].left + rects[1].width * 0.5;
+          rects.forEach((r, i) => {
+            const dx = cx2 - (r.left + r.width * 0.5);
+            cards[i].style.transform = `translateX(${Math.round(dx)}px) rotate(${rotations[i]}deg)`;
+          });
+          media.classList.remove('is-scattered');
+          scattered = false;
+        }
+
+        /* Observer 2 — 트리거 진입 → 흩어짐, 이탈 → 재합침 */
+        const scatterObs = new IntersectionObserver(entries => {
+          entries.forEach(e => {
+            if (e.isIntersecting && !scattered) {
+              scattered = true;
+              cards.forEach(c => { c.style.transform = ''; });
+              media.classList.add('is-scattered');
+            } else if (!e.isIntersecting && scattered) {
+              restackCards();
+            }
+          });
+        }, { rootMargin: '-35% 0px -55% 0px', threshold: 0 });
+        scatterObs.observe(media);
+
+        window.addEventListener('resize', () => {
+          if (!scattered) stackCards();
+        }, { passive: true });
+      })();
+
+    } else {
+      if (gnbWrap) gnbWrap.classList.add('is-revealed');
+
+      /* ── Contact Slideshow ── */
+      (function initContactSlideshow() {
+        const slideshow = document.getElementById('contactSlideshow');
+        if (!slideshow) return;
+        const slides = Array.from(slideshow.querySelectorAll('.contact-slide'));
+        if (slides.length < 2) return;
+        let current = 0;
+        setInterval(() => {
+          slides[current].classList.remove('is-active');
+          current = (current + 1) % slides.length;
+          slides[current].classList.add('is-active');
+        }, 4000);
+      })();
+    }
   }
 
   /* ────────────────────────────────────────────

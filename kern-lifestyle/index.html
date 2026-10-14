@@ -56,13 +56,17 @@
 
   <!-- Product Detail Panel -->
   <aside class="panel" id="panel" aria-hidden="true" aria-label="제품 상세">
-    <span class="panel__close" id="panelClose" role="button" tabindex="0" aria-label="닫기">×</span>
+    <span class="panel__close" id="panelClose" role="button" tabindex="0" aria-label="닫기">
+      <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+        <path d="M1 1L11 11M11 1L1 11"/>
+      </svg>
+    </span>
     <div class="panel__inner">
       <p class="panel__season" id="panelSeason"></p>
       <h2 class="panel__name" id="panelName"></h2>
-      <div class="panel__thumbs" id="panelThumbs"></div>
-      <div class="panel__featured" id="panelFeatured"></div>
       <p class="panel__desc" id="panelDesc"></p>
+      <div class="panel__featured" id="panelFeatured"></div>
+      <div class="panel__img-thumbs" id="panelImgThumbs"></div>
       <p class="panel__material" id="panelMaterial"></p>
     </div>
   </aside>
