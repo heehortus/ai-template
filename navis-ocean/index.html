@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>NAVIS 수산 — 세상을 잇다, 바다를 열다</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- ══════════════════════════════
+     GNB
+══════════════════════════════ -->
+<header class="gnb" id="gnb">
+  <div class="container gnb-inner">
+    <a class="gnb-logo" href="#">
+      <span class="gnb-logo-mark">NAVIS</span>
+    </a>
+    <nav class="gnb-nav" aria-label="주요 메뉴">
+      <a href="#about"   class="gnb-link">회사소개</a>
+      <a href="#business" class="gnb-link">비즈니스</a>
+      <a href="#esg"     class="gnb-link">지속가능경영</a>
+      <a href="#network" class="gnb-link">글로벌 네트워크</a>
+      <a href="#news"    class="gnb-link">뉴스룸</a>
+    </nav>
+    <div class="gnb-hamburger" id="hamburger" role="button" aria-label="메뉴 열기">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</header>
+
+<!-- Mobile Drawer -->
+<div class="mobile-dim" id="mobileDim"></div>
+<nav class="mobile-drawer" id="mobileDrawer">
+  <div class="mobile-drawer-close" id="drawerClose" role="button">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>
+  </div>
+  <a href="#about"    class="mobile-link">회사소개</a>
+  <a href="#business" class="mobile-link">비즈니스</a>
+  <a href="#esg"      class="mobile-link">지속가능경영</a>
+  <a href="#network"  class="mobile-link">글로벌 네트워크</a>
+  <a href="#news"     class="mobile-link">뉴스룸</a>
+</nav>
+
+<!-- ══════════════════════════════
+     HERO
+══════════════════════════════ -->
+<div class="hero-pin">
+<section class="hero" id="hero">
+  <div class="hero-media">
+    <div class="hero-bg" id="heroBg">
+      <video autoplay muted loop playsinline>
+        <source src="asset/navis-hero-video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-overlay"></div>
+  </div>
+
+  <div class="hero-body">
+    <div class="hero-text">
+      <p class="hero-en">Navigate the Ocean, Open the Future</p>
+      <h1 class="hero-title">바다를 항해하다, 미래를 열다</h1>
+    </div>
+  </div>
+
+  <div class="hero-scroll-ind" aria-hidden="true">
+    <span>SCROLL</span>
+    <div class="hero-scroll-bar"><div class="hero-scroll-fill"></div></div>
+  </div>
+</section>
+</div>
+
+<!-- ══════════════════════════════
+     ABOUT
+══════════════════════════════ -->
+<section class="about" id="about">
+  <div class="container about-inner">
+    <div class="about-text">
+      <span class="pill reveal-clip">ABOUT US</span>
+      <h2 class="about-title reveal-clip" data-delay="1">
+        바다를 아는 기업, NAVIS<br>
+        사회에 기여하고 세계와 함께 성장합니다
+      </h2>
+    </div>
+    <div class="about-cards">
+      <div class="about-card reveal" data-delay="1">
+        <div class="about-card-img">
+          <img src="asset/about-card-image-1.jpg" alt="원양어업" loading="lazy">
+        </div>
+        <div class="about-card-info">
+          <span class="about-card-name">원양어업</span>
+        </div>
+      </div>
+      <div class="about-card reveal" data-delay="2">
+        <div class="about-card-img">
+          <img src="asset/about-card-image-2.jpg" alt="수산가공" loading="lazy">
+        </div>
+        <div class="about-card-info">
+          <span class="about-card-name">수산가공</span>
+        </div>
+      </div>
+      <div class="about-card reveal" data-delay="3">
+        <div class="about-card-img">
+          <img src="asset/about-card-image-3.jpg" alt="글로벌 유통" loading="lazy">
+        </div>
+        <div class="about-card-info">
+          <span class="about-card-name">글로벌 유통</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     BUSINESS STAGE (sticky scroll)
+══════════════════════════════ -->
+<div class="biz-pin" id="bizPin">
+<section class="biz-stage" id="bizStage">
+
+  <div class="biz-stage-hd" id="bizStageHd">
+    <span class="pill">BUSINESS</span>
+    <h2 class="biz-stage-title">
+      NAVIS 수산은 다양한 어업분야의 역량을 키워<br>
+      미래 가치를 만들어가고 있습니다
+    </h2>
+  </div>
+
+  <div class="biz-stage-cards" id="bizStageCards">
+    <div class="biz-stage-card" data-biz="0">
+      <img src="asset/stage-card-img-1.jpg" alt="원양어업" loading="lazy">
+      <div class="biz-stage-card-label">원양어업</div>
+    </div>
+    <div class="biz-stage-card" data-biz="1">
+      <img src="asset/stage-card-img-2.jpg" alt="수산가공" loading="lazy">
+      <div class="biz-stage-card-label">수산가공</div>
+    </div>
+    <div class="biz-stage-card biz-stage-card--center" data-biz="2">
+      <img src="asset/stage-card-img-3.jpg" alt="글로벌 유통" loading="lazy">
+      <div class="biz-stage-card-label">글로벌 유통</div>
+    </div>
+    <div class="biz-stage-card" data-biz="3">
+      <img src="asset/stage-card-img-4.jpg" alt="ESG 경영" loading="lazy">
+      <div class="biz-stage-card-label">ESG 경영</div>
+    </div>
+  </div>
+
+</section>
+</div>
+
+<!-- ══════════════════════════════
+     BUSINESS SLIDER (풀스크린)
+══════════════════════════════ -->
+<section class="biz-slider" id="biz-detail">
+
+  <!-- Slide 01: 원양어업 -->
+  <div class="slide active" data-idx="0">
+    <div class="slide-bg" style="background-image:url('asset/stage-card-img-1.jpg')"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-bottom-label">원양어업</div>
+    <div class="slide-panel">
+      <h3 class="slide-title">원양어업</h3>
+      <p class="slide-subtitle">Global Ocean Fishing Leader</p>
+      <p class="slide-desc">태평양·인도양·대서양을 누비는 180척의 선단. 반세기의 노하우를 바탕으로 참치·오징어·명태 등 주요 어종을 직접 어획하고, MSC 인증 지속가능 조업을 실현합니다.</p>
+      <div class="slide-thumbs">
+        <div class="slide-thumb"><img src="asset/slide-thumb-1.jpg" alt="참치"><span class="slide-thumb-label">참치</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-2.jpg" alt="오징어"><span class="slide-thumb-label">오징어</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-3.jpg" alt="명태"><span class="slide-thumb-label">명태</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-4.jpg" alt="선단"><span class="slide-thumb-label">원양 선단</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-5.jpg" alt="조업"><span class="slide-thumb-label">현장 조업</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-6.jpg" alt="해양"><span class="slide-thumb-label">해양 조업</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 02: 수산가공 -->
+  <div class="slide" data-idx="1">
+    <div class="slide-bg" style="background-image:url('asset/stage-card-img-2.jpg')"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-bottom-label">수산가공</div>
+    <div class="slide-panel">
+      <h3 class="slide-title">수산가공</h3>
+      <p class="slide-subtitle">Premium Processing & Quality</p>
+      <p class="slide-desc">최첨단 냉동·가공 시설에서 원료 어획부터 제품 출하까지 일관 생산 체계를 구축합니다. HACCP·ISO 국제 인증을 보유하며, 엄격한 품질 관리로 세계 식탁에 최고급 수산물을 공급합니다.</p>
+      <div class="slide-thumbs">
+        <div class="slide-thumb"><img src="asset/slide-thumb-7.jpg" alt="가공"><span class="slide-thumb-label">가공 시설</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-8.jpg" alt="품질"><span class="slide-thumb-label">품질 관리</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-9.jpg" alt="냉동"><span class="slide-thumb-label">냉동 처리</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-10.jpg" alt="포장"><span class="slide-thumb-label">제품 포장</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-11.jpg" alt="검수"><span class="slide-thumb-label">검수 공정</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-12.jpg" alt="인증"><span class="slide-thumb-label">국제 인증</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 03: 글로벌 유통 -->
+  <div class="slide" data-idx="2">
+    <div class="slide-bg" style="background-image:url('asset/stage-card-img-3.jpg')"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-bottom-label">글로벌 유통</div>
+    <div class="slide-panel">
+      <h3 class="slide-title">글로벌 유통</h3>
+      <p class="slide-subtitle">Worldwide Distribution Network</p>
+      <p class="slide-desc">41개국에 걸친 수출 네트워크와 현지 법인을 운영합니다. 냉동 콜드체인 물류부터 B2B 대형 유통까지 — 산지에서 소비자까지 최단 시간, 최적 온도를 유지하는 종합 공급망입니다.</p>
+      <div class="slide-thumbs">
+        <div class="slide-thumb"><img src="asset/slide-thumb-13.jpg" alt="항구"><span class="slide-thumb-label">항구 시설</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-14.jpg" alt="물류"><span class="slide-thumb-label">냉동 물류</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-15.jpg" alt="선적"><span class="slide-thumb-label">선박 선적</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 04: ESG -->
+  <div class="slide" data-idx="3">
+    <div class="slide-bg" style="background-image:url('asset/stage-card-img-4.jpg')"></div>
+    <div class="slide-overlay"></div>
+    <div class="slide-bottom-label">ESG 경영</div>
+    <div class="slide-panel">
+      <h3 class="slide-title">ESG 경영</h3>
+      <p class="slide-subtitle">Sustainable Ocean, Sustainable Future</p>
+      <p class="slide-desc">MSC(해양관리협의회) 인증 조업 방식을 전 선단에 도입하고, 자원량 모니터링과 어획 쿼터 준수로 해양 생태계를 보호합니다. 2040년 탄소 중립을 목표로 LNG 추진선 전환을 추진합니다.</p>
+      <div class="slide-thumbs">
+        <div class="slide-thumb"><img src="asset/slide-thumb-16.jpg" alt="해양"><span class="slide-thumb-label">해양 보전</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-17.jpg" alt="환경"><span class="slide-thumb-label">환경 관리</span></div>
+        <div class="slide-thumb"><img src="asset/slide-thumb-18.jpg" alt="탄소"><span class="slide-thumb-label">탄소 감축</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Prev Arrow -->
+  <div class="slide-arrow" id="slidePrev" role="button" aria-label="이전 슬라이드">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18L9 12l6-6"/></svg>
+  </div>
+
+  <!-- Next Arrow -->
+  <div class="slide-arrow slide-arrow--next" id="slideNext" role="button" aria-label="다음 슬라이드">
+    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+  </div>
+
+  <!-- Tab Navigation -->
+  <div class="slide-tabs" id="slideTabs">
+    <div class="slide-tab active" data-idx="0"><span class="tab-bar"></span>원양어업</div>
+    <div class="slide-tab" data-idx="1"><span class="tab-bar"></span>수산가공</div>
+    <div class="slide-tab" data-idx="2"><span class="tab-bar"></span>글로벌 유통</div>
+    <div class="slide-tab" data-idx="3"><span class="tab-bar"></span>ESG</div>
+  </div>
+
+</section>
+
+<!-- ══════════════════════════════
+     GLOBAL NETWORK (STATS)
+══════════════════════════════ -->
+<section class="network" id="network">
+  <div class="container network-inner">
+    <div class="network-text">
+      <div class="network-text-top">
+      <span class="pill reveal">GLOBAL NETWORK</span>
+      <h2 class="network-title reveal-clip" data-delay="1">
+        세계 41개국 파트너와 함께,<br>
+        NAVIS는 바다를 넘어 미래를 향합니다
+      </h2>
+      </div>
+      <div class="network-stats">
+        <div class="nstat reveal" data-delay="2">
+          <span class="nstat-num" data-target="41">0</span>
+          <span class="nstat-label">수출국</span>
+        </div>
+        <div class="nstat reveal" data-delay="3">
+          <span class="nstat-num" data-target="17">0</span>
+          <span class="nstat-label">국내 파트너사</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="network-globe" id="networkGlobe" aria-hidden="true"></div>
+</section>
+
+<!-- ══════════════════════════════
+     NEWS
+══════════════════════════════ -->
+<section class="news" id="news">
+  <div class="container">
+    <div class="news-hd">
+      <span class="pill reveal-clip">NEWSROOM</span>
+      <h2 class="news-hd-title reveal-clip" data-delay="1">
+        NAVIS 수산의<br>새로운 소식을 만나보세요
+      </h2>
+    </div>
+
+    <div class="news-grid reveal" data-delay="1">
+      <a href="#" class="news-card">
+        <div class="news-card-img"><img src="asset/news-thumb-1.png" alt="" loading="lazy"></div>
+        <div class="news-card-body">
+          <div class="news-card-top">
+          <span class="news-card-cat">비즈니스</span>
+          <h4 class="news-card-title">남태평양 참치 조업 쿼터 30% 확대 협약 체결</h4>
+          </div>
+          <span class="news-card-date">2026. 09. 20</span>
+        </div>
+      </a>
+      <a href="#" class="news-card">
+        <div class="news-card-img"><img src="asset/news-thumb-2.png" alt="" loading="lazy"></div>
+        <div class="news-card-body">
+          <div class="news-card-top">
+          <span class="news-card-cat">IR</span>
+          <h4 class="news-card-title">3분기 수산물 수출 전년비 18% 증가… 역대 최대 실적</h4>
+          </div>
+          <span class="news-card-date">2026. 08. 14</span>
+        </div>
+      </a>
+      <a href="#" class="news-card">
+        <div class="news-card-img"><img src="asset/news-thumb-3.png" alt="" loading="lazy"></div>
+        <div class="news-card-body">
+          <div class="news-card-top">
+          <span class="news-card-cat">비즈니스</span>
+          <h4 class="news-card-title">NAVIS-유럽 바이어 MOU 체결, 노르딕 시장 본격 진출</h4>
+          </div>
+          <span class="news-card-date">2026. 07. 03</span>
+        </div>
+      </a>
+      <a href="#" class="news-card">
+        <div class="news-card-img"><img src="asset/news-thumb-4.png" alt="" loading="lazy"></div>
+        <div class="news-card-body">
+          <div class="news-card-top">
+          <span class="news-card-cat">ESG</span>
+          <h4 class="news-card-title">신형 LNG 냉동 운반선 2척 취항, 탄소 배출 30% 저감</h4>
+          </div>
+          <span class="news-card-date">2026. 06. 22</span>
+        </div>
+      </a>
+      <a href="#" class="news-card">
+        <div class="news-card-img"><img src="asset/news-thumb-5.png" alt="" loading="lazy"></div>
+        <div class="news-card-body">
+          <div class="news-card-top">
+          <span class="news-card-cat">ESG</span>
+          <h4 class="news-card-title">불법 어획 근절 위한 해양 블록체인 추적 시스템 도입</h4>
+          </div>
+          <span class="news-card-date">2026. 05. 08</span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════
+     FOOTER
+══════════════════════════════ -->
+<footer class="footer" id="esg">
+  <div class="container footer-top">
+    <div class="footer-brand">
+      <span class="footer-logo">NAVIS</span>
+      <p>바다를 항해하다, 미래를 열다</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <address>서울특별시 중구 을지로 100 NAVIS 빌딩 · Tel. 02-1234-5678 · 사업자등록번호 123-45-67890</address>
+<p class="footer-copy">© 2026 NAVIS Corp. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="js/main.js"></script>
+<script type="module">
+import * as THREE from "https://esm.sh/three@0.134.0";
+import OrbitControls from "https://esm.sh/orbit-controls-es6@2.0.1";
+
+const
+    globe_map_url = "https://github.githubassets.com/images/modules/site/home/globe/map.png",
+    image = new Image(),
+    globe_el = document.getElementById("networkGlobe"),
+    {width: W, height: H} = globe_el.getBoundingClientRect(),
+    GLOBE_RADIUS = 25,
+    DEG2RAD = Math.PI / 180,
+    worldDotRows = 200,
+    worldDotSize = .095;
+
+image.src = globe_map_url;
+image.crossOrigin = "Anonymous";
+
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera( 20, W / H, 170, 260 );
+camera.position.set(0, 0, 220);
+
+const renderer = new THREE.WebGLRenderer( { antialias: true, alpha: true } );
+renderer.setSize( W, H );
+globe_el.appendChild( renderer.domElement );
+
+const parentContainer = new THREE.Group();
+const euler = new THREE.Euler(.3, 4.6, .05);
+let rot = euler;
+const offset = (new Date).getTimezoneOffset() || 0;
+rot.y = euler.y + Math.PI * (offset / 720);
+parentContainer.rotation.copy(rot);
+scene.add(parentContainer);
+
+class GLOBE {
+    constructor(t) { this.props = t; this.init(); }
+    init() {
+        const {radius: t, detail: e=50, renderer: n, shadowPoint: i, highlightPoint: r, highlightColor: a, frontHighlightColor: s=3555965, waterColor: o=857395, landColorFront: l=16777215, shadowDist: c, highlightDist: h, frontPoint: d} = this.props,
+              u = new THREE.SphereGeometry(t, e, e),
+              p = new THREE.MeshStandardMaterial({ color: o, metalness: 0, roughness: .9 });
+        this.uniforms = [];
+        p.onBeforeCompile = t => {
+            t.uniforms.shadowDist = { value: c };
+            t.uniforms.highlightDist = { value: h };
+            t.uniforms.shadowPoint = { value: (new THREE.Vector3).copy(i) };
+            t.uniforms.highlightPoint = { value: (new THREE.Vector3).copy(r) };
+            t.uniforms.frontPoint = { value: (new THREE.Vector3).copy(d) };
+            t.uniforms.highlightColor = { value: new THREE.Color(a) };
+            t.uniforms.frontHighlightColor = { value: new THREE.Color(s) };
+            t.vertexShader = "#define GLSLIFY 1\n#define STANDARD\nvarying vec3 vViewPosition;\n#ifndef FLAT_SHADED\n\tvarying vec3 vNormal;\n\t#ifdef USE_TANGENT\n\t\tvarying vec3 vTangent;\n\t\tvarying vec3 vBitangent;\n\t#endif\n#endif\n#include <common>\n#include <uv_pars_vertex>\n#include <uv2_pars_vertex>\n#include <displacementmap_pars_vertex>\n#include <color_pars_vertex>\n#include <fog_pars_vertex>\n#include <morphtarget_pars_vertex>\n#include <skinning_pars_vertex>\n#include <shadowmap_pars_vertex>\n#include <logdepthbuf_pars_vertex>\n#include <clipping_planes_pars_vertex>\n\nvarying vec3 vWorldPosition;\n\nvoid main() {\n\t#include <uv_vertex>\n\t#include <uv2_vertex>\n\t#include <color_vertex>\n\t#include <beginnormal_vertex>\n\t#include <morphnormal_vertex>\n\t#include <skinbase_vertex>\n\t#include <skinnormal_vertex>\n\t#include <defaultnormal_vertex>\n#ifndef FLAT_SHADED\n\tvNormal = normalize( transformedNormal );\n\t#ifdef USE_TANGENT\n\t\tvTangent = normalize( transformedTangent );\n\t\tvBitangent = normalize( cross( vNormal, vTangent ) * tangent.w );\n\t#endif\n#endif\n\t#include <begin_vertex>\n\t#include <morphtarget_vertex>\n\t#include <skinning_vertex>\n\t#include <displacementmap_vertex>\n\t#include <project_vertex>\n\t#include <logdepthbuf_vertex>\n\t#include <clipping_planes_vertex>\n\tvViewPosition = - mvPosition.xyz;\n\t// # include <worldpos_vertex>\n    vec4 worldPosition = vec4( transformed, 1.0 );\n\n\t#ifdef USE_INSTANCING\n\n\t\tworldPosition = instanceMatrix * worldPosition;\n\n\t#endif\n\n\tworldPosition = modelMatrix * worldPosition;\n\tvWorldPosition = worldPosition.xyz;\n\t#include <shadowmap_vertex>\n\t#include <fog_vertex>\n}";
+            t.fragmentShader = "#define GLSLIFY 1\n#define STANDARD\n#ifdef PHYSICAL\n\t#define REFLECTIVITY\n\t#define CLEARCOAT\n\t#define TRANSPARENCY\n#endif\nuniform vec3 diffuse;\nuniform vec3 emissive;\nuniform float roughness;\nuniform float metalness;\nuniform float opacity;\n#ifdef TRANSPARENCY\n\tuniform float transparency;\n#endif\n#ifdef REFLECTIVITY\n\tuniform float reflectivity;\n#endif\n#ifdef CLEARCOAT\n\tuniform float clearcoat;\n\tuniform float clearcoatRoughness;\n#endif\n#ifdef USE_SHEEN\n\tuniform vec3 sheen;\n#endif\nvarying vec3 vViewPosition;\n#ifndef FLAT_SHADED\n\tvarying vec3 vNormal;\n\t#ifdef USE_TANGENT\n\t\tvarying vec3 vTangent;\n\t\tvarying vec3 vBitangent;\n\t#endif\n#endif\n#include <common>\n#include <packing>\n#include <dithering_pars_fragment>\n#include <color_pars_fragment>\n#include <uv_pars_fragment>\n#include <uv2_pars_fragment>\n#include <map_pars_fragment>\n#include <alphamap_pars_fragment>\n#include <aomap_pars_fragment>\n#include <lightmap_pars_fragment>\n#include <emissivemap_pars_fragment>\n#include <bsdfs>\n#include <cube_uv_reflection_fragment>\n#include <envmap_common_pars_fragment>\n#include <envmap_physical_pars_fragment>\n#include <fog_pars_fragment>\n#include <lights_pars_begin>\n#include <lights_physical_pars_fragment>\n#include <shadowmap_pars_fragment>\n#include <bumpmap_pars_fragment>\n#include <normalmap_pars_fragment>\n#include <clearcoat_pars_fragment>\n#include <roughnessmap_pars_fragment>\n#include <metalnessmap_pars_fragment>\n#include <logdepthbuf_pars_fragment>\n#include <clipping_planes_pars_fragment>\n\nuniform float shadowDist;\nuniform float highlightDist;\nuniform vec3 shadowPoint;\nuniform vec3 highlightPoint;\nuniform vec3 frontPoint;\nuniform vec3 highlightColor;\nuniform vec3 frontHighlightColor;\n\nvarying vec3 vWorldPosition;\n\nvoid main() {\n\t#include <clipping_planes_fragment>\n\tvec4 diffuseColor = vec4( diffuse, opacity );\n\tReflectedLight reflectedLight = ReflectedLight( vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ), vec3( 0.0 ) );\n\tvec3 totalEmissiveRadiance = emissive;\n\t#include <logdepthbuf_fragment>\n\t#ifdef USE_MAP\n\n\t\tvec4 texelColor = texture2D( map, vUv );\n\t\ttexelColor = mapTexelToLinear( texelColor );\n\t\t\n\t\t#ifndef IS_FILL\n\t\t\tdiffuseColor *= texelColor;\n\t\t#endif\n\n\t#endif\n\t#include <color_fragment>\n\t#include <alphamap_fragment>\n\t#include <alphatest_fragment>\n\t#include <roughnessmap_fragment>\n\t#include <metalnessmap_fragment>\n\t#include <normal_fragment_begin>\n\t#include <normal_fragment_maps>\n\t#include <clearcoat_normal_fragment_begin>\n\t#include <clearcoat_normal_fragment_maps>\n\t#include <emissivemap_fragment>\n\t#include <lights_physical_fragment>\n\t#include <lights_fragment_begin>\n\t#include <lights_fragment_maps>\n\t#include <lights_fragment_end>\n\t#include <aomap_fragment>\n\tvec3 outgoingLight = reflectedLight.directDiffuse + reflectedLight.indirectDiffuse + reflectedLight.directSpecular + reflectedLight.indirectSpecular + totalEmissiveRadiance;\n\t#ifdef TRANSPARENCY\n\t\tdiffuseColor.a *= saturate( 1. - transparency + linearToRelativeLuminance( reflectedLight.directSpecular + reflectedLight.indirectSpecular ) );\n\t#endif\n\n    float dist;\n\tfloat distZ;\n\n    // highlights\n\t#ifdef USE_HIGHLIGHT\n\t\tdist = distance(vWorldPosition, highlightPoint);\n\t\tdistZ = distance(vWorldPosition.z, 0.0);\n\t\toutgoingLight = mix(highlightColor, outgoingLight, smoothstep(0.0, highlightDist, dist) * smoothstep(0.0, 3.0, pow(distZ, 0.5)));\n        outgoingLight = mix(outgoingLight * 2.0, outgoingLight, smoothstep(0.0, 12.0, distZ));\n\t#endif\n\n    // front hightlight\n    #ifdef USE_FRONT_HIGHLIGHT\n        dist = distance(vWorldPosition * vec3(0.875, 0.5, 1.0), frontPoint);\n        outgoingLight = mix(frontHighlightColor * 1.6, outgoingLight, smoothstep(0.0, 15.0, dist));\n    #endif\n\n    // shadows\n    dist = distance(vWorldPosition, shadowPoint);\n\toutgoingLight = mix(outgoingLight * 0.01, outgoingLight, smoothstep(0.0, shadowDist, dist));\n\n\t#ifdef IS_FILL\n\t\toutgoingLight = mix(outgoingLight, outgoingLight * 0.5, 1.0 - texelColor.g * 1.5);\n\t#endif\n\n\tgl_FragColor = vec4( outgoingLight, diffuseColor.a );\n\t#include <tonemapping_fragment>\n\t#include <encodings_fragment>\n\t#include <fog_fragment>\n\t#include <premultiplied_alpha_fragment>\n\t#include <dithering_fragment>\n}";
+            this.uniforms.push(t.uniforms);
+        };
+        p.defines = { DITHERING: 1 };
+        this.mesh = new THREE.Group();
+        const m = new THREE.Mesh(u, p);
+        m.renderOrder = 1;
+        this.mesh.add(m);
+        this.meshFill = m;
+        this.materials = [p];
+    }
+    setShadowPoint(t) { this.uniforms && this.uniforms.forEach(e => { e.shadowPoint.value.copy(t); }); }
+    setHighlightPoint(t) { this.uniforms && this.uniforms.forEach(e => { e.highlightPoint.value.copy(t); }); }
+    setFrontPoint(t) { this.uniforms && this.uniforms.forEach(e => { e.frontPoint.value.copy(t); }); }
+    setShadowDist(t) { this.uniforms && this.uniforms.forEach(e => { e.shadowDist.value = t; }); }
+    setHighlightDist(t) { this.uniforms && this.uniforms.forEach(e => { e.highlightDist.value = t; }); }
+    dispose() { this.mesh = null; this.materials = null; this.uniforms = null; this.meshFill = null; }
+}
+
+image.onload = () => {
+    draw_world_dots();
+};
+
+const
+    shadowPoint = (new THREE.Vector3).copy(parentContainer.position).add(new THREE.Vector3(.7 * GLOBE_RADIUS, .3 * -GLOBE_RADIUS, GLOBE_RADIUS)),
+    highlightPoint = (new THREE.Vector3).copy(parentContainer.position).add(new THREE.Vector3(1.5 * -GLOBE_RADIUS, 1.5 * -GLOBE_RADIUS, 0)),
+    frontPoint = (new THREE.Vector3).copy(parentContainer.position).add(new THREE.Vector3(0, 0, GLOBE_RADIUS)),
+    globe = new GLOBE({
+        radius: GLOBE_RADIUS,
+        detail: 55,
+        renderer: renderer,
+        shadowPoint: shadowPoint,
+        shadowDist: 1.5 * GLOBE_RADIUS,
+        highlightPoint: highlightPoint,
+        highlightColor: 5339494,
+        highlightDist: 5,
+        frontPoint: frontPoint,
+        frontHighlightColor: 2569853,
+        waterColor: 1513012,
+        landColorFront: 16777215,
+        landColorBack: 16777215
+    });
+scene.add(globe.mesh);
+
+
+const
+    light_amb = new THREE.AmbientLight(16777215, .8),
+    light_spot_1 = new THREE.SpotLight(2197759, 12, 120, .3, 0, 1.1),
+    light_spot_2 = new THREE.SpotLight(16018366, 5, 75, .5, 0, 1.25),
+    light_dir = new THREE.DirectionalLight(11124735, 3);
+
+light_spot_1.position.set(parentContainer.position.x - 2.5 * GLOBE_RADIUS, 80, -40);
+light_spot_2.position.set(parentContainer.position.x + GLOBE_RADIUS, GLOBE_RADIUS, 2 * GLOBE_RADIUS);
+light_spot_2.distance = 75;
+light_dir.position.set(parentContainer.position.x - 50, parentContainer.position.y + 30, 10);
+
+light_spot_1.target = parentContainer;
+light_spot_2.target = parentContainer;
+light_dir.target = parentContainer;
+
+scene.add(light_amb, light_spot_1, light_spot_2);
+
+const controls = new OrbitControls( camera, globe_el );
+controls.rotateSpeed = 0.05;
+controls.enableDamping = true;
+controls.dampingFactor = 0.1;
+controls.minPolarAngle = Math.PI * .3;
+controls.maxPolarAngle = Math.PI * .6;
+controls.enableZoom = false;
+
+const animate = () => {
+    requestAnimationFrame(animate);
+    parentContainer.rotation.y += 0.002;
+    controls.update();
+    renderer.render(scene, camera);
+};
+animate();
+
+function draw_world_dots() {
+    const e = new THREE.Object3D,
+          d = getImageData(image),
+          i = [],
+          r = worldDotRows;
+    for (let lat = -90; lat <= 90; lat += 180 / r) {
+        const radius = Math.cos(Math.abs(lat) * DEG2RAD) * GLOBE_RADIUS;
+        const circum = radius * Math.PI * 2 * 2;
+        for (let r = 0; r < circum; r++) {
+            const lng = 360 * r / circum - 180;
+            if (!visibilityForCoordinate(lng, lat, d)) continue;
+            const s = calc_pos(lat, lng, GLOBE_RADIUS);
+            e.position.set(s.x, s.y, s.z);
+            const o = calc_pos(lat, lng, GLOBE_RADIUS + 5);
+            e.lookAt(o.x, o.y, o.z);
+            e.updateMatrix();
+            i.push(e.matrix.clone());
+        }
+    }
+    const dot = new THREE.CircleGeometry(worldDotSize, 5),
+          dot_mat = new THREE.MeshStandardMaterial({
+              color: 3818644,
+              metalness: 0,
+              roughness: .9,
+              transparent: true,
+              alphaTest: .02
+          });
+    dot_mat.onBeforeCompile = (t) => {
+        t.fragmentShader = t.fragmentShader.replace("gl_FragColor = vec4( outgoingLight, diffuseColor.a );", "\n        gl_FragColor = vec4( outgoingLight, diffuseColor.a );\n        if (gl_FragCoord.z > 0.51) {\n          gl_FragColor.a = 1.0 + ( 0.51 - gl_FragCoord.z ) * 17.0;\n        }\n      ");
+    };
+    const o = new THREE.InstancedMesh(dot, dot_mat, i.length);
+    for (let l = 0; l < i.length; l++) o.setMatrixAt(l, i[l]);
+    o.renderOrder = 3;
+    parentContainer.add(o);
+}
+
+function visibilityForCoordinate(lng, lat, data) {
+    const i = 4 * data.width,
+          r = parseInt((lng + 180) / 360 * data.width + .5),
+          aa = data.height - parseInt((lat + 90) / 180 * data.height - .5),
+          s = parseInt(i * (aa - 1) + 4 * r) + 3;
+    return data.data[s] > 90;
+}
+
+function getImageData(img) {
+    const el = document.createElement("canvas").getContext("2d");
+    el.canvas.width = img.width;
+    el.canvas.height = img.height;
+    el.drawImage(img, 0, 0, img.width, img.height);
+    return el.getImageData(0, 0, img.width, img.height);
+}
+
+function calc_pos(lat, lng, R, vec) {
+    vec = vec || new THREE.Vector3();
+    const V = (90 - lat) * DEG2RAD,
+          H = (lng + 180) * DEG2RAD;
+    return vec.set(
+        -R * Math.sin(V) * Math.cos(H),
+        R * Math.cos(V),
+        R * Math.sin(V) * Math.sin(H)
+    ), vec;
+}
+</script>
+</body>
+</html>
