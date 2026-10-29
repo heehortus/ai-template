@@ -82,8 +82,17 @@ scene.environmentIntensity = 0.2;
 roomEnv.dispose();
 pmrem.dispose();
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 100);
-camera.position.set(0.4, 0.2, 4);
-camera.lookAt(0, 0, 0);
+
+function applyCameraForViewport() {
+  if (window.innerWidth <= 767) {
+    camera.position.set(0, -0.4, 6.5);
+    camera.lookAt(0, 0.3, 0);
+  } else {
+    camera.position.set(0.4, 0.2, 4);
+    camera.lookAt(0, 0, 0);
+  }
+}
+applyCameraForViewport();
 
 // ── 3. Lights (blue-purple ORBIS theme) ───────────────────
 // Ambient — 전체 저조도
@@ -267,6 +276,7 @@ const PROD_STEP    = (BP.P3_END - PROD_FADE_IN) / PRODUCTS.length;
 const productCards = Array.from(document.querySelectorAll('.product-card'));
 const productDots  = Array.from(document.querySelectorAll('.product-dot'));
 let currentProduct  = -1;
+let currentMobileYOffset = 0;
 let lastSeenProduct =  0; // 마지막으로 표시된 제품 인덱스 (제품 구간 이탈 후 유지)
 
 function showProduct(idx) {
@@ -365,15 +375,18 @@ function onScroll() {
         : 1 - invLerp(BP.P3_END, 1.0, p);
   if (sceneProducts) sceneProducts.style.opacity = prodOp;
 
-  // ─ 3D 오브젝트 X 이동
-  // HERO + TAGLINE: 중앙 유지 / TAGLINE 끝난 후 좌측으로 이동
-  if (p <= BP.TAGLINE_END) {
-    targetObjX = 0;
-  } else if (p <= BP.TAGLINE_END + 0.06) {
-    const t = easeIO(invLerp(BP.TAGLINE_END, BP.TAGLINE_END + 0.06, p));
-    targetObjX = lerp(0, -1.1, t);
+  // ─ 3D 오브젝트 X 이동 (모바일: 항상 중앙 고정)
+  if (window.innerWidth > 767) {
+    if (p <= BP.TAGLINE_END) {
+      targetObjX = 0;
+    } else if (p <= BP.TAGLINE_END + 0.06) {
+      const t = easeIO(invLerp(BP.TAGLINE_END, BP.TAGLINE_END + 0.06, p));
+      targetObjX = lerp(0, -1.1, t);
+    } else {
+      targetObjX = -1.1;
+    }
   } else {
-    targetObjX = -1.1;
+    targetObjX = 0;
   }
 
   // ─ 활성 제품 인덱스 계산
@@ -400,9 +413,30 @@ function onScroll() {
 // scroll → lenis.on('scroll') 에서 통합 호출
 
 // ── 10. GNB & Display Logo scroll fade ───────────────────
-const gnb       = document.getElementById('gnb');
-const displayLogo = document.getElementById('heroDisplayLogo');
-const subWrap   = document.getElementById('heroSubWrap');
+const gnb          = document.getElementById('gnb');
+const displayLogo  = document.getElementById('heroDisplayLogo');
+const subWrap      = document.getElementById('heroSubWrap');
+const hamburgerBtn = document.getElementById('gnbHamburger');
+const mobileMenu   = document.getElementById('gnbMobileMenu');
+
+function closeMobileMenu() {
+  hamburgerBtn.classList.remove('is-open');
+  mobileMenu.classList.remove('is-open');
+  hamburgerBtn.setAttribute('aria-expanded', 'false');
+  mobileMenu.setAttribute('aria-hidden', 'true');
+}
+
+if (hamburgerBtn) {
+  hamburgerBtn.addEventListener('click', () => {
+    const isOpen = hamburgerBtn.classList.toggle('is-open');
+    mobileMenu.classList.toggle('is-open', isOpen);
+    hamburgerBtn.setAttribute('aria-expanded', String(isOpen));
+    mobileMenu.setAttribute('aria-hidden', String(!isOpen));
+  });
+  mobileMenu.querySelectorAll('.gnb-mobile-link').forEach(link => {
+    link.addEventListener('click', () => closeMobileMenu());
+  });
+}
 
 let introComplete = false;
 
@@ -421,12 +455,6 @@ document.fonts.ready.then(syncSubToLogo);
 window.addEventListener('resize', syncSubToLogo);
 
 function updateScrollFade(sy = window.scrollY) {
-  // GNB: opacity + 위로 슬라이드 (0 → 160px)
-  const gP = Math.min(1, sy / 160);
-  gnb.style.opacity       = 1 - gP;
-  gnb.style.transform     = `translateY(${-gP * 24}px)`;
-  gnb.style.pointerEvents = gP >= 1 ? 'none' : '';
-
   // Display logo + 서브텍스트: opacity (0 → 320px) — 인트로 완료 후만 제어
   if (introComplete) {
     const lP = Math.min(1, sy / 320);
@@ -443,7 +471,9 @@ const lenis = new Lenis({
   smoothTouch: false,
 });
 
-const inquirySection = document.getElementById('inquiry');
+const inquirySection    = document.getElementById('inquiry');
+const industriesSection = document.getElementById('industries');
+const techSection       = document.getElementById('technology');
 
 // inquiry 섹션 중앙이 뷰포트 중앙과 일치하는 scrollY 값
 let snapScrollY = 0;
@@ -455,17 +485,66 @@ computeSnapScrollY();
 
 // 현재 Lenis scroll 값 추적 (animate loop에서 사용)
 let currentLenisScroll = 0;
+let lastScrollY = 0;
+let inInquiry = false;
 
 lenis.on('scroll', ({ scroll }) => {
   currentLenisScroll = scroll;
+  const scrollingDown = scroll > lastScrollY;
+  lastScrollY = scroll;
+
   onScroll();
   updateScrollFade(scroll);
 
-  // 구매 문의 섹션이 뷰포트에 보이면 무조건 첫 번째 오브젝트
+  // 테크 섹션 진입 시 오브젝트 중앙 복귀 (-1.1 → 0, 모바일 제외)
+  if (window.innerWidth > 767 && techSection) {
+    const tr = techSection.getBoundingClientRect();
+    if (tr.top < window.innerHeight && tr.top > -tr.height) {
+      const prog = clamp01(1 - tr.top / window.innerHeight);
+      targetObjX = lerp(-1.1, 0, easeIO(prog));
+    }
+  }
+
+  // GNB: 스크롤 상단 근처면 항상 표시, 아래로 스크롤 시 숨김, 위로 스크롤 시 재표시
+  const menuIsOpen = mobileMenu && mobileMenu.classList.contains('is-open');
+  if (scroll <= 80) {
+    gnb.style.transform    = 'translateY(0)';
+    gnb.style.opacity      = '1';
+    gnb.style.pointerEvents = '';
+  } else if (scrollingDown && !menuIsOpen) {
+    gnb.style.transform    = 'translateY(calc(-100% - 48px))';
+    gnb.style.opacity      = '0';
+    gnb.style.pointerEvents = 'none';
+    if (menuIsOpen) closeMobileMenu();
+  } else if (!scrollingDown) {
+    gnb.style.transform    = 'translateY(0)';
+    gnb.style.opacity      = '1';
+    gnb.style.pointerEvents = '';
+  }
+
+  // Industries 섹션: 뷰포트 중앙 교차 시 색상 반전
+  if (industriesSection) {
+    const ir = industriesSection.getBoundingClientRect();
+    const vc = window.innerHeight / 2;
+    industriesSection.classList.toggle('is-inverted', ir.top < vc && ir.bottom > vc);
+  }
+
+  // 구매 문의 섹션이 뷰포트에 보이면 무조건 첫 번째 오브젝트 + 정면 복귀 플래그
   if (inquirySection) {
     const r = inquirySection.getBoundingClientRect();
-    if (r.top < window.innerHeight && r.bottom > 0) {
+    inInquiry = r.top < window.innerHeight && r.bottom > 0;
+    if (inInquiry) {
       PRODUCTS.forEach((_, i) => { objTargetOp[i] = i === 0 ? 1.0 : 0.0; });
+      if (window.innerWidth > 767) targetObjX = -1.1;
+    }
+  }
+
+  // footer 요소: 스크롤 90% 도달 시 slide-in 등장
+  if (!footerRevealed) {
+    const maxScroll = document.body.scrollHeight - window.innerHeight;
+    if (maxScroll > 0 && scroll / maxScroll >= 0.9) {
+      footerRevealEls.forEach(el => el.classList.add('is-visible'));
+      footerRevealed = true;
     }
   }
 });
@@ -544,7 +623,8 @@ updateScrollFade(0);
 })();
 
 // ── 11. Reveal on scroll ──────────────────────────────────
-const revealEls = document.querySelectorAll('[data-reveal]');
+// footer 요소는 스크롤 90% 지점에서 별도 트리거 — observer 제외
+const revealEls = document.querySelectorAll('[data-reveal]:not(.footer-tagline):not(.footer-big-logo)');
 const revealObs = new IntersectionObserver((entries) => {
   entries.forEach(e => {
     if (!e.isIntersecting) return;
@@ -554,11 +634,16 @@ const revealObs = new IntersectionObserver((entries) => {
 }, { threshold: 0.2, rootMargin: '0px 0px -8% 0px' });
 revealEls.forEach(el => revealObs.observe(el));
 
+// footer 요소: 스크롤 90% 도달 시 등장
+const footerRevealEls = document.querySelectorAll('.footer-tagline, .footer-big-logo');
+let footerRevealed = false;
+
 // ── 12. Resize ────────────────────────────────────────────
 window.addEventListener('resize', () => {
   camera.aspect = window.innerWidth / window.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(window.innerWidth, window.innerHeight);
+  applyCameraForViewport();
   computeSnapScrollY();
   lastP = -1;
   onScroll();
@@ -577,13 +662,22 @@ function animate(time) {
 
   // 플로팅 (상하 미세 움직임) + inquiry 섹션 중앙 고정
   const floatY = Math.sin(t * 0.72) * 0.04;
-  let objY = floatY;
+  const inProductSection = lastP >= PROD_FADE_IN && lastP <= BP.P3_END;
+  let targetMobileY = 0;
+  if (window.innerWidth <= 767 && inProductSection) {
+    // 패널이 차지하는 픽셀(bottom:48 + 패널 높이)의 절반만큼 오브젝트를 위로 올림
+    const panelH     = productsPanel ? productsPanel.offsetHeight : 280;
+    const pixelShift = (48 + panelH) / 2;
+    const worldPerPx = (2 * Math.tan(22.5 * Math.PI / 180) * camera.position.z) / window.innerHeight;
+    targetMobileY    = pixelShift * worldPerPx;
+  }
+  currentMobileYOffset = lerp(currentMobileYOffset, targetMobileY, 0.05);
+  let objY = floatY + currentMobileYOffset;
   if (currentLenisScroll >= snapScrollY && inquirySection) {
     const r = inquirySection.getBoundingClientRect();
     const inquiryCenterViewport = r.top + r.height / 2;
     const deltaPixels = window.innerHeight / 2 - inquiryCenterViewport;
-    // 카메라 FOV 45°, z=4에서의 world 단위 변환
-    const worldPerPx = (2 * Math.tan(22.5 * Math.PI / 180) * 4) / window.innerHeight;
+    const worldPerPx = (2 * Math.tan(22.5 * Math.PI / 180) * camera.position.z) / window.innerHeight;
     objY = floatY + deltaPixels * worldPerPx;
   }
   objGroups[0].position.y = objY;
@@ -599,6 +693,12 @@ function animate(time) {
     } else {
       dragRotY += 0.004;
     }
+  }
+
+  // inquiry 섹션: 정면 복귀 (userInteracting 중엔 유지)
+  if (inInquiry && !userInteracting) {
+    dragRotY = lerp(dragRotY, 0, 0.04);
+    dragRotX = lerp(dragRotX, 0, 0.04);
   }
 
   // 기본 방향: 정면 (오프셋 0)
@@ -625,74 +725,80 @@ function animate(time) {
   underGlow.intensity     = BASE_INT.underGlow  * lightDimFactor;
   topLight.intensity      = BASE_INT.topLight   * lightDimFactor;
 
-  drawTrail();
   renderer.render(scene, camera);
 }
 
-// ── 14. Custom Cursor + Trail ─────────────────────────
+// ── 14. Custom Cursor ─────────────────────────────────
 const cursorEl    = document.getElementById('cursor');
-const trailCanvas = document.getElementById('trail-canvas');
-const tCtx        = trailCanvas.getContext('2d');
-const trail       = [];
-const TRAIL_MAX   = 48;
+const dragCursorEl = document.getElementById('drag-cursor');
 let   curX = -100, curY = -100;
-
-(function resizeTrail() {
-  trailCanvas.width  = window.innerWidth;
-  trailCanvas.height = window.innerHeight;
-})();
-window.addEventListener('resize', () => {
-  trailCanvas.width  = window.innerWidth;
-  trailCanvas.height = window.innerHeight;
-});
+const _projVec = new THREE.Vector3();
 
 document.addEventListener('mousemove', (e) => {
   curX = e.clientX;
   curY = e.clientY;
-  trail.push({ x: curX, y: curY });
-  if (trail.length > TRAIL_MAX) trail.shift();
+
+  if (cursorEl) {
+    cursorEl.style.left = curX + 'px';
+    cursorEl.style.top  = curY + 'px';
+  }
+
+  if (dragCursorEl) {
+    dragCursorEl.style.left = curX + 'px';
+    dragCursorEl.style.top  = curY + 'px';
+
+    // 오브젝트 중심을 화면 좌표로 투영 후 마우스 거리 계산
+    _projVec.copy(objGroups[0].position).project(camera);
+    const objSx = (_projVec.x * 0.5 + 0.5) * window.innerWidth;
+    const objSy = (-_projVec.y * 0.5 + 0.5) * window.innerHeight;
+    const dist  = Math.hypot(curX - objSx, curY - objSy);
+
+    // 오브젝트 반경(1 world unit)을 픽셀로 환산 (FOV 45°, z=4 기준)
+    const worldPerPx   = (2 * Math.tan(22.5 * Math.PI / 180) * 4) / window.innerHeight;
+    const objRadiusPx  = 1.1 / worldPerPx;
+
+    const inDraggable = lastP >= 0 && lastP < 0.98;
+    const showDrag = inDraggable && dist < objRadiusPx;
+    dragCursorEl.classList.toggle('is-visible', showDrag);
+    if (cursorEl) cursorEl.style.opacity = showDrag ? '0' : '1';
+  }
 });
 
-document.addEventListener('mouseleave', () => { cursorEl.style.opacity = '0'; });
+document.addEventListener('mouseleave', () => {
+  cursorEl.style.opacity = '0';
+  if (dragCursorEl) dragCursorEl.classList.remove('is-visible');
+});
 document.addEventListener('mouseenter', () => { cursorEl.style.opacity = '1'; });
+
+// ── Industry Popup ────────────────────────────────────
+const industryPopupEl  = document.getElementById('industry-popup');
+const industryPopupImg = document.getElementById('industry-popup-img');
+
+function positionPopup(x, y) {
+  if (!industryPopupEl) return;
+  const pw = 280, ph = 380;
+  const left = x + 24 + pw > window.innerWidth ? x - 24 - pw : x + 24;
+  const top  = Math.max(8, Math.min(y - ph / 2, window.innerHeight - ph - 8));
+  industryPopupEl.style.left = left + 'px';
+  industryPopupEl.style.top  = top  + 'px';
+}
+
+document.querySelectorAll('.industry-item').forEach(item => {
+  item.addEventListener('mouseenter', (e) => {
+    if (!industryPopupEl || !industryPopupImg) return;
+    const src = item.dataset.img;
+    if (!src) return;
+    industryPopupImg.src = src;
+    positionPopup(e.clientX, e.clientY);
+    industryPopupEl.classList.add('is-visible');
+  });
+  item.addEventListener('mousemove', (e) => {
+    positionPopup(e.clientX, e.clientY);
+  });
+  item.addEventListener('mouseleave', () => {
+    if (industryPopupEl) industryPopupEl.classList.remove('is-visible');
+  });
+});
 
 animate();
 
-function drawTrail() {
-  tCtx.clearRect(0, 0, trailCanvas.width, trailCanvas.height);
-  if (trail.length < 2) return;
-
-  const n = trail.length;
-  tCtx.lineCap     = 'round';
-  tCtx.lineJoin    = 'round';
-  tCtx.strokeStyle = '#ffffff';
-
-  // Pass 1: 중점→중점 quadratic bezier — C1 연속 (꺾임 없음)
-  // 꼬리→헤드 순으로 그려야 큰 캡이 작은 캡을 덮어 도트 없음
-  for (let i = 0; i < n - 1; i++) {
-    const t  = (i + 1) / n;
-    const x0 = i === 0     ? trail[0].x     : (trail[i - 1].x + trail[i].x) / 2;
-    const y0 = i === 0     ? trail[0].y     : (trail[i - 1].y + trail[i].y) / 2;
-    const x1 = i === n - 2 ? trail[n - 1].x : (trail[i].x + trail[i + 1].x) / 2;
-    const y1 = i === n - 2 ? trail[n - 1].y : (trail[i].y + trail[i + 1].y) / 2;
-
-    tCtx.beginPath();
-    tCtx.moveTo(x0, y0);
-    tCtx.quadraticCurveTo(trail[i].x, trail[i].y, x1, y1);
-    tCtx.lineWidth = Math.max(2, t * 14);
-    tCtx.stroke();
-  }
-
-  // Pass 2: destination-out 그라디언트로 꼬리 페이드
-  const tail = trail[0];
-  const head = trail[n - 1];
-  const grad = tCtx.createLinearGradient(tail.x, tail.y, head.x, head.y);
-  grad.addColorStop(0,   'rgba(0,0,0,1)');
-  grad.addColorStop(0.5, 'rgba(0,0,0,0.4)');
-  grad.addColorStop(1,   'rgba(0,0,0,0)');
-
-  tCtx.globalCompositeOperation = 'destination-out';
-  tCtx.fillStyle = grad;
-  tCtx.fillRect(0, 0, trailCanvas.width, trailCanvas.height);
-  tCtx.globalCompositeOperation = 'source-over';
-}
