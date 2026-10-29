@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ORBIS — Enterprise Mixed Reality</title>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js",
+      "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"
+    }
+  }
+  </script>
+</head>
+<body>
+
+<!-- ── GNB ──────────────────────────────────────────── -->
+<header class="gnb" id="gnb">
+  <div class="gnb-inner">
+    <a class="gnb-logo" href="#">ORBIS</a>
+    <nav class="gnb-nav">
+      <a href="#products" class="gnb-link">Products</a>
+      <a href="#technology" class="gnb-link">Technology</a>
+      <a href="#industries" class="gnb-link">Industries</a>
+      <a href="#inquiry" class="gnb-link">문의</a>
+    </nav>
+    <a class="gnb-cta" href="#contact">파트너십 문의</a>
+  </div>
+</header>
+
+<!-- ── THREE.JS CANVAS (fixed, full-screen) ─────────── -->
+<canvas id="orb-canvas"></canvas>
+
+<!-- ── BACKGROUND GRADIENT ───────────────────────────── -->
+<div class="bg-gradient" aria-hidden="true"></div>
+
+<!-- ── DIM OVERLAY (canvas 위 / runway 아래) ─────────── -->
+<div class="dim-overlay" id="dimOverlay" aria-hidden="true"></div>
+
+<!-- ── STICKY SCROLL RUNWAY ─────────────────────────── -->
+<!--
+  runway-wrap: 700vh 높이가 스크롤 런웨이.
+  runway-pin:  sticky 100vh — 캔버스 위에 올라오는 씬 레이어.
+  progress 0→1 = 600vh 스크롤.
+
+  0.00 → 0.15  HERO       : 오브젝트 중앙, 타이틀 표시
+  0.15 → 0.25  TRANSITION : 오브젝트 중앙 → 좌측 이동
+  0.25 → 0.55  TAGLINE    : 대형 문장 wipe 연출
+  0.55 → 0.70  PRODUCT 1  : ORBIS ONE 스펙
+  0.70 → 0.80  PRODUCT 2  : ORBIS PRO 스펙
+  0.80 → 0.90  PRODUCT 3  : ORBIS FIELD 스펙
+  0.90 → 1.00  EXIT       : 씬 페이드아웃
+-->
+<div class="runway-wrap" id="runwayWrap">
+  <div class="runway-pin" id="runwayPin">
+
+    <!-- Scene: Hero -->
+    <div class="scene scene--hero" id="sceneHero"></div>
+
+    <!-- Display Logo (독립 레이어 — 별도 fade 제어) -->
+    <div class="hero-display-logo" id="heroDisplayLogo" aria-hidden="true">ORBIS</div>
+
+    <!-- Display Logo 서브텍스트 -->
+    <div class="hero-disp-sub-wrap" id="heroSubWrap">
+      <p class="hero-disp-sub">한계를 뛰어넘는 기술<br>현실과의 경계를 허물다</p>
+      <p class="hero-disp-sub hero-disp-sub--right">산업 현장을 위한<br>가장 정밀한 선택</p>
+    </div>
+
+    <!-- Scene: Tagline -->
+    <div class="scene scene--tagline" id="sceneTagline">
+      <div class="tagline-body">
+        <p class="tagline-line">
+          <span class="tw">눈앞에</span> <span class="tw">펼쳐지는</span> <span class="tw">생생한</span> <span class="tw">현장.</span>
+        </p>
+        <p class="tagline-line">
+          <span class="tw">손끝으로</span> <span class="tw">제어하는</span> <span class="tw">현장.</span>
+        </p>
+        <p class="tagline-line">
+          <span class="tw">현실과</span> <span class="tw">디지털이</span> <span class="tw">하나로</span> <span class="tw">융합됩니다.</span>
+        </p>
+      </div>
+    </div>
+
+    <!-- Scene: Products -->
+    <div class="scene scene--products" id="sceneProducts">
+      <div class="products-panel" id="productsPanel"></div><!-- /products-panel JS populated -->
+
+      <!-- 제품 인디케이터 -->
+      <div class="product-dots" id="productDots"></div><!-- JS populated -->
+
+    </div><!-- /scene--products -->
+
+  </div><!-- /runway-pin -->
+</div><!-- /runway-wrap -->
+
+<!-- ── REGULAR SECTIONS ──────────────────────────────── -->
+
+<!-- Technology -->
+<section class="section section--tech" id="technology">
+  <div class="container">
+    <h2 class="section-title" data-reveal>Core Technology</h2>
+    <p class="section-desc" data-reveal>ORBIS의 독자 기술이 현장의 한계를 넘습니다</p>
+    <div class="tech-grid">
+      <div class="tech-card" data-reveal>
+        <div class="tech-icon">◎</div>
+        <h3 class="tech-name">Spatial Mapping</h3>
+        <p class="tech-desc">실시간 공간 매핑으로 0.1mm 정밀도의 AR 오버레이를 구현합니다</p>
+      </div>
+      <div class="tech-card" data-reveal>
+        <div class="tech-icon">◈</div>
+        <h3 class="tech-name">Edge AI</h3>
+        <p class="tech-desc">온디바이스 AI 칩으로 클라우드 의존 없이 즉각적인 인식과 판단을 수행합니다</p>
+      </div>
+      <div class="tech-card" data-reveal>
+        <div class="tech-icon">◉</div>
+        <h3 class="tech-name">Micro-OLED</h3>
+        <p class="tech-desc">차세대 Micro-OLED 패널로 직사광선 아래에서도 선명한 시각을 보장합니다</p>
+      </div>
+      <div class="tech-card" data-reveal>
+        <div class="tech-icon">◐</div>
+        <h3 class="tech-name">Mesh Network</h3>
+        <p class="tech-desc">다중 기기 간 메시 네트워크로 현장 전체를 하나의 혼합현실 공간으로 연결합니다</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Industries -->
+<section class="section section--industries" id="industries">
+  <div class="container">
+    <h2 class="section-title" data-reveal>Industries</h2>
+    <p class="section-desc" data-reveal>다양한 산업 현장에서 검증된 ORBIS</p>
+    <div class="industry-list">
+      <div class="industry-item" data-reveal>
+        <span class="industry-num">01</span>
+        <div class="industry-body">
+          <h3 class="industry-name">제조</h3>
+          <p class="industry-desc">조립 가이드, 품질 검사, 설비 유지보수를 AR로 전환합니다</p>
+        </div>
+      </div>
+      <div class="industry-item" data-reveal>
+        <span class="industry-num">02</span>
+        <div class="industry-body">
+          <h3 class="industry-name">물류</h3>
+          <p class="industry-desc">피킹 효율 40% 향상, 오작동 99% 감소를 실현합니다</p>
+        </div>
+      </div>
+      <div class="industry-item" data-reveal>
+        <span class="industry-num">03</span>
+        <div class="industry-body">
+          <h3 class="industry-name">의료</h3>
+          <p class="industry-desc">수술 지원, 원격 협진, 교육 시뮬레이션을 혼합현실로 구현합니다</p>
+        </div>
+      </div>
+      <div class="industry-item" data-reveal>
+        <span class="industry-num">04</span>
+        <div class="industry-body">
+          <h3 class="industry-name">건설</h3>
+          <p class="industry-desc">BIM 연동, 시공 검측, 안전 관리를 현장에서 바로 수행합니다</p>
+        </div>
+      </div>
+      <div class="industry-item" data-reveal>
+        <span class="industry-num">05</span>
+        <div class="industry-body">
+          <h3 class="industry-name">에너지</h3>
+          <p class="industry-desc">원격 점검, 위험 시설 유지보수, 훈련을 안전하게 진행합니다</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Stats -->
+<section class="section section--stats">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-item" data-reveal>
+        <span class="stat-num">340<span class="stat-unit">+</span></span>
+        <span class="stat-label">도입 기업</span>
+      </div>
+      <div class="stat-item" data-reveal>
+        <span class="stat-num">28<span class="stat-unit">개국</span></span>
+        <span class="stat-label">글로벌 공급</span>
+      </div>
+      <div class="stat-item" data-reveal>
+        <span class="stat-num">99.7<span class="stat-unit">%</span></span>
+        <span class="stat-label">현장 가동률</span>
+      </div>
+      <div class="stat-item" data-reveal>
+        <span class="stat-num">40<span class="stat-unit">%</span></span>
+        <span class="stat-label">평균 생산성 향상</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Inquiry Form -->
+<section class="section section--inquiry" id="inquiry">
+  <div class="inquiry-layout">
+    <!-- 왼쪽: 고정 캔버스의 3D 오브젝트가 비침 -->
+    <div class="inquiry-visual" aria-hidden="true"></div>
+    <!-- 오른쪽: 폼 -->
+    <div class="inquiry-content">
+      <h2 class="section-title" data-reveal>구매 문의</h2>
+      <p class="section-desc" data-reveal>ORBIS 제품 도입에 대한 문의를 남겨주세요.<br>담당자가 빠르게 연락드립니다.</p>
+      <form class="inquiry-form" action="#" method="post">
+        <div class="inquiry-row">
+          <div class="inquiry-field">
+            <label class="inquiry-label" for="field-name">담당자명</label>
+            <input class="inquiry-input" type="text" id="field-name" name="name" placeholder="홍길동" autocomplete="name">
+          </div>
+          <div class="inquiry-field">
+            <label class="inquiry-label" for="field-company">회사명</label>
+            <input class="inquiry-input" type="text" id="field-company" name="company" placeholder="회사명을 입력하세요" autocomplete="organization">
+          </div>
+        </div>
+        <div class="inquiry-row">
+          <div class="inquiry-field">
+            <label class="inquiry-label" for="field-email">이메일</label>
+            <input class="inquiry-input" type="email" id="field-email" name="email" placeholder="orbis@example.com" autocomplete="email">
+          </div>
+          <div class="inquiry-field">
+            <label class="inquiry-label" for="field-tel">연락처</label>
+            <input class="inquiry-input" type="tel" id="field-tel" name="tel" placeholder="010-0000-0000" autocomplete="tel">
+          </div>
+        </div>
+        <div class="inquiry-field">
+          <label class="inquiry-label" for="field-product">관심 제품</label>
+          <select class="inquiry-input inquiry-select" id="field-product" name="product">
+            <option value="">선택해주세요</option>
+            <option value="one">ORBIS ONE</option>
+            <option value="pro">ORBIS PRO</option>
+            <option value="both">전 제품</option>
+          </select>
+        </div>
+        <div class="inquiry-field">
+          <label class="inquiry-label" for="field-message">문의 내용</label>
+          <textarea class="inquiry-input inquiry-textarea" id="field-message" name="message" placeholder="도입 규모, 활용 목적 등 자세한 내용을 입력해주세요"></textarea>
+        </div>
+        <input class="inquiry-submit" type="submit" value="문의 보내기">
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Footer / Contact -->
+<footer class="footer" id="contact">
+  <!-- 빅 로고 — hero display logo와 동일 스타일 -->
+  <div class="footer-big-logo" aria-hidden="true">ORBIS</div>
+</footer>
+
+<div id="cursor" aria-hidden="true"></div>
+<canvas id="trail-canvas" aria-hidden="true"></canvas>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>

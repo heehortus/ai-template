@@ -1,6 +1,22 @@
 /* ═══════════════════════════════════════
    NAVIS 수산 — main.js
    ═══════════════════════════════════════ */
+
+/* 모바일 biz 슬라이더 열기 (전역 — onclick 속성에서 직접 호출) */
+function bizOpenSlider(idx) {
+  var slider = document.querySelector('.biz-slider');
+  if (!slider) return;
+  /* slides / tabs 는 IIFE 내부 변수이므로 DOM 직접 조작 */
+  var slides = slider.querySelectorAll('.slide');
+  var tabs   = document.querySelectorAll('.slide-tab');
+  slides.forEach(function(s) { s.classList.remove('active'); });
+  tabs.forEach(function(t)   { t.classList.remove('active'); });
+  if (slides[idx]) slides[idx].classList.add('active');
+  if (tabs[idx])   tabs[idx].classList.add('active');
+  slider.classList.add('mobile-open');
+  if (window.lenis) window.lenis.stop();
+}
+
 (function () {
   'use strict';
 
@@ -18,6 +34,7 @@
     easing: function (t) { return 1 - Math.pow(1 - t, 4); }, // easeOutQuart
     smoothWheel: true
   });
+  window.lenis = lenis; // bizOpenSlider 전역 함수에서 참조
   (function lenisRaf(time) {
     lenis.raf(time);
     requestAnimationFrame(lenisRaf);
@@ -39,7 +56,17 @@
   if (hamburger) hamburger.addEventListener('click', function () { drawer.classList.contains('open') ? closeDrawer() : openDrawer(); });
   if (closer) closer.addEventListener('click', closeDrawer);
   if (dim)    dim.addEventListener('click', closeDrawer);
-  document.querySelectorAll('.mobile-link').forEach(function (l) { l.addEventListener('click', closeDrawer); });
+  document.querySelectorAll('.mobile-link').forEach(function (l) {
+    l.addEventListener('click', function (e) {
+      e.preventDefault();
+      closeDrawer();
+      var target = l.getAttribute('href');
+      if (target && target !== '#') {
+        var el = document.querySelector(target);
+        if (el) setTimeout(function () { lenis.scrollTo(el, { duration: 1.2 }); }, 340);
+      }
+    });
+  });
 
   /* ══════════════════════════════
      HERO: 페이지 로드 인트로
@@ -55,56 +82,78 @@
      clip-path: inset(96px 24px 24px round 20px) → inset(0)
      GNB: 배경 투명 전환
   ══════════════════════════════ */
-  var EXPAND_DIST  = 360;  // 이 px 만큼 스크롤하면 완전히 확장 (hero-pin height의 extra 부분)
-  var INSET_TOP    = 96;   // 초기 top inset: GNB(72) + 간격(24)
-  var INSET_SIDE   = 24;   // 초기 side inset
-  var INSET_BOT    = 24;   // 초기 bottom inset
-  var BR_INIT      = 20;   // 초기 border-radius
+  var EXPAND_DIST  = 360;
+  var INSET_TOP    = 96;
+  var INSET_SIDE   = 24;
+  var INSET_BOT    = 24;
+  var BR_INIT      = 20;
   var heroBg       = document.getElementById('heroBg');
   var heroRafPending = false;
-  var heroPrev     = 0;    // 직전 프레임의 p 값
-  var heroLocked   = false; // 스크롤 일시 정지 중 여부
+  var heroPrev     = 0;
+  var heroLocked   = false;
+  var heroAnimating = false; // CSS transition 진행 중 여부
+  var heroExpanded  = false; // 풀스크린 확장 완료 여부
 
   function updateHero() {
+    // 애니메이션 진행 중엔 scroll 기반 업데이트 차단
+    if (heroAnimating) { heroRafPending = false; return; }
+
     var p = clamp(window.scrollY / EXPAND_DIST, 0, 1);
 
-    // hero가 완전히 펼쳐지는 순간(p < 1 → p ≥ 1) 스크롤을 잠시 정지
-    if (p >= 1 && heroPrev < 1 && !heroLocked) {
-      heroLocked = true;
+    // 스크롤 시작 순간 lenis.stop + CSS transition으로 풀스크린 확장
+    if (p > 0 && !heroExpanded) {
+      heroAnimating = true;
       lenis.stop();
-      setTimeout(function () {
-        heroLocked = false;
-        lenis.start();
-      }, 900);
-    }
-    heroPrev = p;
 
-    if (heroEl) {
+      if (heroEl) {
+        heroEl.style.transition = 'clip-path 0.72s cubic-bezier(0.16, 1, 0.3, 1)';
+        heroEl.style.clipPath   = 'inset(0px 0px 0px round 0px)';
+      }
+      var ind = heroEl ? heroEl.querySelector('.hero-scroll-ind') : null;
+      if (ind) { ind.style.transition = 'opacity 0.24s'; ind.style.opacity = '0'; }
+
+      setTimeout(function () {
+        if (heroEl) heroEl.style.transition = '';
+        if (ind)    ind.style.transition    = '';
+        heroAnimating = false;
+        heroExpanded  = true;
+        lenis.start();
+      }, 760);
+
+      heroRafPending = false;
+      return; // 같은 콜에서 아래 scroll 기반 clipPath가 덮어쓰지 않도록 차단
+    }
+
+    // 맨 위로 돌아오면 초기 상태로 리셋
+    if (heroExpanded && window.scrollY <= 0) {
+      heroExpanded = false;
+      if (heroEl) heroEl.style.clipPath =
+        'inset(' + INSET_TOP + 'px ' + INSET_SIDE + 'px ' + INSET_BOT + 'px round ' + BR_INIT + 'px)';
+    }
+
+    // 확장 전: 스크롤 기반 clip-path (모바일 등 isPc 아닌 경우 자연스러운 폴백)
+    if (!heroExpanded && heroEl) {
       var it  = (INSET_TOP  * (1 - p)).toFixed(1);
       var is_ = (INSET_SIDE * (1 - p)).toFixed(1);
       var ib  = (INSET_BOT  * (1 - p)).toFixed(1);
       var br  = (BR_INIT    * (1 - p)).toFixed(1);
       heroEl.style.clipPath = 'inset(' + it + 'px ' + is_ + 'px ' + ib + 'px round ' + br + 'px)';
-
-      // 스크롤 인디케이터: 확장 중에 페이드 아웃
-      var ind = heroEl.querySelector('.hero-scroll-ind');
-      if (ind) ind.style.opacity = (1 - p * 3 > 0 ? 1 - p * 3 : 0).toFixed(2);
+      var ind2 = heroEl.querySelector('.hero-scroll-ind');
+      if (ind2) ind2.style.opacity = (1 - p * 3 > 0 ? 1 - p * 3 : 0).toFixed(2);
     }
 
-    // GNB 그림자: 히어로 벗어나면 표시
+    // GNB 그림자
     if (gnb) {
       var heroBottom = heroEl ? heroEl.getBoundingClientRect().bottom : 0;
-      if (heroBottom > 0) {
-        gnb.classList.remove('is-shadow');
-      } else {
-        gnb.classList.add('is-shadow');
-      }
+      if (heroBottom > 0) { gnb.classList.remove('is-shadow'); }
+      else                { gnb.classList.add('is-shadow'); }
     }
 
     // 패럴랙스
     if (heroBg && window.scrollY < window.innerHeight * 1.5) {
       heroBg.style.transform = 'translateY(' + (window.scrollY * 0.36).toFixed(1) + 'px)';
     }
+    heroPrev = p;
     heroRafPending = false;
   }
 
@@ -152,7 +201,7 @@
   var slideIdx    = 0;
   var slideTotal  = slides.length;
   var slideTimer  = null;
-  var SLIDE_DUR   = 2000;
+  var SLIDE_DUR   = 4000; // CSS tab-progress 애니메이션(4s)과 일치
 
   function restartTabBar(tab) {
     var bar = tab.querySelector('.tab-bar');
@@ -165,7 +214,15 @@
   function scrollToNetwork() {
     clearTimeout(slideTimer);
     clearInterval(slideTimer);
-    lenis.start(); // 혹시 멈춰 있는 경우 강제 재개
+    lenis.start();
+    if (window.innerWidth <= 900) {
+      // 모바일: 슬라이더 닫은 뒤 network 섹션으로 스크롤
+      var mSlider = document.querySelector('.biz-slider');
+      if (mSlider) mSlider.classList.remove('mobile-open');
+      var networkEl = document.getElementById('network');
+      if (networkEl) setTimeout(function () { lenis.scrollTo(networkEl, { duration: 1.2 }); }, 440);
+      return;
+    }
     var networkEl = document.getElementById('network');
     if (!networkEl) return;
     // slider가 fixed 상태면 먼저 자연 배치로 복귀
@@ -185,10 +242,12 @@
     restartTabBar(tabs[slideIdx]);
     clearTimeout(slideTimer);
     clearInterval(slideTimer);
-    if (slideIdx < slideTotal - 1) {
-      slideTimer = setInterval(function () { goSlide(slideIdx + 1); }, SLIDE_DUR);
-    } else {
-      slideTimer = setTimeout(scrollToNetwork, SLIDE_DUR);
+    if (window.innerWidth > 900) {
+      if (slideIdx < slideTotal - 1) {
+        slideTimer = setInterval(function () { goSlide(slideIdx + 1); }, SLIDE_DUR);
+      } else {
+        slideTimer = setTimeout(scrollToNetwork, SLIDE_DUR);
+      }
     }
   }
 
@@ -208,9 +267,11 @@
     }
   });
 
-  // 초기 자동 슬라이드 시작
+  // 초기 자동 슬라이드 시작 (PC 전용)
   restartTabBar(tabs[0]);
-  slideTimer = setInterval(function () { goSlide(slideIdx + 1); }, SLIDE_DUR);
+  if (window.innerWidth > 900) {
+    slideTimer = setInterval(function () { goSlide(slideIdx + 1); }, SLIDE_DUR);
+  }
 
   /* ══════════════════════════════
      스탯 카운트업
@@ -270,13 +331,16 @@
   var BIZ_P0 = 0.16;  // 헤더 완전히 나타남
   var BIZ_P1 = 0.56;  // 카드 완전히 정착
   var BIZ_P2 = 0.60;  // 센터 카드 확장 시작
+  var isMobileBiz = window.innerWidth <= 900; // 모바일/태블릿 여부 (biz 섹션 애니메이션 분기)
 
   function updateBiz() {
     if (!bizPin || !bizStage) return;
     var pinExtra = bizPin.offsetHeight - window.innerHeight;
+    if (pinExtra <= 0) return;
     var p = clamp(-bizPin.getBoundingClientRect().top / pinExtra, 0, 1);
 
-    var inP3 = p >= BIZ_P2 - 0.01;
+    var biz_p2_eff = BIZ_P2;
+    var inP3 = p >= biz_p2_eff - 0.01;
 
     // Phase 3 종료 시 절대 위치 + slider 초기화
     if (!inP3 && bizRects) {
@@ -285,8 +349,9 @@
       bizCards.forEach(function(card) {
         card.style.position = card.style.left = card.style.top =
         card.style.width = card.style.height = card.style.borderRadius =
-        card.style.zIndex = '';
+        card.style.zIndex = card.style.transform = card.style.opacity = '';
       });
+      if (bizHd) { bizHd.style.opacity = ''; bizHd.style.clipPath = ''; bizHd.style.transform = ''; }
       // bizSliderReady=true면 위 스크롤 중이므로 slider는 건드리지 않음
       if (!bizSliderReady) {
         if (bizSlider) { bizSlider.style.cssText = ''; }
@@ -295,39 +360,35 @@
     }
 
     if (!inP3) {
-      // Phase 1: 헤더 클립패스 (0 → BIZ_P0)
-      if (bizHd) {
-        var t0  = clamp(p / BIZ_P0, 0, 1);
-        var t0e = 1 - Math.pow(1 - t0, 2); // easeOutQuad
-        bizHd.style.clipPath = 'inset(' + (100 - 100 * t0e).toFixed(1) + '% 0 0 0)';
-        bizHd.style.opacity  = '';
-      }
+      if (isMobileBiz) {
+        /* 모바일: CSS .biz-entered 클래스로 표시 — 인라인 스타일 개입 없음 */
+      } else {
+        // Phase 1: hd는 항상 표시 — 카드 애니메이션만 실행
 
-      // Phase 2: 카드 상승 (BIZ_P0+stagger → BIZ_P1)
-      bizCards.forEach(function(card, i) {
-        var startP = BIZ_P0 + BIZ_STAGGER[i];
-        var lp     = clamp((p - startP) / (BIZ_P1 - startP), 0, 1);
-        var ease   = 1 - Math.pow(1 - lp, 3); // easeOutCubic
-        card.style.transform = 'translateY(' + ((1 - ease) * 110).toFixed(2) + 'vh)';
-        card.style.opacity   = lp > 0 ? '1' : '0';
-      });
-    } else {
-      // Phase 3: 선택된 카드 확장
+        // Phase 2: 카드 상승 (BIZ_P0+stagger → BIZ_P1)
+        bizCards.forEach(function(card, i) {
+          var startP = BIZ_P0 + BIZ_STAGGER[i];
+          var lp     = clamp((p - startP) / (BIZ_P1 - startP), 0, 1);
+          var ease   = 1 - Math.pow(1 - lp, 3); // easeOutCubic
+          card.style.transform = 'translateY(' + ((1 - ease) * 110).toFixed(2) + 'vh)';
+          card.style.opacity   = lp > 0 ? '1' : '0';
+        });
+      }
+    } else if (!isMobileBiz) {
+      // Phase 3: 선택된 카드 확장 (PC 전용)
       if (!bizRects) {
         bizRects = [];
-        // 컨테이너 높이 freeze → flex layout shift 방지
         if (bizStageCards) { bizStageCards.style.height = bizStageCards.offsetHeight + 'px'; }
         var sr = bizStage.getBoundingClientRect();
         bizCards.forEach(function(card) {
           var r = card.getBoundingClientRect();
           bizRects.push({ l: r.left - sr.left, t: r.top - sr.top, w: r.width, h: r.height });
         });
-        // 슬라이더 slide를 확장 카드와 미리 sync (slider 등장 전에 처리 → 렉 감소)
         goSlide(selectedBizCard);
       }
 
-      var t3  = clamp((p - BIZ_P2) / (1 - BIZ_P2), 0, 1);
-      var t3e = 1 - Math.pow(1 - t3, 3); // easeOutCubic
+      var t3  = clamp((p - biz_p2_eff) / (1 - biz_p2_eff), 0, 1);
+      var t3e = 1 - Math.pow(1 - t3, 3);
 
       bizCards.forEach(function(card, i) {
         var r = bizRects[i];
@@ -343,11 +404,7 @@
           card.style.opacity      = '1';
           card.style.zIndex       = '20';
         } else {
-          card.style.left    = r.l + 'px';
-          card.style.top     = r.t + 'px';
-          card.style.width   = r.w + 'px';
-          card.style.height  = r.h + 'px';
-          card.style.opacity = Math.max(0, 1 - t3e * 2.5).toFixed(2);
+          card.style.opacity = '0';
           card.style.zIndex  = '5';
         }
       });
@@ -356,7 +413,6 @@
         bizHd.style.opacity = Math.max(0, 1 - t3e * 3).toFixed(2);
       }
 
-      // biz-slider: 카드 확장 후반부(t3e 0.75→1.0)에 고정 오버레이로 페이드인
       if (bizSlider && !bizSliderReady) {
         var slOp = clamp((t3e - 0.75) / 0.25, 0, 1);
         if (slOp > 0) {
@@ -371,14 +427,14 @@
       }
     }
 
-    // biz-slider 관리: fixed 해제 / 위 스크롤 시 재표시
-    if (bizSlider) {
+    // biz-slider 관리: fixed 해제 / 위 스크롤 시 재표시 (PC 전용)
+    if (bizSlider && !isMobileBiz) {
       var pinBtm = bizPin.getBoundingClientRect().bottom;
 
       if (bizSliderReady) {
         if (pinBtm > 0) {
           // 위로 스크롤 중: fixed 오버레이로 다시 표시
-          var revOp = clamp((p - BIZ_P2 + 0.08) / 0.08, 0, 1);
+          var revOp = clamp((p - biz_p2_eff + 0.08) / 0.08, 0, 1);
           if (revOp > 0) {
             bizSlider.style.position   = 'fixed';
             bizSlider.style.inset      = '0';
@@ -419,6 +475,38 @@
     lenis.on('scroll', function() {
       if (!bizRafPend) { bizRafPend = true; requestAnimationFrame(updateBiz); }
     });
+
+    // 모바일: biz-pin 진입 시 콘텐츠 즉시 표시 (CSS 트랜지션)
+    if (isMobileBiz && 'IntersectionObserver' in window) {
+      var bizEntryIO = new IntersectionObserver(function(entries) {
+        if (!entries[0].isIntersecting) return;
+        if (bizHd) setTimeout(function() { bizHd.classList.add('biz-entered'); }, 60);
+        bizCards.forEach(function(card, i) {
+          var delays = [160, 280, 60, 220];
+          setTimeout(function() { card.classList.add('biz-entered'); }, delays[i] !== undefined ? delays[i] : 60);
+        });
+        bizEntryIO.disconnect();
+      }, { threshold: 0 });
+      bizEntryIO.observe(bizPin);
+    } else if (isMobileBiz) {
+      // 폴백: 즉시 표시
+      if (bizHd) bizHd.classList.add('biz-entered');
+      bizCards.forEach(function(card) { card.classList.add('biz-entered'); });
+    }
+
+    // 닫기 버튼
+    var slideClose = document.getElementById('slideClose');
+    if (slideClose) {
+      slideClose.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        if (bizSlider) { bizSlider.classList.remove('mobile-open'); bizSlider.style.cssText = ''; }
+        lenis.start();
+      });
+      slideClose.addEventListener('click', function() {
+        if (bizSlider) { bizSlider.classList.remove('mobile-open'); bizSlider.style.cssText = ''; }
+        lenis.start();
+      });
+    }
   }
 
   /* ══════════════════════════════
@@ -426,11 +514,11 @@
   ══════════════════════════════ */
   document.querySelectorAll('a[href^="#"]').forEach(function (a) {
     a.addEventListener('click', function (e) {
+      e.preventDefault();
       var href = a.getAttribute('href');
       if (href === '#') return;
       var target = document.querySelector(href);
       if (!target) return;
-      e.preventDefault();
       var off = gnb ? gnb.offsetHeight : 72;
       lenis.scrollTo(target, { offset: -off, duration: 1.4 });
     });

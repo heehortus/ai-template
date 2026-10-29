@@ -21,7 +21,6 @@
     <nav class="gnb-nav" aria-label="주요 메뉴">
       <a href="#about"   class="gnb-link">회사소개</a>
       <a href="#business" class="gnb-link">비즈니스</a>
-      <a href="#esg"     class="gnb-link">지속가능경영</a>
       <a href="#network" class="gnb-link">글로벌 네트워크</a>
       <a href="#news"    class="gnb-link">뉴스룸</a>
     </nav>
@@ -39,7 +38,6 @@
   </div>
   <a href="#about"    class="mobile-link">회사소개</a>
   <a href="#business" class="mobile-link">비즈니스</a>
-  <a href="#esg"      class="mobile-link">지속가능경영</a>
   <a href="#network"  class="mobile-link">글로벌 네트워크</a>
   <a href="#news"     class="mobile-link">뉴스룸</a>
 </nav>
@@ -116,31 +114,32 @@
 <!-- ══════════════════════════════
      BUSINESS STAGE (sticky scroll)
 ══════════════════════════════ -->
+<div id="business"></div>
 <div class="biz-pin" id="bizPin">
 <section class="biz-stage" id="bizStage">
 
   <div class="biz-stage-hd" id="bizStageHd">
-    <span class="pill">BUSINESS</span>
-    <h2 class="biz-stage-title">
+    <span class="pill reveal-clip">BUSINESS</span>
+    <h2 class="biz-stage-title reveal-clip" data-delay="1">
       NAVIS 수산은 다양한 어업분야의 역량을 키워<br>
       미래 가치를 만들어가고 있습니다
     </h2>
   </div>
 
   <div class="biz-stage-cards" id="bizStageCards">
-    <div class="biz-stage-card" data-biz="0">
+    <div class="biz-stage-card" data-biz="0" ontouchstart="event.stopPropagation()" ontouchend="bizOpenSlider(0)" onclick="bizOpenSlider(0)">
       <img src="asset/stage-card-img-1.jpg" alt="원양어업" loading="lazy">
       <div class="biz-stage-card-label">원양어업</div>
     </div>
-    <div class="biz-stage-card" data-biz="1">
+    <div class="biz-stage-card" data-biz="1" ontouchstart="event.stopPropagation()" ontouchend="bizOpenSlider(1)" onclick="bizOpenSlider(1)">
       <img src="asset/stage-card-img-2.jpg" alt="수산가공" loading="lazy">
       <div class="biz-stage-card-label">수산가공</div>
     </div>
-    <div class="biz-stage-card biz-stage-card--center" data-biz="2">
+    <div class="biz-stage-card biz-stage-card--center" data-biz="2" ontouchstart="event.stopPropagation()" ontouchend="bizOpenSlider(2)" onclick="bizOpenSlider(2)">
       <img src="asset/stage-card-img-3.jpg" alt="글로벌 유통" loading="lazy">
       <div class="biz-stage-card-label">글로벌 유통</div>
     </div>
-    <div class="biz-stage-card" data-biz="3">
+    <div class="biz-stage-card" data-biz="3" ontouchstart="event.stopPropagation()" ontouchend="bizOpenSlider(3)" onclick="bizOpenSlider(3)">
       <img src="asset/stage-card-img-4.jpg" alt="ESG 경영" loading="lazy">
       <div class="biz-stage-card-label">ESG 경영</div>
     </div>
@@ -153,6 +152,11 @@
      BUSINESS SLIDER (풀스크린)
 ══════════════════════════════ -->
 <section class="biz-slider" id="biz-detail">
+
+  <!-- 모바일 닫기 버튼 -->
+  <div class="slide-close" id="slideClose" role="button" aria-label="닫기">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+  </div>
 
   <!-- Slide 01: 원양어업 -->
   <div class="slide active" data-idx="0">
@@ -228,14 +232,14 @@
     </div>
   </div>
 
-  <!-- Prev Arrow -->
-  <div class="slide-arrow" id="slidePrev" role="button" aria-label="이전 슬라이드">
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18L9 12l6-6"/></svg>
-  </div>
-
-  <!-- Next Arrow -->
-  <div class="slide-arrow slide-arrow--next" id="slideNext" role="button" aria-label="다음 슬라이드">
-    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+  <!-- Arrows -->
+  <div class="slide-arrows">
+    <div class="slide-arrow" id="slidePrev" role="button" aria-label="이전 슬라이드">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M15 18L9 12l6-6"/></svg>
+    </div>
+    <div class="slide-arrow slide-arrow--next" id="slideNext" role="button" aria-label="다음 슬라이드">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M9 18l6-6-6-6"/></svg>
+    </div>
   </div>
 
   <!-- Tab Navigation -->
@@ -349,14 +353,36 @@
 <footer class="footer" id="esg">
   <div class="container footer-top">
     <div class="footer-brand">
-      <span class="footer-logo">NAVIS</span>
+      <div class="footer-brand-top">
+        <span class="footer-logo">NAVIS</span>
+        <div class="footer-social">
+          <a class="social-icon" href="#" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="2" width="20" height="20" rx="5.5" stroke="currentColor" stroke-width="2"/>
+              <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor"/>
+            </svg>
+          </a>
+          <a class="social-icon" href="#" aria-label="YouTube">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="2" y="5" width="20" height="14" rx="4" stroke="currentColor" stroke-width="2"/>
+              <path d="M10 9.5L15 12L10 14.5V9.5Z" fill="currentColor"/>
+            </svg>
+          </a>
+          <a class="social-icon" href="#" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 2H15C13.6739 2 12.4021 2.52678 11.4645 3.46447C10.5268 4.40215 10 5.67392 10 7V10H7V14H10V22H14V14H17L18 10H14V7C14 6.73478 14.1054 6.48043 14.2929 6.29289C14.4804 6.10536 14.7348 6 15 6H18V2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+      </div>
       <p>바다를 항해하다, 미래를 열다</p>
+      <address class="footer-address">서울특별시 중구 을지로 100 NAVIS 빌딩 · Tel. 02-1234-5678 · 사업자등록번호 123-45-67890</address>
     </div>
   </div>
   <div class="footer-bottom">
     <div class="container footer-bottom-inner">
-      <address>서울특별시 중구 을지로 100 NAVIS 빌딩 · Tel. 02-1234-5678 · 사업자등록번호 123-45-67890</address>
-<p class="footer-copy">© 2026 NAVIS Corp. All rights reserved.</p>
+      <p class="footer-copy">© 2026 NAVIS Corp. All rights reserved.</p>
     </div>
   </div>
 </footer>
@@ -472,7 +498,13 @@ light_spot_1.target = parentContainer;
 light_spot_2.target = parentContainer;
 light_dir.target = parentContainer;
 
-scene.add(light_amb, light_spot_1, light_spot_2);
+// 모바일: 조명 강도 증가
+if (window.innerWidth <= 900) {
+    light_amb.intensity = 2.2;
+    light_spot_1.intensity = 24;
+    light_spot_2.intensity = 12;
+}
+scene.add(light_amb, light_spot_1, light_spot_2, light_dir);
 
 const controls = new OrbitControls( camera, globe_el );
 controls.rotateSpeed = 0.05;
@@ -489,6 +521,16 @@ const animate = () => {
     renderer.render(scene, camera);
 };
 animate();
+
+// 반응형: 요소 크기 변경 시 렌더러·카메라 업데이트
+const ro = new ResizeObserver(() => {
+    const { width: rW, height: rH } = globe_el.getBoundingClientRect();
+    if (rW === 0 || rH === 0) return;
+    renderer.setSize(rW, rH);
+    camera.aspect = rW / rH;
+    camera.updateProjectionMatrix();
+});
+ro.observe(globe_el);
 
 function draw_world_dots() {
     const e = new THREE.Object3D,
